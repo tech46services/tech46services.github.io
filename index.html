@@ -2,28 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Tech 46 Services – Dépannage informatique à domicile autour de Gramat</title>
+  <title>Tech 46 Services – Dépannage informatique à domicile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tech 46 Services : dépannage informatique, assistance et conseil à domicile, jusqu’à 45 minutes autour de Gramat (Lot 46).">
+
+  <!-- Police Google Fonts (gratuite) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bleu-bmw: #0b2a4a;
-      --bleu-accent: #1976d2;
-      --bleu-accent-soft: rgba(25, 118, 210, 0.12);
-      --fond: #050814;
-      --fond-carte: #0f172a;
-      --fond-carte-soft: rgba(15, 23, 42, 0.8);
-      --texte-principal: #f9fafb;
-      --texte-secondaire: #9ca3af;
-      --bordure-subtile: rgba(148, 163, 184, 0.2);
-      --radius-lg: 24px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
-      --shadow-chip: 0 4px 12px rgba(15, 23, 42, 0.6);
-      --transition-fast: 0.18s ease-out;
+      --primary: #0d47a1;      /* bleu “pro” */
+      --primary-dark: #0a377c;
+      --accent: #ffb300;
+      --bg: #f4f5f7;
+      --text: #1f2933;
+      --card-bg: #ffffff;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.12);
+      --shadow-strong: 0 20px 45px rgba(15, 23, 42, 0.18);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --max-width: 1100px;
     }
 
     * {
@@ -33,695 +32,848 @@
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, #1e3a8a 0, transparent 55%),
-        radial-gradient(circle at bottom right, #0f172a 0, #020617 55%);
-      color: var(--texte-principal);
-      min-height: 100vh;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
-    main {
-      max-width: 1100px;
+    /* ---- Barre en haut ---- */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(244, 245, 247, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .topbar {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-    }
-
-    /* Top bar */
-
-    .top-bar {
+      padding: 0.75rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.25rem;
       gap: 1rem;
     }
 
-    .brand-chip {
-      display: inline-flex;
+    .logo {
+      display: flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-chip);
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
     }
 
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6);
-    }
-
-    .top-actions {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .chip {
-      border-radius: var(--radius-pill);
-      padding: 0.3rem 0.9rem;
-      font-size: 0.8rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.85);
-      color: var(--texte-secondaire);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: var(--shadow-chip);
-    }
-
-    /* Layout cartes principales */
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 1.5rem;
-      align-items: flex-start;
-      margin-bottom: 2rem;
-    }
-
-    .card {
-      background: var(--fond-carte-soft);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--bordure-subtile);
+    .logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #0d47a1);
       box-shadow: var(--shadow-soft);
-      padding: 1.6rem 1.5rem;
-      backdrop-filter: blur(18px);
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
     }
 
-    .card::before {
+    .logo-text-main {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 1rem;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+    }
+
+    nav a::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.25), transparent 55%);
-      opacity: 0.7;
-      pointer-events: none;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.2s ease-out;
     }
 
-    .card-inner {
-      position: relative;
-      z-index: 1;
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .cta-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .cta-top span {
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    .btn-primary {
+      border-radius: var(--radius-full);
+      border: none;
+      padding: 0.45rem 1.1rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* ---- Contenu principal ---- */
+
+    main {
+      max-width: var(--max-width);
+      margin: 1.5rem auto 3rem;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ---- Section Hero ---- */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.6rem;
+      background: rgba(13, 71, 161, 0.06);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      font-size: 0.78rem;
+      color: var(--primary-dark);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
     }
 
     .hero-title {
-      font-size: 2rem;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.35rem;
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span {
+      color: var(--primary);
     }
 
     .hero-subtitle {
       font-size: 0.98rem;
-      color: var(--texte-secondaire);
-      margin-bottom: 1.2rem;
+      max-width: 36rem;
+      color: #4b5563;
     }
 
     .hero-highlight {
-      color: #e5e7eb;
-      font-weight: 500;
-    }
-
-    .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 1.4rem;
+      gap: 0.8rem;
+      font-size: 0.9rem;
     }
 
-    .tag {
-      font-size: 0.78rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--texte-secondaire);
-    }
-
-    .tag-primary {
-      border-color: rgba(59, 130, 246, 0.8);
-      background: var(--bleu-accent-soft);
-      color: #e5f0ff;
+    .hero-highlight-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      box-shadow: 0 7px 18px rgba(15, 23, 42, 0.1);
+      font-weight: 500;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 0.8rem;
+      margin-top: 0.4rem;
+      align-items: center;
     }
 
-    .btn {
-      border-radius: var(--radius-pill);
-      padding: 0.75rem 1.4rem;
-      font-size: 0.92rem;
-      border: none;
+    .btn-ghost {
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.45rem 1.05rem;
+      font-size: 0.85rem;
+      background: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border var(--transition-fast);
-      white-space: nowrap;
+      gap: 0.35rem;
+      transition: background 0.15s ease-out, box-shadow 0.15s ease-out, transform 0.15s ease-out;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #22c1c3);
-      color: #f9fafb;
-      box-shadow: 0 18px 38px rgba(37, 99, 235, 0.5);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 46px rgba(37, 99, 235, 0.65);
-    }
-
-    .btn-secondary {
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: var(--texte-secondaire);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: #e5e7eb;
+    .btn-ghost:hover {
+      background: #f8fafc;
+      box-shadow: var(--shadow-soft);
       transform: translateY(-1px);
     }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--texte-secondaire);
-    }
-
-    /* Carte de droite */
-
-    .pill-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--texte-secondaire);
-      margin-bottom: 0.8rem;
-    }
-
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-      font-size: 0.9rem;
-    }
-
-    .info-label {
-      display: inline-block;
-      min-width: 90px;
-      color: var(--texte-secondaire);
-      font-size: 0.82rem;
-    }
-
-    .info-item strong {
-      font-weight: 500;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.7rem;
-      font-size: 0.78rem;
-      border-radius: var(--radius-pill);
-      background: var(--bleu-accent-soft);
-      border: 1px solid rgba(59, 130, 246, 0.7);
-      color: #dbeafe;
+    .hero-meta {
       margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: #6b7280;
     }
 
-    /* Sections app-like */
-
-    section {
-      margin-bottom: 1.75rem;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .section-subtitle {
-      font-size: 0.85rem;
-      color: var(--texte-secondaire);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .mini-card {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.86));
-      border-radius: 20px;
-      border: 1px solid var(--bordure-subtile);
-      padding: 1rem 1rem 1.1rem;
+    .hero-card {
+      background: radial-gradient(circle at top left, #1d4ed8, #020617);
+      border-radius: 26px;
+      padding: 1.5rem 1.3rem 1.7rem;
+      color: #e5e7eb;
+      box-shadow: var(--shadow-strong);
       position: relative;
       overflow: hidden;
     }
 
-    .mini-card::after {
+    .hero-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2), transparent 55%);
-      opacity: 0.4;
+      background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.5), transparent 55%);
+      opacity: 0.7;
       pointer-events: none;
     }
 
-    .mini-card h3 {
+    .hero-card-inner {
       position: relative;
       z-index: 1;
-      font-size: 0.98rem;
-      margin-bottom: 0.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .mini-card p,
-    .mini-card ul {
-      position: relative;
-      z-index: 1;
-      font-size: 0.85rem;
-      color: var(--texte-secondaire);
-    }
-
-    .mini-card ul {
-      margin-top: 0.4rem;
-      padding-left: 1rem;
-    }
-
-    .pill-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--texte-secondaire);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Tarifs */
-
-    .tarif-wrapper {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: 20px;
-      border: 1px solid var(--bordure-subtile);
-      padding: 1rem 1.1rem;
-    }
-
-    .tarif-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-
-    .tarif-table th,
-    .tarif-table td {
-      padding: 0.45rem 0.35rem;
-      text-align: left;
-    }
-
-    .tarif-table th {
-      color: var(--texte-secondaire);
+    .hero-card-title {
+      font-size: 1rem;
       font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-card-sub {
       font-size: 0.8rem;
+      color: #cbd5f5;
     }
 
-    .tarif-table tr:not(:last-child) td {
-      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
-    }
-
-    .tarif-label {
-      font-weight: 500;
-    }
-
-    .tarif-note {
-      margin-top: 0.55rem;
-      font-size: 0.78rem;
-      color: var(--texte-secondaire);
-    }
-
-    /* Zone carte */
-
-    .zone-card {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: 20px;
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      padding: 1rem 1.1rem;
-      font-size: 0.85rem;
-      color: var(--texte-secondaire);
-    }
-
-    .zone-chip-row {
-      margin-top: 0.6rem;
+    .hero-card-pillrow {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
+      margin-top: 0.2rem;
     }
 
-    .zone-chip {
-      font-size: 0.78rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: #e5e7eb;
+    .pill {
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
-    /* Contact / mentions */
+    .hero-card-footer {
+      margin-top: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-    .contact-layout {
+    .hero-card-tagline {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-card-tagline span {
+      font-weight: 500;
+    }
+
+    /* ---- Sections génériques ---- */
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.4rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      max-width: 26rem;
+    }
+
+    /* ---- Cartes services ---- */
+
+    .grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 2.2fr);
-      gap: 1.2rem;
-      align-items: flex-start;
+      gap: 1.25rem;
     }
 
-    .contact-card,
-    .mentions-card {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: 20px;
-      border: 1px solid var(--bordure-subtile);
-      padding: 1rem 1.1rem;
+    @media (min-width: 800px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 799px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(59, 130, 246, 0.7);
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    .card-meta {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* ---- Encart tarifs ---- */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 799px) {
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pricing-main {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      border-radius: 22px;
+      color: #e5e7eb;
+      padding: 1.2rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .pricing-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px;
+      height: 160px;
+      background: radial-gradient(circle at 50% 0%, rgba(248, 250, 252, 0.35), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .pricing-main-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .pricing-label {
+      color: #d1d5db;
+    }
+
+    .pricing-value {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .pricing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      margin-top: 0.1rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .pricing-note {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      opacity: 0.95;
+    }
+
+    .pricing-side {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 0.83rem;
+      color: #4b5563;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--primary);
+      margin-right: 0.3rem;
+    }
+
+    /* ---- Bloc contact ---- */
+
+    .contact-card {
+      margin-top: 1rem;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 0.9rem 1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
       font-size: 0.85rem;
     }
 
-    .contact-card a {
-      color: #bfdbfe;
-      text-decoration: none;
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
 
-    .contact-card a:hover {
-      text-decoration: underline;
+    .contact-details strong {
+      font-size: 0.9rem;
     }
 
-    .mentions-card p {
-      font-size: 0.78rem;
-      color: var(--texte-secondaire);
-      margin-bottom: 0.4rem;
+    .contact-details span {
+      color: #4b5563;
     }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* ---- Mentions légales / bas de page ---- */
 
     footer {
-      max-width: 1100px;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 1.3rem 1.25rem 1.8rem;
+      font-size: 0.72rem;
+      color: #6b7280;
+      background: #e5e7eb;
+    }
+
+    footer div {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0.75rem 1.25rem 1.5rem;
-      font-size: 0.78rem;
-      color: var(--texte-secondaire);
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
     footer a {
-      color: #93c5fd;
-      text-decoration: none;
-    }
-
-    footer a:hover {
+      color: inherit;
       text-decoration: underline;
-    }
-
-    @media (max-width: 840px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-title {
-        font-size: 1.55rem;
-      }
-      main {
-        padding-inline: 1rem;
-      }
-      .card {
-        padding-inline: 1.25rem;
-      }
+      text-decoration-style: dotted;
     }
   </style>
 </head>
 <body>
-  <main>
-    <!-- Top app bar -->
-    <div class="top-bar">
-      <div class="brand-chip">
-        <span class="brand-dot"></span>
-        <span>Tech 46 Services</span>
-      </div>
-      <div class="top-actions">
-        <div class="chip">Lot (46) • Gramat et alentours</div>
-        <div class="chip">Dépannage &amp; assistance informatique</div>
+
+<header>
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-circle">46</div>
+      <div>
+        <div class="logo-text-main">TECH 46 SERVICES</div>
+        <div class="logo-text-sub">Dépannage informatique à domicile</div>
       </div>
     </div>
 
-    <!-- Hero layout -->
-    <div class="layout">
-      <!-- Carte principale -->
-      <section class="card">
-        <div class="card-inner">
-          <h1 class="hero-title">Dépannage informatique à domicile autour de Gramat</h1>
-          <p class="hero-subtitle">
-            Assistance, maintenance et conseils informatiques pour particuliers,
-            jusqu’à <span class="hero-highlight">45&nbsp;minutes de route autour de Gramat</span>.
-            Explications claires, pédagogie et service local.
-          </p>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-          <div class="hero-tags">
-            <span class="tag tag-primary">📍 À domicile</span>
-            <span class="tag">💻 PC &amp; portable</span>
-            <span class="tag">📱 Smartphone &amp; tablette</span>
-            <span class="tag">🌐 Internet, box, Wi-Fi</span>
-          </div>
+    <div class="cta-top">
+      <span>Intervention Lot (46)</span>
+      <button class="btn-primary" onclick="window.location.href='tel:+33600000000'">
+        Appeler maintenant
+      </button>
+    </div>
+  </div>
+</header>
 
-          <div class="hero-actions">
-            <a href="tel:+33769754085" class="btn btn-primary">
-              📞 Appeler le 07&nbsp;69&nbsp;75&nbsp;40&nbsp;85
-            </a>
-            <a href="mailto:tech46services@gmail.com?subject=Demande%20d%E2%80%99intervention&amp;body=Bonjour,%0A%0ANom%20:%0ACommune%20:%0AProbl%C3%A8me%20rencontr%C3%A9%20:%0AMes%20disponibilit%C3%A9s%20:%0A%0AMerci." class="btn btn-secondary">
-              ✉️ Écrire un e-mail
-            </a>
-          </div>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Intervention rapide à domicile – sur rendez-vous
+      </div>
 
-          <p class="hero-note">
-            Intervention sur rendez-vous.  
-            Un devis peut être réalisé avant toute intervention.
-          </p>
-        </div>
-      </section>
+      <h1 class="hero-title">
+        Dépannage informatique <span>pro & transparent</span><br />à votre domicile.
+      </h1>
 
-      <!-- Carte info de droite -->
-      <aside class="card">
-        <div class="card-inner">
-          <div class="pill-title">Coordonnées &amp; infos pratiques</div>
-          <ul class="info-list">
-            <li class="info-item">
-              <span class="info-label">Téléphone</span>
-              <strong><a href="tel:+33769754085" style="color:#e5e7eb;text-decoration:none;">07&nbsp;69&nbsp;75&nbsp;40&nbsp;85</a></strong>
-            </li>
-            <li class="info-item">
-              <span class="info-label">E-mail</span>
-              <a href="mailto:tech46services@gmail.com" style="color:#bfdbfe;">tech46services@gmail.com</a>
-            </li>
-            <li class="info-item">
-              <span class="info-label">Secteur</span>
-              <span>Jusqu’à ~45&nbsp;min de route autour de Gramat (Lot 46).</span>
-            </li>
-            <li class="info-item">
-              <span class="info-label">Public</span>
-              <span>Particuliers, aidants, petites structures locales.</span>
-            </li>
-          </ul>
-          <div class="badge-pill">
-            🔒 Respect de vos données : rien n’est conservé en dehors de la prestation.
-          </div>
-        </div>
-      </aside>
+      <p class="hero-subtitle">
+        Diagnostic, réparation, optimisation et conseils. PC, portable, box, Wi-Fi, sauvegardes…
+        Un interlocuteur unique qui se déplace chez vous dans le Lot.
+      </p>
+
+      <div class="hero-highlight">
+        <div class="hero-highlight-item">✅ Micro-entreprise déclarée</div>
+        <div class="hero-highlight-item">✅ Devis clairs, pas de surprise</div>
+        <div class="hero-highlight-item">✅ Sauvegarde et respect des données</div>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Demander un rappel
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('tarifs').scrollIntoView({behavior:'smooth'})">
+          Voir les tarifs
+        </button>
+      </div>
+
+      <div class="hero-meta">
+        Disponible en soirée et le week-end selon planning – intervention sur rendez-vous.
+      </div>
     </div>
 
-    <!-- Services -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Services proposés</h2>
-        <p class="section-subtitle">Une aide informatique complète, au rythme de chacun.</p>
-      </div>
-      <div class="card-grid">
-        <article class="mini-card">
-          <span class="pill-tag">Dépannage &amp; maintenance</span>
-          <h3>Votre ordinateur ne réagit plus comme avant&nbsp;?</h3>
-          <p>Diagnostic et réparation des problèmes courants :</p>
-          <ul>
-            <li>Démarrage lent ou impossible</li>
-            <li>Messages d’erreur, bugs, blocages</li>
-            <li>Nettoyage logiciel, suppression de programmes inutiles</li>
-          </ul>
-        </article>
+    <aside class="hero-card">
+      <div class="hero-card-inner">
+        <div>
+          <div class="hero-card-title">
+            Problème urgent ?
+            <span>📍 Lot (46)</span>
+          </div>
+          <div class="hero-card-sub">
+            Exemple d’interventions fréquentes :
+          </div>
+        </div>
 
-        <article class="mini-card">
-          <span class="pill-tag">Installation &amp; configuration</span>
-          <h3>Mettre en route sereinement votre matériel</h3>
-          <p>Mise en place et réglages de vos équipements&nbsp;:</p>
-          <ul>
-            <li>PC, écrans, imprimantes</li>
-            <li>Box Internet, Wi-Fi, CPL</li>
-            <li>Création et sécurisation de comptes</li>
-          </ul>
-        </article>
+        <div class="hero-card-pillrow">
+          <span class="pill">PC lent / qui rame</span>
+          <span class="pill">Virus / pub envahissante</span>
+          <span class="pill">Installation PC neuf</span>
+          <span class="pill">Sauvegarde & récupération</span>
+          <span class="pill">Wi-Fi qui décroche</span>
+        </div>
 
-        <article class="mini-card">
-          <span class="pill-tag">Accompagnement &amp; pédagogie</span>
-          <h3>Prendre en main vos outils numériques</h3>
-          <p>Accompagnement patient, sans jargon&nbsp;:</p>
-          <ul>
-            <li>Découverte de Windows et Android</li>
-            <li>Conseils d’organisation et de sauvegarde</li>
-          </ul>
-        </article>
+        <div class="hero-card-footer">
+          <div class="hero-card-tagline">
+            <span class="dot"></span>
+            <span>Diagnostic sur place & conseils adaptés</span>
+          </div>
+          <button class="btn-ghost" onclick="window.location.href='mailto:contact@tech46services.fr'">
+            Envoyer un e-mail
+          </button>
+        </div>
       </div>
-    </section>
+    </aside>
+  </section>
 
-    <!-- Tarifs -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Tarifs indicatifs</h2>
-        <p class="section-subtitle">Transparents et adaptés à la situation. Un devis peut être établi au préalable.</p>
-      </div>
-      <div class="tarif-wrapper">
-        <table class="tarif-table">
-          <thead>
-            <tr>
-              <th>Prestation</th>
-              <th>Détail</th>
-              <th>Tarif indicatif</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tarif-label">Intervention à domicile</td>
-              <td>Diagnostic + 1ère heure sur place</td>
-              <td>À compléter (ex&nbsp;: XX&nbsp;€)</td>
-            </tr>
-            <tr>
-              <td class="tarif-label">Heure supplémentaire</td>
-              <td>Facturation au temps réel</td>
-              <td>À compléter</td>
-            </tr>
-            <tr>
-              <td class="tarif-label">Assistance / conseil</td>
-              <td>Accompagnement, prise en main, réglages</td>
-              <td>À compléter</td>
-            </tr>
-            <tr>
-              <td class="tarif-label">Forfaits spécifiques</td>
-              <td>Installation complète, remise à neuf, etc.</td>
-              <td>Sur devis</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="tarif-note">
-          TVA non applicable, article 293 B du CGI.
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header">
+      <h2 class="section-title">Services proposés</h2>
+      <p class="section-subtitle">
+        Un accompagnement de A à Z : du simple nettoyage logiciel jusqu’à la mise en place
+        de solutions de sauvegarde et de sécurité adaptées à votre usage.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3 class="card-title">Dépannage & réparation</h3>
+        <p class="card-text">
+          PC qui ne démarre plus, écran bleu, plantages, message d’erreur… Diagnostic sur place,
+          explication claire et solution adaptée.
         </p>
-      </div>
-    </section>
-
-    <!-- Zone -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Zone d’intervention</h2>
-        <p class="section-subtitle">Pour garder un service de proximité, les interventions se font dans un rayon d’environ 45&nbsp;minutes de route.</p>
-      </div>
-      <div class="zone-card">
-        <p>
-          Le point de départ est <strong>Gramat (46500)</strong>. La zone exacte est confirmée lors de la demande de rendez-vous
-          en fonction de l’adresse et de l’horaire souhaité.
+        <p class="card-meta">
+          • Fixation de la panne<br />
+          • Test matériel / logiciel<br />
+          • Rapport oral en fin d’intervention
         </p>
-        <div class="zone-chip-row">
-          <span class="zone-chip">Rayon ~45 min autour de Gramat</span>
-          <span class="zone-chip">Lot (46)</span>
-          <span class="zone-chip">Domicile ou petit local</span>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Optimisation & nettoyage</h3>
+        <p class="card-text">
+          Ordinateur lent, démarrage interminable, trop de programmes au lancement.
+          Nettoyage, désinstallation, optimisation et conseils.
+        </p>
+        <p class="card-meta">
+          • Suppression programmes inutiles<br />
+          • Vérification antivirus<br />
+          • Conseils d’entretien simple
+        </p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Installation & mise en service</h3>
+        <p class="card-text">
+          PC neuf, imprimante, box, Wi-Fi, écran, périphériques : installation complète, tests,
+          et prise en main avec explications.
+        </p>
+        <p class="card-meta">
+          • Paramétrage adapté à votre usage<br />
+          • Mises à jour essentielles<br />
+          • Création comptes / e-mail si besoin
+        </p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Sauvegarde & récupération</h3>
+        <p class="card-text">
+          Mise en place d’une solution de sauvegarde simple ou récupération de données
+          lorsque cela est possible (clé USB, disque, etc.).
+        </p>
+        <p class="card-meta">
+          • Analyse de la situation<br />
+          • Sauvegarde sur support choisi<br />
+          • Explication de la procédure
+        </p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Sécurité & protection</h3>
+        <p class="card-text">
+          Vérification antivirus, paramétrage basique de la sécurité, conseils pratiques pour
+          éviter arnaques, mails frauduleux et pertes de données.
+        </p>
+        <p class="card-meta">
+          • Paramètres Windows / navigateur<br />
+          • Recommandations personnalisées<br />
+          • Explications claires, sans jargon
+        </p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Conseils d’achat & configuration</h3>
+        <p class="card-text">
+          Vous voulez changer de matériel ? Conseils neutres selon votre usage
+          (bureautique, famille, photo, jeux, etc.).
+        </p>
+        <p class="card-meta">
+          • Préparation d’une configuration type<br />
+          • Installation et transfert de données possible<br />
+          • Aide à la prise en main
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section id="tarifs">
+    <div class="section-header">
+      <h2 class="section-title">Tarifs simples & transparents</h2>
+      <p class="section-subtitle">
+        Pas de surprise : un tarif horaire clair, déplacement indiqué à l’avance, et
+        facturation simple. TVA non applicable, article 293 B du CGI.
+      </p>
+    </div>
+
+    <div class="pricing">
+      <div class="pricing-main">
+        <div class="pricing-main-inner">
+          <div class="pricing-row">
+            <span class="pricing-label">Tarif horaire</span>
+            <span class="pricing-value">XX € / heure TTC</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Déplacement (zone locale)</span>
+            <span class="pricing-value">XX € TTC</span>
+          </div>
+
+          <div class="pricing-badge">
+            <span class="dot"></span>
+            <span>TVA non applicable – art. 293 B du CGI.</span>
+          </div>
+
+          <p class="pricing-note">
+            Le tarif exact est confirmé sur le devis avant toute intervention. Aucune
+            facturation sans votre accord. En cas d’impossibilité de réparer, un
+            forfait diagnostic peut être appliqué.
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- Contact + mentions -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">Prendre contact</h2>
-        <p class="section-subtitle">Quelques informations suffisent pour organiser un rendez-vous.</p>
+      <div class="pricing-side">
+        <ul class="list">
+          <li>Devis obligatoire au-delà de 150 € TTC.</li>
+          <li>Facture remise en fin d’intervention.</li>
+          <li>Paiement possible par chèque, virement, espèces (à adapter).</li>
+          <li>Intervention uniquement sur rendez-vous.</li>
+        </ul>
       </div>
-      <div class="contact-layout">
-        <div class="contact-card">
-          <p><strong>Par téléphone :</strong><br>
-            <a href="tel:+33769754085">07&nbsp;69&nbsp;75&nbsp;40&nbsp;85</a>
-          </p>
-          <p style="margin-top:0.5rem;"><strong>Par e-mail :</strong><br>
-            <a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a>
-          </p>
-          <p style="margin-top:0.6rem;">Pensez à préciser :</p>
-          <ul style="margin-top:0.2rem;padding-left:1rem;">
-            <li>Votre nom et votre commune</li>
-            <li>Un court descriptif du problème</li>
-            <li>Vos créneaux préférentiels</li>
-          </ul>
-          <p style="margin-top:0.6rem;font-size:0.8rem;color:var(--texte-secondaire);">
-            Une réponse vous sera apportée dès que possible pour affiner le diagnostic et proposer un horaire.
-          </p>
-        </div>
+    </div>
+  </section>
 
-        <div class="mentions-card">
-          <p><strong>Tech 46 Services</strong> – Entreprise individuelle de dépannage informatique à domicile.</p>
-          <p><strong>Statut :</strong> micro-entrepreneur. SIREN / SIRET : à compléter.</p>
-          <p><strong>Responsable de la publication :</strong> à compléter.</p>
-          <p><strong>TVA :</strong> TVA non applicable, article 293 B du CGI.</p>
-          <p>
-            <strong>Données personnelles :</strong> lors des interventions, un accès technique à vos équipements
-            (ordinateur, téléphone, box, etc.) peut permettre de voir certaines données. Aucune donnée n’est copiée,
-            conservée ou utilisée en dehors des besoins stricts de la prestation (sauvegarde ou transfert réalisés
-            à votre demande).
-          </p>
-          <p>
-            Vous êtes invité à effectuer ou vérifier vos sauvegardes préalablement et à rester présent pendant
-            l’intervention. Aucun mot de passe n’est conservé après la fin de la prestation.
-          </p>
-          <p>
-            En cas de demande de suppression ou de changement de mot de passe sur un équipement ou service sensible,
-            une preuve de propriété (facture, accès au compte, etc.) pourra être demandée.
-          </p>
-        </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <h2 class="section-title">Contact & secteur d’intervention</h2>
+      <p class="section-subtitle">
+        Basé à [votre ville], intervention dans un rayon d’environ XX km.
+        N’hésitez pas à laisser un message : rappel dès que possible.
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-details">
+        <strong>Tech 46 Services – Dépannage informatique</strong>
+        <span>SIRET : XXX XXX XXX XXXXX</span>
+        <span>Tél. : <a href="tel:+33600000000">06 00 00 00 00</a></span>
+        <span>E-mail : <a href="mailto:contact@tech46services.fr">contact@tech46services.fr</a></span>
+        <span>Zone : Gramat et alentours (Lot – 46)</span>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    © <span id="year"></span> Tech 46 Services – Dépannage informatique à domicile autour de Gramat.
-  </footer>
+      <div class="contact-actions">
+        <button class="btn-primary" onclick="window.location.href='tel:+33600000000'">
+          📞 Appeler
+        </button>
+        <button class="btn-ghost" onclick="window.location.href='mailto:contact@tech46services.fr'">
+          ✉️ Envoyer un e-mail
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer>
+  <div>
+    <div>
+      Tech 46 Services – Micro-entreprise de dépannage informatique à domicile.
+      TVA non applicable, article 293 B du CGI.
+    </div>
+    <div>
+      Le dépannage informatique implique un accès potentiel à des données personnelles
+      présentes sur vos appareils. Aucun fichier n’est consulté, collecté ou transmis
+      sans votre accord. En cas de demande de suppression ou changement de mot de passe,
+      une preuve de propriété du matériel pourra être demandée.
+    </div>
+    <div>
+      Toute intervention donne lieu à l’édition d’un devis puis d’une facture.
+      Toute signature vaut acceptation du présent devis. Conditions détaillées sur demande.
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
