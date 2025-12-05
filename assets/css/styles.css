@@ -819,3 +819,19 @@ textarea {
     padding: 0;
     background: none;
 }
+.two-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page-main {
+  display: flex;
+  justify-content: center;
+}
+
+
+.two-columns > * {
+  max-width: 600px;
+  width: 100%;
+}
