@@ -39,25 +39,55 @@
           <div class="card-panel elevation-3 reveal">
             <h2>Formulaire de contact</h2>
             <!-- Formulaire simple en mailto (facile sans backend) -->
-            <form class="contact-form" action="mailto:ton.email@exemple.com" method="post" enctype="text/plain">
-              <label>
-                Nom
-                <input type="text" name="Nom" required />
-              </label>
-              <label>
-                E-mail
-                <input type="email" name="Email" required />
-              </label>
-              <label>
-                Sujet
-                <input type="text" name="Sujet" required />
-              </label>
-              <label>
-                Message
-                <textarea name="Message" rows="5" required></textarea>
-              </label>
-              <button type="submit" class="btn primary full-width">Envoyer le message</button>
-            </form>
+            <section id="contact" class="section contact-section">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="section-subtitle">
+      Une question, un dépannage à planifier ? Laisse-moi un message.
+    </p>
+
+    <form id="contact-form" class="contact-form">
+      <!-- Clé Web3Forms (à remplacer) -->
+      <input type="hidden" name="access_key" value="2e8a6d68-d066-437a-ae83-5317a2070e77">
+
+      <!-- Optionnel : pour savoir de quel site vient le message -->
+      <input type="hidden" name="from_site" value="Tech 46 Services - Formulaire de contact">
+
+      <!-- Anti-spam (honeypot, laisser caché) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" placeholder="Objet de votre demande" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre problème ou votre demande"
+          required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        Envoyer le message
+      </button>
+
+      <p id="form-status" class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
             <p class="form-note">
               Vous pouvez aussi me contacter directement par téléphone ou e-mail.
             </p>
