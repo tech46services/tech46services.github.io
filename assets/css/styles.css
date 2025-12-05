@@ -142,7 +142,8 @@ body {
 .nav-cta {
   border: 1px solid rgba(26, 115, 232, 0.35);
   border-radius: 999px;
-  padding: 0.45rem 0.95rem; /* <<< HAUTEUR SUPÉRIEURE ICI */
+  padding: 0.55rem 1.1rem;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
