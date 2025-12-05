@@ -109,13 +109,18 @@ body {
 .site-logo {
   display: inline-flex;
   align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffffff, #f3f6ff);
+  border: 1px solid rgba(224, 227, 235, 0.9);
   text-decoration: none;
 }
 
 .site-logo img {
-  height: 34px;           /* tu peux ajuster 30–40px selon ton goût */
+  height: 30px;
   display: block;
 }
+
 
 
 /* Liens de navigation */
