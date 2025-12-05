@@ -66,55 +66,43 @@
         <div class="two-columns">
           <div class="card-panel elevation-3 reveal">
             <h2>Formulaire de contact</h2>
-            <!-- Formulaire simple en mailto (facile sans backend) -->
-            <section id="contact" class="section contact-section">
+<!-- Formulaire simple en mailto (facile sans backend) -->
+<section id="contact" class="section contact-section">
   <div class="container">
     <h2>Contact</h2>
     <p class="section-subtitle">
-      Une question, un dépannage à planifier ? Laisse-moi un message.
+      Une question ou un dépannage ? Envoyez-moi un message.
     </p>
 
-    <form id="contact-form" class="contact-form">
-      <!-- Clé Web3Forms (à remplacer) -->
+    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      
       <input type="hidden" name="access_key" value="2e8a6d68-d066-437a-ae83-5317a2070e77">
+      <input type="hidden" name="subject" value="Nouveau message depuis le site Tech 46 Services">
+      <input type="checkbox" name="botcheck" style="display:none;">
 
-      <!-- Optionnel : pour savoir de quel site vient le message -->
-      <input type="hidden" name="from_site" value="Tech 46 Services - Formulaire de contact">
-
-      <!-- Anti-spam (honeypot, laisser caché) -->
-      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="name">Nom</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
-        </div>
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
       </div>
 
       <div class="form-group">
-        <label for="subject">Sujet</label>
-        <input type="text" id="subject" name="subject" placeholder="Objet de votre demande" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
       </div>
 
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre problème ou votre demande"
-          required></textarea>
+        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre demande..." required></textarea>
       </div>
 
-      <button type="submit" class="btn-primary">
-        Envoyer le message
-      </button>
+      <button type="submit" class="btn-primary">Envoyer</button>
 
-      <p id="form-status" class="form-status" aria-live="polite"></p>
+      <p id="form-status" class="form-status"></p>
+
     </form>
   </div>
 </section>
+
 
             <p class="form-note">
               Vous pouvez aussi me contacter directement par téléphone ou e-mail.
