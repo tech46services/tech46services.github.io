@@ -9,6 +9,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+  <script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.textContent = "Envoi en cours...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Merci, votre message a bien été envoyé.";
+        form.reset();
+      } else {
+        status.textContent = "❌ Une erreur est survenue. Vous pouvez aussi m'écrire à : tech46services@gmail.com";
+      }
+    } catch (error) {
+      status.textContent = "❌ Impossible d'envoyer le message (problème de connexion ?).";
+    }
+  });
+</script>
+
 <body>
   <div class="app-shell">
     <header class="top-nav elevation-2">
