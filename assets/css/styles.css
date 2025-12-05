@@ -811,3 +811,11 @@ textarea {
   height: 150px;      /* hauteur fixe */
   overflow-y: auto;   /* si le texte est long, une scrollbar apparaît */
 }
+
+/* Deuxième logo SANS bulle */
+.logo-secondary {
+    height: 50px;     /* même hauteur que le premier */
+    border-radius: 0; /* aucune forme arrondie */
+    padding: 0;
+    background: none;
+}
