@@ -805,3 +805,9 @@ main {
   margin-top: 0.6rem;
   font-size: 0.95rem;
 }
+
+textarea {
+  resize: none;       /* empêche le redimensionnement */
+  height: 150px;      /* hauteur fixe */
+  overflow-y: auto;   /* si le texte est long, une scrollbar apparaît */
+}
