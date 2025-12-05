@@ -142,6 +142,10 @@ body {
 .nav-cta {
   border: 1px solid rgba(26, 115, 232, 0.35);
   border-radius: 999px;
+  padding: 0.45rem 0.95rem; /* <<< HAUTEUR SUPÉRIEURE ICI */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-cta.active {
