@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mentions légales – Tech 46 Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- NAVBAR -->
+    <header class="top-nav elevation-2">
+      <div class="nav-left">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/logo-no-text.png" alt="Tech 46 Services">
+        </a>
+        <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo">
+      </div>
+
+      <!-- Bouton menu mobile -->
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="mentions-legales.html" class="nav-link active">Mentions légales</a>
+        <a href="contact.html" class="nav-link nav-cta">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="section-padding">
+        <div class="section-header">
+          <h1>Mentions légales</h1>
+        </div>
+
+        <div class="card-panel elevation-3">
+          <div class="section-header reveal">
+            <p><strong>Tech 46 Services</strong></p>
+            <p>Entreprise Individuelle</p>
+            <p><strong>Entrepreneur :</strong> Uberti Adrian</p>
+            <p><strong>SIRET :</strong> 993 957 513 00019</p>
+            <p><strong>Adresse :</strong> Secteur de Gramat (Lot), France</p>
+            <p><strong>Téléphone :</strong> 07&nbsp;69&nbsp;75&nbsp;40&nbsp;85</p>
+            <p><strong>E-mail :</strong> tech46services@gmail.com</p>
+
+            <hr />
+
+            <h2>Hébergement du site</h2>
+            <p>Ce site est hébergé par :</p>
+            <p><strong>GitHub Pages</strong><br>
+              GitHub Inc.<br>
+              88 Colin P. Kelly Jr St, San Francisco, CA 94107, USA</p>
+            <p>Site : https://pages.github.com/</p>
+
+            <hr />
+
+            <h2>Propriété intellectuelle</h2>
+            <p>L'ensemble du contenu du site (textes, images, illustrations, logo, mise en page) est la propriété exclusive de Tech 46 Services, sauf mention contraire.</p>
+            <p>Toute reproduction ou réutilisation sans autorisation est interdite.</p>
+
+            <hr />
+
+            <h2>Données personnelles (RGPD)</h2>
+            <p>Le site ne collecte aucune donnée sensible.</p>
+            <p>Les seules informations collectées sont celles que vous transmettez volontairement via le formulaire de contact (nom, e-mail et message).</p>
+
+            <p><strong>Ces données ne sont :</strong></p>
+            <ul>
+              <li>ni revendues,</li>
+              <li>ni transmises à des tiers,</li>
+              <li>ni utilisées à des fins commerciales autres que la réponse à votre demande.</li>
+            </ul>
+
+            <p>
+              Conformément au RGPD, vous pouvez demander la suppression ou la consultation de vos données.
+            </p>
+
+            <hr />
+
+            <h2>Cookies</h2>
+            <p>Ce site ne dépose aucun cookie publicitaire ou de suivi.</p>
+            <p>Il peut utiliser des cookies techniques nécessaires au bon fonctionnement (hébergement GitHub Pages).</p>
+
+            <hr />
+
+            <h2>Conditions d’utilisation</h2>
+            <p>En consultant ce site, vous acceptez les présentes conditions d’utilisation.</p>
+            <p>Tech 46 Services se réserve le droit de modifier le contenu du site à tout moment, sans préavis.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-columns">
+        <div>
+          <div class="logo-chip small">
+            <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+            <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
+          </ul>
+        </div>
+        <div></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Tech 46 Services</span>
+        <span class="footer-note">Site hébergé sur Github</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const btn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+        btn.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>
