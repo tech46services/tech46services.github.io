@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services – Tech 46 Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics - Mode sans cookies/IP anonyme -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5RJZZRVC7C', {
+      'anonymize_ip': true,
+      'storage': 'none',
+      'client_id': 'anonyme',
+      'allow_ad_personalization_signals': false,
+      'allow_google_signals': false
+    });
+  </script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- HEADER -->
+    <header class="top-nav elevation-2">
+      <div class="nav-left">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/logo-no-text.png" alt="Tech 46 Services">
+        </a>
+        <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo">
+      </div>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link nav-cta">Contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-main">
+
+      <!-- INTRO -->
+      <section class="section-padding">
+        <div class="section-header">
+          <h1>Services proposés</h1>
+          <p>Aperçu des prestations informatiques disponibles à domicile</p>
+        </div>
+
+        <p class="intro-text" style="max-width: 900px; margin: 0 auto 40px;">
+          Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour le dépannage informatique,
+          la réparation d’ordinateurs, l’installation de matériel, la sécurisation des données et l’optimisation
+          de vos performances. Prestations adaptées aux particuliers et petites entreprises, avec un accompagnement
+          clair et personnalisé.
+        </p>
+
+        <!-- GRID SERVICES -->
+        <div class="cards-grid big">
+
+          <!-- 1. REPARATION -->
+          <article class="service-card elevation-3 reveal">
+            <h2>Réparation et dépannage</h2>
+            <p>
+              Diagnostic complet de votre ordinateur, résolution des problèmes système, suppression des virus et
+              optimisation générale des performances.
+            </p>
+            <ul class="service-list">
+              <li>PC lent, qui plante ou ne démarre plus</li>
+              <li>Erreurs système (Windows / pilotes)</li>
+              <li>Suppression virus, malwares, pubs</li>
+              <li>Nettoyage et optimisation du PC</li>
+              <li>Récupération de mots de passe</li>
+            </ul>
+            <p>
+              Intervention sur PC portables et fixes, toutes marques. Une solution rapide et efficace est proposée
+              après diagnostic.
+            </p>
+          </article>
+
+          <!-- 2. INSTALLATION -->
+          <article class="service-card elevation-3 reveal">
+            <h2>Installation & configuration</h2>
+            <p>
+              Mise en service complète de votre nouveau matériel avec une configuration adaptée à vos besoins.
+            </p>
+            <ul class="service-list">
+              <li>Installation Windows / logiciels</li>
+              <li>Paramétrage comptes utilisateurs</li>
+              <li>Installation imprimantes & périphériques</li>
+              <li>Configuration box Internet et Wi-Fi</li>
+              <li>Conseils d’utilisation</li>
+            </ul>
+            <p>
+              Installation clé en main pour repartir avec un système parfaitement fonctionnel.
+            </p>
+          </article>
+
+          <!-- 3. SAUVEGARDE -->
+          <article class="service-card elevation-3 reveal">
+            <h2>Sauvegarde & sécurité des données</h2>
+            <p>
+              Mise en place de solutions simples et fiables pour protéger vos photos, documents et données importantes.
+            </p>
+            <ul class="service-list">
+              <li>Sauvegarde automatique ou manuelle</li>
+              <li>Récupération de fichiers perdus</li>
+              <li>Stockage externe ou cloud</li>
+              <li>Protection antivirus</li>
+              <li>Conseils bonnes pratiques</li>
+            </ul>
+          </article>
+
+          <!-- 4. RÉSEAU & WI-FI -->
+          <article class="service-card elevation-3 reveal">
+            <h2>Réseau & optimisation Wi-Fi</h2>
+            <p>
+              Analyse et amélioration de votre réseau domestique pour une connexion plus stable et plus rapide.
+            </p>
+            <ul class="service-list">
+              <li>Optimisation de la box Internet</li>
+              <li>Extension de la portée Wi-Fi</li>
+              <li>Diagnostic des coupures / lenteurs</li>
+              <li>Conseils sécurité réseau</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- ZONES D’INTERVENTION -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Zones d’intervention</h2>
+            <p>Dépannage informatique dans un rayon d’environ 45 minutes autour de Gramat</p>
+          </div>
+          <p style="max-width: 900px; margin: 0 auto;">
+            Intervention possible à Gramat, Padirac, Rocamadour, Alvignac, Saint-Céré, Lacapelle-Marival,
+            Aynac, Leyme, Livernon, Figeac et l’ensemble du nord du Lot (46).
+            Déplacement à domicile sur rendez-vous.
+          </p>
+        </section>
+
+        <!-- POURQUOI NOUS ? -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Pourquoi choisir Tech 46 Services ?</h2>
+          </div>
+          <ul class="service-list" style="max-width: 700px; margin: auto;">
+            <li>Déplacement rapide à domicile</li>
+            <li>Diagnostic clair et transparent</li>
+            <li>Accompagnement sans jargon technique</li>
+            <li>Tarifs honnêtes et sans surprise</li>
+            <li>Conseils personnalisés selon vos besoins</li>
+          </ul>
+        </section>
+
+        <!-- CTA -->
+        <div class="section-footer-link">
+          <a href="contact.html" class="btn primary">Demander un devis ou une intervention</a>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-columns">
+        <div>
+          <div class="logo-chip small">
+            <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+            <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Tech 46 Services</span>
+        <span class="footer-note">Site hébergé sur Github</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const btn = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+        btn.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>
