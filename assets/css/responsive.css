@@ -1,0 +1,173 @@
+@media (max-width: 900px) {
+  .top-nav {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-cards-stack {
+    order: -1;
+  }
+
+  .footer-columns {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-grid,
+  .section-padding,
+  .page-main {
+    padding-inline: 1rem;
+  }
+
+  .two-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .main-footer {
+    padding-inline: 1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+/* MODE APPLICATION - MOBILE */
+/* ------------------------- */
+
+@media (max-width: 780px) {
+  /* HEADER / LOGOS */
+  .logo-secondary {
+    display: none !important;
+  }
+
+  .site-logo img {
+    height: 34px;
+  }
+
+  .top-nav {
+    padding: 0.5rem 0.8rem;
+    min-height: 58px;
+    overflow: visible;
+  }
+
+  .nav-left {
+    max-width: 55%;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    overflow: hidden;
+  }
+
+  /* BOUTON HAMBURGER  */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 34px;
+    height: 26px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--text-main);
+    border-radius: 4px;
+    transition: 0.25s;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+
+  /* MENU DÉROULANT */
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    transform: translateY(-12px);
+    pointer-events: none;
+    transition: 0.25s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-link,
+  .nav-cta {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.9rem 1rem;
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+  }
+
+  /* CONTENU EN MODE APP */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+
+  .hero-main-card,
+  .service-card,
+  .step-card {
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+@media (max-width: 600px) {
+  .seo-text {
+    margin: 24px auto;
+    padding: 0 1.25rem;   /* un peu moins large sur très petit écran */
+    font-size: 0.95rem;
+  }
+
+  .seo-text h2 {
+    font-size: 1.2rem;
+  }
+}
