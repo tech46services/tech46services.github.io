@@ -462,3 +462,44 @@
 .seo-text p + p {
   margin-top: 0.5rem;
 }
+
+/*image index*/
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 40px;
+  max-width: 650px;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%; /* Ajuste ici selon ton rendu */
+  background-image: url('img/image-acceuil.webp');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+/* Fondu blanc sur la gauche */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200px; /* Agrandit le dégradé pour éviter un bord visible */
+  width: 400px;
+  height: 100%;
+  background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%);
+}
+ /*fin image index*/
