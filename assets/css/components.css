@@ -486,7 +486,7 @@
   right: 0;
   bottom: 0;
   width: 55%; /* Ajuste ici selon ton rendu */
-  background-image: url('img/image-acceuil.webp');
+  background-image: url('assets/img/image-acceuil.webp');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -503,3 +503,4 @@
   background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%);
 }
  /*fin image index*/
+
