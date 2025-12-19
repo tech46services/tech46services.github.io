@@ -1,4 +1,5 @@
-Sitemap: https://tech46services.github.io/sitemap.xml
+Sitemap: https://tech46services.fr/sitemap.xml
 
 User-agent: *
 Disallow:
+
