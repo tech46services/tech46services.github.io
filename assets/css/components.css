@@ -464,43 +464,48 @@
 }
 
 /*image index*/
-.hero {
+.hero-grid {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 60px 0;
-  min-height: 380px;
   overflow: hidden;
+  padding: 80px 0;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding-left: 40px;
-  max-width: 650px;
-}
-
+/* Image à droite */
 .hero-image {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  width: 55%; /* Ajuste ici selon ton rendu */
-  background-image: url('assets/img/image-acceuil.webp');
+  width: 55%;
+  height: 100%;
+  background-image: url("/assets/img/image_acceuil.webp");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
+  z-index: 0;
 }
 
-/* Fondu blanc sur la gauche */
+/* Fondu blanc à gauche */
 .hero-image::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -200px; /* Agrandit le dégradé pour éviter un bord visible */
-  width: 400px;
+  left: -180px;
+  width: 360px;
   height: 100%;
-  background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
+
+/* S'assurer que le contenu passe au-dessus */
+.hero-content,
+.hero-cards-stack {
+  position: relative;
+  z-index: 1;
+}
+
  /*fin image index*/
+
 
