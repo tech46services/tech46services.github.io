@@ -3,7 +3,7 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://tech46services.github.io/</loc>
+    <loc>https://tech46servicesfr/</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Services -->
   <url>
-    <loc>https://tech46services.github.io/services.html</loc>
+    <loc>https://tech46services.fr/services.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- À propos -->
   <url>
-    <loc>https://tech46services.github.io/apropos.html</loc>
+    <loc>https://tech46services.fr/apropos.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -27,7 +27,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://tech46services.github.io/contact.html</loc>
+    <loc>https://tech46services.fr/contact.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- Page maintenance (info temporaire / travaux) -->
   <url>
-    <loc>https://tech46services.github.io/maintenance.html</loc>
+    <loc>https://tech46services.fr/maintenance.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -43,7 +43,7 @@
 
   <!-- Mentions légales -->
   <url>
-    <loc>https://tech46services.github.io/mentions-legales.html</loc>
+    <loc>https://tech46services.fr/mentions-legales.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -51,10 +51,11 @@
 
   <!-- Politique de confidentialité -->
   <url>
-    <loc>https://tech46services.github.io/confidentialite.html</loc>
+    <loc>https://tech46services.fr/confidentialite.html</loc>
     <lastmod>2025-12-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
 </urlset>
+
