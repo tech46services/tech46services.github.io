@@ -1,18 +1,71 @@
+@media (max-width: 1100px) {
+  .nav-left {
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .site-logo img {
+    height: 48px;
+  }
+
+  .logo-secondary {
+    height: 44px;
+    max-width: 220px;
+    object-fit: contain;
+  }
+}
+
 @media (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .top-nav {
     padding: 0.6rem 1.2rem;
   }
 
+  /* Masque l'image de fond du hero sur mobile/tablette */
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.78) 32%,
+        rgba(255, 255, 255, 0.45) 100%
+      ),
+      url("../img/image_acceuil.webp") center/cover no-repeat;
   }
 
-  .hero-cards-stack {
-    order: -1;
+  .hero-grid::before {
+    background: none;
+  }
+
+.hero-text-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.3rem;
+  }
+
+  /* Texte hero sans ombre sur mobile/tablette */
+  .hero-content h1,
+  .hero-subtitle {
+    text-shadow: none;
   }
 
   .footer-columns {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cards-grid.big {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
 
@@ -47,6 +100,13 @@
 
   .footer-bottom {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+  }
+
+  .main-footer h4 {
+    margin-top: 0.4rem;
   }
 }
 
@@ -54,13 +114,16 @@
 /* ------------------------- */
 
 @media (max-width: 780px) {
-  /* HEADER / LOGOS */
-  .logo-secondary {
-    display: none !important;
-  }
-
   .site-logo img {
     height: 34px;
+  }
+
+  .logo-secondary {
+    display: block;
+    height: 38px;
+    max-width: 180px;
+    object-fit: contain;
+    flex-shrink: 1;
   }
 
   .top-nav {
@@ -70,11 +133,11 @@
   }
 
   .nav-left {
-    max-width: 55%;
+    max-width: 72%;
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    overflow: hidden;
+    overflow: visible;
   }
 
   /* BOUTON HAMBURGER  */
@@ -114,7 +177,7 @@
   /* MENU DÉROULANT */
   .nav-links {
     position: absolute;
-    top: 64px;
+    top: calc(100% - 4px);
     left: 0;
     right: 0;
     background: var(--card);
@@ -158,6 +221,42 @@
     border-radius: 20px;
     box-shadow: var(--shadow-soft);
   }
+
+  .hero-main-card {
+    padding: 1.15rem 1.2rem 1.25rem;
+  }
+
+  .hero-main-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+  }
+
+  .hero-meta {
+    gap: 0.35rem;
+  }
+
+  .card-layer {
+    display: none;
+  }
+
+  /* Lisibilité du bloc "Comment ça marche" sur smartphone */
+  .section-padding.tinted.steps-section .section-header h2 {
+    color: #ffffff;
+  }
+
+  .section-padding.tinted.steps-section .section-header p {
+    color: #e5e7eb;
+  }
 }
 
 @media (max-width: 600px) {
@@ -193,3 +292,53 @@
   }
 }
 /*fin image acceuil*/
+
+@media (max-width: 520px) {
+  .hero-grid {
+    margin-top: 0.6rem;
+    padding-inline: 0.95rem;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .hero-list {
+    padding-left: 0.8rem;
+  }
+
+  .hero-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .section-padding,
+  .section-padding.tinted,
+  .page-main {
+    padding-inline: 1.05rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  .cards-grid,
+  .steps-grid {
+    gap: 1rem;
+  }
+
+  .service-card,
+  .step-card {
+    padding: 1.05rem 1.1rem;
+  }
+
+  .section-header h1,
+  .section-header h2 {
+    font-size: 1.35rem;
+  }
+}
+
+

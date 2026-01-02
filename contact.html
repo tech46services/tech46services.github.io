@@ -1,24 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://tech46services.fr/contact.html">
-  <title>Contact – Tech 46 Services</title>
+  <title>Contact - Tech 46 Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!--Google Analytic - Avec cookies et non anonyme-->
-  <!-- Google tag (gtag.js) -->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5RJZZRVC7C');-->
 
   <!-- Google Analytics - Mode sans cookies et IP anonymisée -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
@@ -31,7 +21,7 @@
   gtag('config', 'G-5RJZZRVC7C', {
     'anonymize_ip': true,   // IP tronquée => localisation régionale seulement
     'storage': 'none',      // aucun cookie créé
-    'client_id': 'anonyme', // pas d’identifiant utilisateur
+    'client_id': 'anonyme', // pas d'identifiant utilisateur
     'allow_ad_personalization_signals': false,
     'allow_google_signals': false
   });
@@ -69,14 +59,14 @@
           <p>Expliquez votre besoin en quelques mots, je vous réponds dès que possible.</p>
         </div>
 
-        <div class="two-columns">
+        <div class="two-columns contact-grid">
           <div class="card-panel elevation-3 reveal">
             <h2>Formulaire de contact</h2>
 
             <section id="contact" class="section contact-section">
               <div class="container">
                 <p class="section-subtitle">
-                  Une question ou un dépannage ? Envoyez-moi un message.
+                  Une question ou une demande de dépannage ? Envoyez-moi un message.
                 </p>
 
                 <form id="contact-form" class="contact-form">
@@ -99,14 +89,14 @@
                     required
                     pattern="^0[1-9][0-9]{8}$"
                     inputmode="numeric"
-                    maxlength="10"
+                    maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
                     title="Veuillez entrer un numéro de téléphone français valide à 10 chiffres."
                     >
                   </div>
 
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
                   </div>
 
                   <div class="form-group">
@@ -167,13 +157,13 @@
           });
 
           if (response.ok) {
-            status.textContent = "✅ Merci, votre message a bien été envoyé.";
+            status.textContent = "Merci, votre message a bien été envoyé.";
             form.reset();
           } else {
-            status.textContent = "❌ Une erreur est survenue. Vous pouvez aussi m'écrire à : tech46services@gmail.com";
+            status.textContent = "Une erreur est survenue. Vous pouvez aussi m'écrire à : tech46services@gmail.com";
           }
         } catch (error) {
-          status.textContent = "❌ Impossible d'envoyer le message (problème de connexion ?).";
+          status.textContent = "Impossible d'envoyer le message (problème de connexion ?).";
         }
       });
     });

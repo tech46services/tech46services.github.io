@@ -10,7 +10,194 @@
   margin-bottom: 0.2rem;
 }
 
-/* Formulaire contact – version “carte” */
+.service-card.reparation-card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
+              url("../img/reparation.webp") center/cover no-repeat;
+  color: #ffffff;
+}
+
+.service-card.reparation-card h2,
+.service-card.reparation-card p,
+.service-card.reparation-card .service-list,
+.service-card.reparation-card .service-details summary {
+  color: #ffffff;
+}
+
+.service-card.reparation-card .service-details p {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-card.installation-card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)),
+              url("../img/installation.webp") center/cover no-repeat;
+  color: #ffffff;
+}
+
+.service-card.installation-card h2,
+.service-card.installation-card p,
+.service-card.installation-card .service-list,
+.service-card.installation-card .service-details summary {
+  color: #ffffff;
+}
+
+.service-card.installation-card .service-details p {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-card.donnees-card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)),
+              url("../img/donnees.webp") center/cover no-repeat;
+  color: #ffffff;
+}
+
+.service-card.donnees-card h2,
+.service-card.donnees-card p,
+.service-card.donnees-card .service-list,
+.service-card.donnees-card .service-details summary {
+  color: #ffffff;
+}
+
+.service-card.donnees-card .service-details p {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-card.reseau-card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)),
+              url("../img/reseau.webp") center/cover no-repeat;
+  color: #ffffff;
+}
+
+.service-card.reseau-card h2,
+.service-card.reseau-card p,
+.service-card.reseau-card .service-list,
+.service-card.reseau-card .service-details summary {
+  color: #ffffff;
+}
+
+.service-card.reseau-card .service-details p {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-details {
+  position: relative;
+  display: block;
+  padding-top: 0.65rem; /* espace entre le texte et le lien */
+  margin-top: auto;     /* pousse le lien en bas de la carte */
+}
+/* Place la carte au-dessus quand la bulle est ouverte */
+.service-card:has(.service-details[open]) {
+  z-index: 40;
+}
+.service-card.popover-open {
+  z-index: 40;
+}
+
+.service-details summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.88rem; /* mÇ¬me taille que le texte */
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.service-details summary::-webkit-details-marker,
+.service-details summary::marker {
+  display: none;
+}
+
+.service-details summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.service-details p {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  min-width: 240px;
+  max-width: 280px;
+  padding: 0.75rem 0.95rem;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  font-size: 0.88rem;
+  color: var(--text-main);
+  z-index: 25;
+}
+
+.service-details[open] p {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Espacement page Services */
+.services-page .section-padding {
+  padding: 1.7rem 1.5rem;
+}
+
+.services-page .section-padding + .section-padding {
+  margin-top: 0.7rem;
+}
+
+.services-page .section-footer-link {
+  margin-top: 0.9rem;
+}
+
+
+.why-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.why-cta .section-footer-link {
+  margin-top: 0;
+}
+
+.why-list {
+  font-size: 1rem;
+}
+
+.why-list li {
+  line-height: 1.6;
+}
+
+.why-list li::marker {
+  color: var(--primary);
+}
+
+.about-list {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.about-list li::marker {
+  color: var(--primary);
+}
+
+/* Formulaire contact */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -22,7 +209,8 @@
 }
 
 .contact-form label {
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
   display: grid;
   gap: 0.3rem;
 }
@@ -64,6 +252,29 @@
   margin-bottom: 0.4rem;
 }
 
+.contact-grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.contact-grid .card-panel {
+  width: 100%;
+  max-width: 720px;
+}
+
+@media (max-width: 640px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.85rem 0.95rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    font-size: 0.95rem;
+  }
+}
+
 .btn-primary {
   background: var(--primary);
   color: white;
@@ -90,3 +301,11 @@ textarea {
   height: 150px;      /* hauteur fixe */
   overflow-y: auto;   /* si le texte est long, une scrollbar apparaît */
 }
+
+
+/* Espacement intro Services */
+.services-page .intro-text {
+  margin: 2.4rem 0 4rem 0;
+}
+
+
