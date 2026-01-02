@@ -26,25 +26,11 @@
 
   /* Masque l'image de fond du hero sur mobile/tablette */
   .hero-grid {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.92) 0%,
-        rgba(255, 255, 255, 0.78) 32%,
-        rgba(255, 255, 255, 0.45) 100%
-      ),
-      url("../img/image_acceuil.webp") center/cover no-repeat;
+    background: url("../img/image_acceuil.webp") center/cover no-repeat;
   }
 
   .hero-grid::before {
     background: none;
-  }
-
-.hero-text-panel {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
   }
 
   .hero-grid {
