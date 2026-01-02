@@ -33,14 +33,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Page maintenance (info temporaire / travaux) -->
-  <url>
-    <loc>https://tech46services.fr/maintenance.html</loc>
-    <lastmod>2025-12-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
   <!-- Mentions légales -->
   <url>
     <loc>https://tech46services.fr/mentions-legales.html</loc>
