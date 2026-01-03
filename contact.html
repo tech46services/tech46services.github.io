@@ -9,6 +9,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .contact-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .phone-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 0.95rem;
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      box-shadow: var(--shadow-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .contact-phone a {
+      color: #1e88e5;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-phone a:hover {
+      text-decoration: underline;
+    }
+  </style>
 
   <!-- Google Analytics - Mode sans cookies et IP anonymisée -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
@@ -56,7 +89,8 @@
       <section class="section-padding">
         <div class="section-header">
           <h1>Me contacter</h1>
-          <p>Expliquez votre besoin en quelques mots, je vous réponds dès que possible.</p>
+          <p class="contact-phone">Par téléphone au <span class="phone-chip"><a href="tel:+33769754085">07 69 75 40 85</a></span></p>
+          <p>Ou via le formulaire suivant : </p>
         </div>
 
         <div class="two-columns contact-grid">
@@ -170,4 +204,3 @@
   </script>
 </body>
 </html>
-
