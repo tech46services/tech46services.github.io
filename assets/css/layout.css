@@ -170,8 +170,14 @@ main {
   max-width: 1100px;
   margin: 0 auto 0.7rem;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) minmax(0, 1.4fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start; /* aligne les tuiles texte en haut pour un alignement horizontal propre */
+}
+
+/* Centre uniquement le bloc logo pour garder son équilibre visuel */
+.footer-columns > div:first-child {
+  align-self: center;
 }
 
 .footer-bottom {

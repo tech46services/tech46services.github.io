@@ -10,10 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      white-space: nowrap;
+    }
+
     .contact-phone {
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.35rem;
       flex-wrap: wrap;
       font-size: 1.8rem;
       font-weight: 500;
@@ -41,6 +54,21 @@
     .contact-phone a:hover {
       text-decoration: underline;
     }
+
+    /* Centre les titres sur la page contact */
+    .contact-page .section-header {
+      text-align: center;
+    }
+
+    .contact-page .section-header h1,
+    .contact-page .section-header p {
+      text-align: center;
+    }
+
+    /* Centre le titre du formulaire */
+    .contact-grid h2 {
+      text-align: center;
+    }
   </style>
 
   <!-- Google Analytics - Mode sans cookies et IP anonymisée -->
@@ -62,7 +90,7 @@
   
 </head>
 
-<body>
+<body class="contact-page">
   <div class="app-shell">
     <header class="top-nav elevation-2">
       <div class="nav-left">
@@ -88,14 +116,14 @@
     <main class="page-main">
       <section class="section-padding">
         <div class="section-header">
-          <h1>Me contacter</h1>
+          <h1>Contactez-moi</h1>
           <p class="contact-phone">Par téléphone au <span class="phone-chip"><a href="tel:+33769754085">07 69 75 40 85</a></span></p>
           <p>Ou via le formulaire suivant : </p>
         </div>
 
         <div class="two-columns contact-grid">
           <div class="card-panel elevation-3 reveal">
-            <h2>Formulaire de contact</h2>
+            <h2 class="sr-only">Formulaire de contact</h2>
 
             <section id="contact" class="section contact-section">
               <div class="container">
@@ -149,9 +177,35 @@
       </section>
     </main>
 
-    <footer class="main-footer">
+        <footer class="main-footer">
+      <div class="footer-columns">
+        <div>
+          <div class="logo-chip small">
+            <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+            <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
+          </ul>
+        </div>
+        <div></div>
+      </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Tech 46 Services</span>
+        <span>&copy; <span id="year"></span> Tech 46 Services</span>
         <span class="footer-note">Site hébergé sur Github</span>
       </div>
     </footer>
@@ -204,3 +258,8 @@
   </script>
 </body>
 </html>
+
+
+
+
+

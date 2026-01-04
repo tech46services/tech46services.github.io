@@ -147,6 +147,10 @@
 }
 
 /* HERO â€“ contenu texte */
+.hero-content {
+  --hero-block-width: 36rem;
+}
+
 .hero-content h1 {
   font-size: clamp(2.1rem, 3vw, 2.7rem);
   line-height: 1.1;
@@ -162,12 +166,32 @@
 }
 
 .hero-text-panel {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: var(--hero-block-width);
   padding: 1.3rem 1.4rem 1.35rem;
   border-radius: var(--radius-xl);
   background: var(--card);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
+}
+
+/* Ajuste la tuile texte du hero sur desktop pour la rendre moins haute */
+@media (min-width: 901px) {
+  .hero-text-panel {
+    padding: 1.05rem 1.25rem 1.15rem;
+  }
+
+  .hero-content h1 {
+    margin: 0.5rem 0 0.75rem;
+  }
+}
+
+/* Sur écran étroit (pile verticale), le bloc texte prend toute la largeur */
+@media (max-width: 900px) {
+  .hero-content {
+    --hero-block-width: 100%;
+  }
 }
 
 .hero-badge {
@@ -185,14 +209,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 1.4rem 0 1rem;
+  margin: 0.6rem 0 0.6rem;
 }
 
 .hero-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  margin-top: 0.4rem;
+  margin-top: 0.2rem;
+  width: 100%;
+  max-width: var(--hero-block-width);
+  align-items: stretch;
 }
 
 .meta-chip {
@@ -244,6 +271,18 @@
   left: -0.8rem;
   top: 0;
   color: var(--primary);
+}
+
+/* Aligne les trois meta-chips sur une seule ligne en desktop pour éviter les retours isolés */
+@media (min-width: 720px) {
+  .hero-meta {
+    width: 100%;
+    max-width: var(--hero-block-width);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 /* Cartes de service / Ã©tapes / tÃ©moignages */
@@ -437,6 +476,33 @@
 
 .inline-link:hover::after {
   width: 100%;
+}
+
+.step-card h3 .inline-link {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+/* Mise en avant du lien d'appel à l'action dans la carte hero */
+.hero-main-card .inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--primary-soft);
+  border: 1px solid rgba(26, 115, 232, 0.25);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  font-weight: 600;
+}
+
+.hero-main-card .inline-link::after {
+  display: none;
+}
+
+.hero-main-card .inline-link:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-med);
 }
 
 .text-accent {
