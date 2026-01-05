@@ -101,6 +101,10 @@
       </div>
 
       <!-- Bouton menu mobile -->
+      <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
+        <span aria-hidden="true" class="nav-quick-call-icon"></span>
+      </a>
+
       <button class="menu-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -248,10 +252,10 @@
             status.textContent = "Merci, votre message a bien été envoyé.";
             form.reset();
           } else {
-            status.textContent = "Une erreur est survenue. Vous pouvez aussi m'écrire à : tech46services@gmail.com";
+            status.innerHTML = "Une erreur est survenue. Vous pouvez aussi m'écrire à : <a href=\"mailto:tech46services@gmail.com\">tech46services@gmail.com</a>";
           }
         } catch (error) {
-          status.textContent = "Impossible d'envoyer le message (problème de connexion ?).";
+          status.innerHTML = "Impossible d'envoyer le message (problème de connexion ?). Vous pouvez aussi m'écrire à : <a href=\"mailto:tech46services@gmail.com\">tech46services@gmail.com</a>";
         }
       });
     });

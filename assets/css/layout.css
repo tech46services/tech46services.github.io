@@ -6,10 +6,16 @@
 }
 
 /* NAVBAR */
+body {
+  padding-top: var(--nav-height); /* espace pour la barre fixe */
+}
+
 .top-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 400;
   background: #ffffff;
   border-bottom: 1px solid rgba(224, 227, 235, 0.9);
   display: flex;
@@ -19,6 +25,7 @@
   margin: 0;
   max-width: 100%;
   border-radius: 0;
+  transform: translateZ(0); /* fiabilise le fixed sur mobile */
 }
 
 main {

@@ -3,6 +3,7 @@ html {
 }
  
 :root {
+  --nav-height: 86px;
   --bg: #f8fafc;
   --bg-alt: #eef2f7;
   --card: #ffffff;

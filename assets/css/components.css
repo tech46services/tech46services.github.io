@@ -557,6 +557,19 @@
   display: none;
 }
 
+.nav-quick-call {
+  display: none;
+}
+
+.nav-quick-call-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-color: #002043;
+  -webkit-mask: url("../img/contact.png") center/contain no-repeat;
+  mask: url("../img/contact.png") center/contain no-repeat;
+}
+
 /* Liens longs dans card-panel */
 .card-panel a {
   overflow-wrap: anywhere;
