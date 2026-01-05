@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         root: null,
-        rootMargin: "0px 0px -8% 0px",
-        threshold: 0.15,
+        // Trigger un peu plus tôt pour éviter que le contenu reste invisible sur mobile
+        rootMargin: "20% 0px",
+        threshold: 0,
       }
     );
 

@@ -114,6 +114,18 @@
   }
 }
 
+@media (max-width: 380px) {
+  .logo-secondary {
+    display: none !important;
+  }
+
+  /* Remplace le logo sans texte par la version avec texte pour gagner de la place */
+  .site-logo img {
+    content: url("../img/logo-tech46.png");
+    height: 34px;
+  }
+}
+
 /* MODE APPLICATION - MOBILE */
 /* ------------------------- */
 
