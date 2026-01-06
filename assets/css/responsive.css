@@ -259,6 +259,10 @@
     box-shadow: var(--shadow-soft);
   }
 
+  .nav-cta .nav-cta-icon {
+    display: none;
+  }
+
   .hero-main-card {
     padding: 1.15rem 1.2rem 1.25rem;
   }

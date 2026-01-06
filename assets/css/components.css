@@ -128,6 +128,7 @@
 /* CTA (Contact) */
 .nav-cta {
   border-color: rgba(26, 115, 232, 0.35);
+  gap: 0.45rem;
 }
 
 /* Hover CTA */
@@ -144,6 +145,16 @@
   color: #ffffff;
   border-color: transparent;
   box-shadow: 0 10px 22px rgba(26, 115, 232, 0.35);
+}
+
+.nav-cta .nav-cta-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: url("../img/contact.png") center/contain no-repeat;
+  mask: url("../img/contact.png") center/contain no-repeat;
+  opacity: 0.9;
 }
 
 /* HERO â€“ contenu texte */
