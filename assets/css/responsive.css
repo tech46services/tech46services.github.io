@@ -124,6 +124,10 @@
 /* ------------------------- */
 
 @media (max-width: 780px) {
+  :root {
+    --nav-height: 66px;
+  }
+
   .site-logo img {
     height: 34px;
   }
@@ -311,28 +315,6 @@
     font-size: 1.2rem;
   }
 }
-
-/*image acceuil*/
-@media (max-width: 768px) {
-  .hero-image {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    margin-bottom: 24px;
-    border-radius: 16px;
-  }
-
-  .hero-image::before {
-    left: 0;
-    width: 100%;
-    background: linear-gradient(
-      to bottom,
-      #ffffff 0%,
-      rgba(255,255,255,0) 100%
-    );
-  }
-}
-/*fin image acceuil*/
 
 @media (max-width: 520px) {
   .hero-grid {

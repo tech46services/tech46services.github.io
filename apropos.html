@@ -1,143 +1,214 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="canonical" href="https://tech46services.fr/apropos.html">
-  <title>À propos - Tech 46 Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <head>
+    <!-- =========================
+         META / SEO
+    ========================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Analytics - Mode sans cookies et IP anonymisée -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
+    <title>À propos - Tech 46 Services</title>
+    <link rel="canonical" href="https://tech46services.fr/apropos.html" />
 
-  gtag('js', new Date());
+    <!-- =========================
+         FAVICON / STYLES
+    ========================== -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-  gtag('config', 'G-5RJZZRVC7C', {
-    'anonymize_ip': true,   // IP tronquée => localisation régionale seulement
-    'storage': 'none',      // aucun cookie créé
-    'client_id': 'anonyme', // pas d'identifiant utilisateur
-    'allow_ad_personalization_signals': false,
-    'allow_google_signals': false
-  });
-</script>
+    <!-- =========================
+         FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  
-</head>
-<body>
-  <div class="app-shell">
+    <!-- =========================
+         GOOGLE ANALYTICS
+         Mode sans cookies et IP anonymisée
+    ========================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    <header class="top-nav elevation-2">
-      <div class="nav-left">
-        <a href="index.html" class="site-logo">
-          <img src="assets/img/logo-no-text.png" alt="Tech 46 Services">
-        </a>
-        <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo">
-      </div>
+      gtag("js", new Date());
 
-      <!-- Bouton menu mobile -->
-      <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
-        <span aria-hidden="true" class="nav-quick-call-icon"></span>
-      </a>
+      gtag("config", "G-5RJZZRVC7C", {
+        anonymize_ip: true,
+        storage: "none",
+        client_id: "anonyme",
+        allow_ad_personalization_signals: false,
+        allow_google_signals: false,
+      });
+    </script>
+  </head>
 
-      <button class="menu-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="apropos.html" class="nav-link active">À propos</a>
-        <a href="contact.html" class="nav-link nav-cta">Contact <span aria-hidden="true" class="nav-cta-icon"></span></a>
-      </nav>
-    </header>
-
-    <main class="page-main">
-      <section class="section-padding">
-        <div class="section-header">
-          <h1>À propos de Tech 46 Services</h1>
-          <p>Un interlocuteur unique, à votre écoute.</p>
+  <body>
+    <!-- =========================
+         APP SHELL
+    ========================== -->
+    <div class="app-shell">
+      <!-- =========================
+           HEADER / NAVBAR
+      ========================== -->
+      <header class="top-nav elevation-2">
+        <div class="nav-left">
+          <a href="index.html" class="site-logo">
+            <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
+          </a>
+          <img
+            class="logo-secondary"
+            src="assets/img/text-logo.png"
+            alt="Deuxième logo"
+          />
         </div>
 
-        <div class="two-columns">
-          <div class="card-panel elevation-3 reveal">
-            <h2>Qui suis-je ?</h2>
-            <p>
-              Passionné d'informatique, j'accompagne les particuliers et les professionnels pour tous leurs besoins
-              du quotidien : dépannage, installation, configuration, conseils.
-            </p>
-            <p>
-              Mon objectif : vous simplifier l'informatique, sans jargon inutile, avec des explications claires
-              et des solutions durables.
-            </p>
+        <!-- Bouton appel rapide (mobile) -->
+        <a
+          class="nav-quick-call"
+          href="tel:0769754085"
+          aria-label="Appeler Tech 46 Services"
+        >
+          <span aria-hidden="true" class="nav-quick-call-icon"></span>
+        </a>
+
+        <!-- Bouton menu mobile -->
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation principale -->
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="apropos.html" class="nav-link active">À propos</a>
+          <a href="contact.html" class="nav-link nav-cta">
+            Contact <span aria-hidden="true" class="nav-cta-icon"></span>
+          </a>
+        </nav>
+      </header>
+
+      <!-- =========================
+           MAIN CONTENT
+      ========================== -->
+      <main class="page-main">
+        <!-- =========================
+             SECTION : À PROPOS
+        ========================== -->
+        <section class="section-padding">
+          <div class="section-header">
+            <h1>À propos de Tech 46 Services</h1>
+            <p>Un interlocuteur unique, à votre écoute.</p>
           </div>
 
-          <div class="card-panel elevation-2 reveal">
-            <h2>Ma façon de travailler</h2>
-            <ul class="service-list about-list">
-              <li>Prise de contact simple et rapide</li>
-              <li>Diagnostic transparent avant intervention</li>
-              <li>Explications claires à chaque étape</li>
-              <li>Conseils pour éviter que le problème ne revienne</li>
+          <!-- Contenu en deux colonnes -->
+          <div class="two-columns">
+            <!-- Carte : Qui suis-je -->
+            <div class="card-panel elevation-3 reveal">
+              <h2>Qui suis-je ?</h2>
+              <p>
+                Passionné d'informatique, j'accompagne les particuliers et les
+                professionnels pour tous leurs besoins du quotidien : dépannage,
+                installation, configuration, conseils.
+              </p>
+              <p>
+                Mon objectif : vous simplifier l'informatique, sans jargon inutile,
+                avec des explications claires et des solutions durables.
+              </p>
+            </div>
+
+            <!-- Carte : Méthode de travail -->
+            <div class="card-panel elevation-2 reveal">
+              <h2>Ma façon de travailler</h2>
+              <ul class="service-list about-list">
+                <li>Prise de contact simple et rapide</li>
+                <li>Diagnostic transparent avant intervention</li>
+                <li>Explications claires à chaque étape</li>
+                <li>Conseils pour éviter que le problème ne revienne</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Lien bas de section -->
+          <div class="section-footer-link">
+            <a href="contact.html" class="inline-link">
+              Envie d'en savoir plus ou besoin d'aide ? Contactez-moi &rarr;
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- =========================
+           FOOTER
+      ========================== -->
+      <footer class="main-footer">
+        <div class="footer-columns">
+          <div>
+            <div class="logo-chip small">
+              <img src="assets/img/logo-tech46.png" alt="Tech 46 Services" />
+            </div>
+          </div>
+
+          <div>
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="apropos.html">À propos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="mentions-legales.html">Mentions légales</a></li>
+              <li>
+                <a href="confidentialite.html">Politique de confidentialité</a>
+              </li>
             </ul>
           </div>
-        </div>
 
-        <div class="section-footer-link">
-          <a href="contact.html" class="inline-link">Envie d'en savoir plus ou besoin d'aide ? Contactez-moi &rarr;</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="main-footer">
-      <div class="footer-columns">
-        <div>
-          <div class="logo-chip small">
-            <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+          <div>
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+              <li>
+                <a href="mailto:tech46services@gmail.com"
+                  >tech46services@gmail.com</a
+                >
+              </li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="apropos.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="tel:0769754085">07 69 75 40 85</a></li>
-            <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
-          </ul>
-        </div>
-        <div></div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; <span id="year"></span> Tech 46 Services</span>
-        <span class="footer-note">Site hébergé sur Github</span>
-      </div>
-    </footer>
-  </div>
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    const btn = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        nav.classList.toggle("open");
-        btn.classList.toggle("open");
-      });
-    }
-  </script>
-</body>
+          <div></div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; <span id="year"></span> Tech 46 Services</span>
+          <span class="footer-note">Site hébergé sur Github</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Menu mobile -->
+    <script>
+      const btn = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          nav.classList.toggle("open");
+          btn.classList.toggle("open");
+        });
+      }
+    </script>
+  </body>
 </html>

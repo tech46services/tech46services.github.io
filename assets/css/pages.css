@@ -97,9 +97,6 @@
   margin-top: auto;     /* pousse le lien en bas de la carte */
 }
 /* Place la carte au-dessus quand la bulle est ouverte */
-.service-card:has(.service-details[open]) {
-  z-index: 40;
-}
 .service-card.popover-open {
   z-index: 40;
 }
@@ -198,6 +195,58 @@
 }
 
 /* Formulaire contact */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.contact-phone {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.phone-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.contact-phone a {
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-phone a:hover {
+  text-decoration: underline;
+}
+
+.contact-page .section-header,
+.contact-page .section-header h1,
+.contact-page .section-header p,
+.contact-grid h2 {
+  text-align: center;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -275,19 +324,9 @@
   }
 }
 
-.btn-primary {
-  background: var(--primary);
-  color: white;
+.contact-form .btn {
   padding: 0.9rem 1.2rem;
-  border: none;
   border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .form-status {
@@ -295,8 +334,8 @@
   font-size: 0.95rem;
 }
 
-/* Textarea global (contact + autres) */
-textarea {
+/* Textarea contact */
+.contact-form textarea {
   resize: none;       /* empêche le redimensionnement */
   height: 150px;      /* hauteur fixe */
   overflow-y: auto;   /* si le texte est long, une scrollbar apparaît */

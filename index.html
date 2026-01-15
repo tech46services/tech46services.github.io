@@ -1,220 +1,299 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="canonical" href="https://tech46services.fr/">
-  <title>Tech 46 Services - Dépannage informatique à domicile à Gramat (Lot)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tech 46 Services, dépannage informatique à domicile à Gramat et alentours : réparation d'ordinateurs, PC lents, virus, installation et conseils pour particuliers et petites entreprises." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <head>
+    <!-- =========================
+         META / SEO
+    ========================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Analytics - Mode sans cookies et IP anonymisée -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    <title>Tech 46 Services - Dépannage informatique à domicile à Gramat (Lot)</title>
+    <meta
+      name="description"
+      content="Tech 46 Services, dépannage informatique à domicile à Gramat et alentours : réparation d'ordinateurs, PC lents, virus, installation et conseils pour particuliers et petites entreprises."
+    />
+    <link rel="canonical" href="https://tech46services.fr/" />
 
-    gtag('js', new Date());
+    <!-- =========================
+         FAVICON / STYLES
+    ========================== -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-    gtag('config', 'G-5RJZZRVC7C', {
-      'anonymize_ip': true,   // IP tronquée => localisation régionale seulement
-      'storage': 'none',      // aucun cookie créé
-      'client_id': 'anonyme', // pas d'identifiant utilisateur
-      'allow_ad_personalization_signals': false,
-      'allow_google_signals': false
-    });
-  </script>
-  
-</head>
-<body>
-  <div class="app-shell">
-    <!-- Barre de navigation -->
-    <header class="top-nav elevation-2">
-      <div class="nav-left">
-        <a href="/" class="site-logo">
-          <img src="assets/img/logo-no-text.png" alt="Tech 46 Services">
+    <!-- =========================
+         FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =========================
+         GOOGLE ANALYTICS
+         Mode sans cookies et IP anonymisée
+    ========================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-5RJZZRVC7C", {
+        anonymize_ip: true, // IP tronquée => localisation régionale seulement
+        storage: "none", // aucun cookie créé
+        client_id: "anonyme", // pas d'identifiant utilisateur
+        allow_ad_personalization_signals: false,
+        allow_google_signals: false,
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- =========================
+         APP SHELL
+    ========================== -->
+    <div class="app-shell">
+      <!-- =========================
+           HEADER / NAVBAR
+      ========================== -->
+      <header class="top-nav elevation-2">
+        <!-- Logo(s) -->
+        <div class="nav-left">
+          <a href="/" class="site-logo">
+            <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
+          </a>
+          <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo" />
+        </div>
+
+        <!-- Bouton appel rapide (mobile) -->
+        <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
+          <span aria-hidden="true" class="nav-quick-call-icon"></span>
         </a>
-        <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo">
-      </div>
 
-      <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
-        <span aria-hidden="true" class="nav-quick-call-icon"></span>
-      </a>
+        <!-- Bouton menu mobile -->
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <!-- Bouton menu mobile -->
-      <button class="menu-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+        <!-- Liens navigation -->
+        <nav class="nav-links">
+          <a href="/" class="nav-link active">Accueil</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="apropos.html" class="nav-link">À propos</a>
+          <a href="contact.html" class="nav-link nav-cta">
+            Contact <span aria-hidden="true" class="nav-cta-icon"></span>
+          </a>
+        </nav>
+      </header>
 
-      <nav class="nav-links">
-        <a href="/" class="nav-link active">Accueil</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="apropos.html" class="nav-link">À propos</a>
-        <a href="contact.html" class="nav-link nav-cta">Contact <span aria-hidden="true" class="nav-cta-icon"></span></a>
-      </nav>
-    </header>
+      <!-- =========================
+           MAIN CONTENT
+      ========================== -->
+      <main>
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero-grid">
+          <div class="hero-content reveal">
+            <!-- <div class="hero-badge elevation-1">Dépannage informatique à domicile</div> -->
 
-    <main>
-      <!-- HERO -->
-      <section class="hero-grid">
-        <div class="hero-content reveal">
-          <!-- <div class="hero-badge elevation-1">Dépannage informatique à domicile</div> -->
-          <div class="hero-text-panel"><h1>Rapide, fiable et <span class="text-primary">efficace</span>.</h1>
-          <p class="hero-subtitle">
-            Je me déplace chez vous pour résoudre vos problèmes informatiques,
-            installer vos équipements et sécuriser vos données, en toute simplicité.
-          </p></div>
-          <div class="hero-actions">
-          </div>
-          <div class="hero-meta">
-            <span class="meta-chip">Intervention à domicile</span>
-            <span class="meta-chip">Conseils personnalisés</span>
-            <span class="meta-chip">Tarifs transparents</span>
-          </div>
-        </div>
+            <div class="hero-text-panel">
+              <h1>
+                Rapide, fiable et <span class="text-primary">efficace</span>.
+              </h1>
 
-        <div class="hero-cards-stack reveal">
-          <div class="card-layer layer-1 elevation-1"></div>
-          <div class="card-layer layer-2 elevation-2"></div>
+              <p class="hero-subtitle">
+                Je me déplace chez vous pour résoudre vos problèmes informatiques,
+                installer vos équipements et sécuriser vos données, en toute simplicité.
+              </p>
+            </div>
 
-          <div class="hero-main-card elevation-3">
-            <h2>Vous avez un souci avec votre PC ?</h2>
-            <p>
-              Il est devenu trop lent, il ne démarre pas, ou quelque chose ne fonctionne plus ?
-            </p>
-            <ul class="hero-list">
-              <li>J'interviens sur tout type de matériel</li>
-              <li>Le diagnostic est rapide et professionnel</li>
-              <li>Une solution efficace est proposée</li>
-              <li>La satisfaction du client est mon engagement</li>
-            </ul>
-            <a href="contact.html" class="inline-link">Contactez-moi &rarr;</a>
-          </div>
-        </div>
-      </section>
+            <!-- Actions -->
+            <div class="hero-actions"></div>
 
-      <!-- BLOC TEXTE SEO LOCAL -->
-      <section class="seo-text reveal">
-        <h2 style="font-size: 1.4rem; margin-bottom: 10px;">Dépannage informatique à domicile à Gramat (46500) et alentours</h2>
-        <p>
-          Tech 46 Services intervient rapidement pour résoudre vos problèmes informatiques à Gramat, dans les communes
-          proches telles que Padirac, Rocamadour, Alvignac, Saint-Céré, Lacapelle-Marival ou encore Figeac ainsi que dans tout le nord du Lot. J'accompagne les
-          particuliers et les petites entreprises pour la réparation d'ordinateurs, l'optimisation de PC lents, la suppression
-          de virus, la réinstallation des systèmes d'exploitation (Windows/Linux/MacOS), le remplacement de matériel et la configuration de vos équipements.
-        </p>
-        <p>
-          Le service est disponible dans un rayon d'environ 45 minutes autour de Gramat, avec des interventions simples,
-          efficaces et au prix juste. Conseils personnalisés, sécurisation de vos données, dépannage sur place et accompagnement
-          pas à pas : votre informatique est entre de bonnes mains.
-        </p>
-      </section>
-
-      <!-- SECTION SERVICES RÉSUMÉS -->
-      <section class="section-padding reveal">
-        <div class="section-header">
-          <h2>Ce que je peux faire pour vous</h2>
-          <p>Des services clairs, pensés pour les besoins du quotidien.</p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="service-card elevation-2">
-            <h3>Réparation & dépannage</h3>
-            <p>PC lent, plantages, virus, erreurs système. Je remets votre ordinateur en état.</p>
-          </article>
-
-          <article class="service-card elevation-2">
-            <h3>Installation & mise en route</h3>
-            <p>Nouvel ordinateur, imprimante, box internet ou Wi-Fi à configurer ? Je m'en occupe.</p>
-          </article>
-
-          <article class="service-card elevation-2">
-            <h3>Sauvegarde & sécurité</h3>
-            <p>Vous avez des fichiers perdus ou un support de stockage illisible ? Je vous aide et sécurise vos données.</p>
-          </article>
-        </div>
-
-        <div class="section-footer-link">
-          <a href="services.html" class="inline-link">Voir tous les services en détail &rarr;</a>
-        </div>
-      </section>
-
-      <!-- SECTION PROCESS -->
-      <section class="section-padding tinted reveal steps-section">
-        <div class="section-header">
-          <h2>Comment ça marche ?</h2>
-          <p>Un fonctionnement simple, un gain de temps.</p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card elevation-2 contact-step">
-            <div class="step-index">1</div>
-            <h3>Vous me contactez <a class="inline-link" href="contact.html">ici</a></h3>
-            <p>Par téléphone ou via le formulaire. Vous expliquez votre problème en quelques mots.</p>
-          </div>
-          <div class="step-card elevation-2 rendezvous-step">
-            <div class="step-index">2</div>
-            <h3>Nous fixons un rendez-vous</h3>
-            <p>Nous choisissons ensemble un créneau adapté à vos disponibilités.</p>
-          </div>
-          <div class="step-card elevation-2 intervention-step">
-            <div class="step-index">3</div>
-            <h3>J'interviens à domicile</h3>
-            <p>Je me déplace chez vous, j'interviens sur place et je vous explique mes procédures.</p>
-          </div>
-        </div>
-      </section>
-
-      <footer class="main-footer">
-        <div class="footer-columns">
-          <div>
-            <div class="logo-chip small">
-              <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+            <!-- Petites infos / chips -->
+            <div class="hero-meta">
+              <span class="meta-chip">Intervention à domicile</span>
+              <span class="meta-chip">Conseils personnalisés</span>
+              <span class="meta-chip">Tarifs transparents</span>
             </div>
           </div>
-          <div>
-            <h4>Navigation</h4>
-            <ul class="footer-links">
-              <li><a href="/">Accueil</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="apropos.html">À propos</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="mentions-legales.html">Mentions légales</a></li>
-              <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-            </ul>
+
+          <!-- Carte à droite (stack + carte principale) -->
+          <div class="hero-cards-stack reveal">
+            <div class="card-layer layer-1 elevation-1"></div>
+            <div class="card-layer layer-2 elevation-2"></div>
+
+            <div class="hero-main-card elevation-3">
+              <h2>Vous avez un souci avec votre PC ?</h2>
+
+              <p>
+                Il est devenu trop lent, il ne démarre pas, ou quelque chose ne fonctionne plus ?
+              </p>
+
+              <ul class="hero-list">
+                <li>J'interviens sur tout type de matériel</li>
+                <li>Le diagnostic est rapide et professionnel</li>
+                <li>Une solution efficace est proposée</li>
+                <li>La satisfaction du client est mon engagement</li>
+              </ul>
+
+              <a href="contact.html" class="inline-link">Contactez-moi &rarr;</a>
+            </div>
           </div>
-          <div>
-            <h4>Contact</h4>
-            <ul class="footer-links">
-              <li><a href="tel:0769754085">07 69 75 40 85</a></li>
-              <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
-            </ul>
+        </section>
+
+        <!-- =========================
+             BLOC TEXTE SEO LOCAL
+        ========================== -->
+        <section class="seo-text reveal">
+          <h2 style="font-size: 1.4rem; margin-bottom: 10px;">
+            Dépannage informatique à domicile à Gramat (46500) et alentours
+          </h2>
+
+          <p>
+            Tech 46 Services intervient rapidement pour résoudre vos problèmes informatiques à Gramat, dans les communes
+            proches telles que Padirac, Rocamadour, Alvignac, Saint-Céré, Lacapelle-Marival ou encore Figeac ainsi que
+            dans tout le nord du Lot. J'accompagne les particuliers et les petites entreprises pour la réparation
+            d'ordinateurs, l'optimisation de PC lents, la suppression de virus, la réinstallation des systèmes
+            d'exploitation (Windows/Linux/MacOS), le remplacement de matériel et la configuration de vos équipements.
+          </p>
+
+          <p>
+            Le service est disponible dans un rayon d'environ 45 minutes autour de Gramat, avec des interventions simples,
+            efficaces et au prix juste. Conseils personnalisés, sécurisation de vos données, dépannage sur place et
+            accompagnement pas à pas : votre informatique est entre de bonnes mains.
+          </p>
+        </section>
+
+        <!-- =========================
+             SERVICES (RÉSUMÉ)
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Ce que je peux faire pour vous</h2>
+            <p>Des services clairs, pensés pour les besoins du quotidien.</p>
           </div>
-          <div></div>
-        </div>
-        <div class="footer-bottom">
-          <span>&copy; <span id="year"></span> Tech 46 Services</span>
-          <span class="footer-note">Site hébergé sur Github</span>
-        </div>
 
-      </footer>
-    </main>
-  </div>
+          <div class="cards-grid">
+            <article class="service-card elevation-2">
+              <h3>Réparation & dépannage</h3>
+              <p>PC lent, plantages, virus, erreurs système. Je remets votre ordinateur en état.</p>
+            </article>
 
-  <script src="assets/js/main.js"></script>
+            <article class="service-card elevation-2">
+              <h3>Installation & mise en route</h3>
+              <p>Nouvel ordinateur, imprimante, box internet ou Wi-Fi à configurer ? Je m'en occupe.</p>
+            </article>
 
-  <!-- Script menu mobile -->
-  <script>
-    const btn = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        nav.classList.toggle("open");
-        btn.classList.toggle("open");
-      });
-    }
-  </script>
-</body>
+            <article class="service-card elevation-2">
+              <h3>Sauvegarde & sécurité</h3>
+              <p>
+                Vous avez des fichiers perdus ou un support de stockage illisible ? Je vous aide et sécurise vos données.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-footer-link">
+            <a href="services.html" class="inline-link">Voir tous les services en détail &rarr;</a>
+          </div>
+        </section>
+
+        <!-- =========================
+             PROCESS / ÉTAPES
+        ========================== -->
+        <section class="section-padding tinted reveal steps-section">
+          <div class="section-header">
+            <h2>Comment ça marche ?</h2>
+            <p>Un fonctionnement simple, un gain de temps.</p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card elevation-2 contact-step">
+              <div class="step-index">1</div>
+              <h3>Vous me contactez <a class="inline-link" href="contact.html">ici</a></h3>
+              <p>Par téléphone ou via le formulaire. Vous expliquez votre problème en quelques mots.</p>
+            </div>
+
+            <div class="step-card elevation-2 rendezvous-step">
+              <div class="step-index">2</div>
+              <h3>Nous fixons un rendez-vous</h3>
+              <p>Nous choisissons ensemble un créneau adapté à vos disponibilités.</p>
+            </div>
+
+            <div class="step-card elevation-2 intervention-step">
+              <div class="step-index">3</div>
+              <h3>J'interviens à domicile</h3>
+              <p>Je me déplace chez vous, j'interviens sur place et je vous explique mes procédures.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+        <footer class="main-footer">
+          <div class="footer-columns">
+            <div>
+              <div class="logo-chip small">
+                <img src="assets/img/logo-tech46.png" alt="Tech 46 Services" />
+              </div>
+            </div>
+
+            <div>
+              <h4>Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4>Contact</h4>
+              <ul class="footer-links">
+                <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+                <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
+              </ul>
+            </div>
+
+            <div></div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; <span id="year"></span> Tech 46 Services</span>
+            <span class="footer-note">Site hébergé sur Github</span>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Script menu mobile -->
+    <script>
+      const btn = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          nav.classList.toggle("open");
+          btn.classList.toggle("open");
+        });
+      }
+    </script>
+  </body>
 </html>

@@ -7,7 +7,7 @@ html {
   --bg: #f8fafc;
   --bg-alt: #eef2f7;
   --card: #ffffff;
-  --primary: #1a73e8;         /* bleu type Google */
+  --primary: #0467ad;         /* bleu type Google */
   --primary-soft: #e8f0fe;
   --accent: #0b8043;          /* vert type Google */
   --accent-soft: #e6f4ea;
@@ -40,4 +40,8 @@ body {
   background: var(--bg);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+}
+
+.text-primary {
+  color: var(--primary);
 }

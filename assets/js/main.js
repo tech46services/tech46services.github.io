@@ -12,8 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const summary = details.querySelector("summary");
     if (!summary) return;
 
-    const openDetails = () => { details.open = true; };
-    const closeDetails = () => { details.open = false; };
+    const card = details.closest(".service-card");
+    const syncPopoverClass = () => {
+      if (!card) return;
+      card.classList.toggle("popover-open", details.open);
+    };
+
+    const openDetails = () => {
+      details.open = true;
+      syncPopoverClass();
+    };
+
+    const closeDetails = () => {
+      details.open = false;
+      syncPopoverClass();
+    };
+
+    details.addEventListener("toggle", syncPopoverClass);
+    syncPopoverClass();
 
     if (isPointerFine) {
       summary.addEventListener("mouseenter", openDetails);

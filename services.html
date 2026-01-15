@@ -1,238 +1,317 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="canonical" href="https://tech46services.fr/services.html">
-  <title>Services - Tech 46 Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <head>
+    <!-- =========================
+         META / SEO
+    ========================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Analytics - Mode sans cookies/IP anonyme -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-5RJZZRVC7C', {
-      'anonymize_ip': true,
-      'storage': 'none',
-      'client_id': 'anonyme',
-      'allow_ad_personalization_signals': false,
-      'allow_google_signals': false
-    });
-  </script>
-</head>
+    <title>Services - Tech 46 Services</title>
+    <link rel="canonical" href="https://tech46services.fr/services.html" />
 
-<body class="services-page">
-  <div class="app-shell">
+    <!-- =========================
+         FAVICON / STYLES
+    ========================== -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <!-- HEADER -->
-    <header class="top-nav elevation-2">
-      <div class="nav-left">
-        <a href="index.html" class="site-logo">
-          <img src="assets/img/logo-no-text.png" alt="Tech 46 Services">
+    <!-- =========================
+         FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =========================
+         GOOGLE ANALYTICS
+         Mode sans cookies / IP anonymisée
+    ========================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      gtag("config", "G-5RJZZRVC7C", {
+        anonymize_ip: true,
+        storage: "none",
+        client_id: "anonyme",
+        allow_ad_personalization_signals: false,
+        allow_google_signals: false,
+      });
+    </script>
+  </head>
+
+  <body class="services-page">
+    <!-- =========================
+         APP SHELL
+    ========================== -->
+    <div class="app-shell">
+      <!-- =========================
+           HEADER / NAVBAR
+      ========================== -->
+      <header class="top-nav elevation-2">
+        <div class="nav-left">
+          <a href="index.html" class="site-logo">
+            <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
+          </a>
+          <img
+            class="logo-secondary"
+            src="assets/img/text-logo.png"
+            alt="Deuxième logo"
+          />
+        </div>
+
+        <!-- Bouton appel rapide (mobile) -->
+        <a
+          class="nav-quick-call"
+          href="tel:0769754085"
+          aria-label="Appeler Tech 46 Services"
+        >
+          <span aria-hidden="true" class="nav-quick-call-icon"></span>
         </a>
-        <img class="logo-secondary" src="assets/img/text-logo.png" alt="Deuxième logo">
-      </div>
 
-      <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
-        <span aria-hidden="true" class="nav-quick-call-icon"></span>
-      </a>
+        <!-- Bouton menu mobile -->
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <button class="menu-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+        <!-- Navigation principale -->
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="apropos.html" class="nav-link">À propos</a>
+          <a href="contact.html" class="nav-link nav-cta">
+            Contact <span aria-hidden="true" class="nav-cta-icon"></span>
+          </a>
+        </nav>
+      </header>
 
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Accueil</a>
-        <a href="services.html" class="nav-link active">Services</a>
-        <a href="apropos.html" class="nav-link">À propos</a>
-        <a href="contact.html" class="nav-link nav-cta">Contact <span aria-hidden="true" class="nav-cta-icon"></span></a>
-      </nav>
-    </header>
+      <!-- =========================
+           MAIN CONTENT
+      ========================== -->
+      <main class="page-main">
+        <!-- =========================
+             INTRO SERVICES
+        ========================== -->
+        <section class="section-padding">
+          <div class="section-header">
+            <h1>Services proposés</h1>
+            <p>Aperçu des prestations informatiques disponibles à domicile</p>
+          </div>
 
-    <!-- MAIN -->
-    <main class="page-main">
+          <p class="intro-text">
+            Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour
+            le dépannage informatique, la réparation d'ordinateurs,
+            l'installation de matériel, la sécurisation des données et
+            l'optimisation de vos performances. Des prestations adaptées aux
+            particuliers et petites entreprises, avec un accompagnement clair
+            et personnalisé.
+          </p>
 
-      <!-- INTRO -->
-      <section class="section-padding">
-        <div class="section-header">
-          <h1>Services proposés</h1>
-          <p>Aperçu des prestations informatiques disponibles à domicile</p>
-        </div>
+          <!-- =========================
+               LISTE DES SERVICES
+          ========================== -->
+          <div class="cards-grid big">
+            <!-- 1. RÉPARATION -->
+            <article class="service-card elevation-3 reveal reparation-card">
+              <h2>Réparation et dépannage</h2>
 
-        <p class="intro-text">
-          Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour le dépannage informatique,
-          la réparation d'ordinateurs, l'installation de matériel, la sécurisation des données et l'optimisation
-          de vos performances. Des prestations adaptées aux particuliers et petites entreprises, avec un accompagnement
-          clair et personnalisé.
-        </p>
+              <ul class="service-list">
+                <li>PC lent, qui plante ou ne démarre plus</li>
+                <li>Erreurs Windows / pilotes</li>
+                <li>Virus, malwares, publicités</li>
+                <li>Nettoyage et optimisation</li>
+                <li>Récupération de mots de passe</li>
+              </ul>
 
-        <!-- GRID SERVICES -->
-        <div class="cards-grid big">
+              <details class="service-details">
+                <summary>En savoir plus</summary>
+                <p>
+                  Diagnostic complet et intervention sur PC fixes et portables.
+                  Solution proposée après diagnostic.
+                </p>
+              </details>
+            </article>
 
-          <!-- 1. REPARATION -->
-          <article class="service-card elevation-3 reveal reparation-card">
-            <h2>Réparation et dépannage</h2>
-<ul class="service-list">
-  <li>PC lent, qui plante ou ne démarre plus</li>
-  <li>Erreurs Windows / pilotes</li>
-  <li>Virus, malwares, publicités</li>
-  <li>Nettoyage et optimisation</li>
-  <li>Récupération de mots de passe</li>
-</ul>
+            <!-- 2. INSTALLATION -->
+            <article class="service-card elevation-3 reveal installation-card">
+              <h2>Installation et configuration</h2>
 
-<details class="service-details">
-  <summary>En savoir plus</summary>
-  <p>
-    Diagnostic complet et intervention sur PC fixes et portables. Solution proposée après diagnostic.
-  </p>
-</details>
+              <ul class="service-list">
+                <li>Installation Windows / logiciels</li>
+                <li>Comptes utilisateurs & paramétrages</li>
+                <li>Imprimantes & périphériques</li>
+                <li>Configuration box Internet & Wi-Fi</li>
+                <li>Conseils d'utilisation</li>
+              </ul>
 
-          </article>
+              <details class="service-details">
+                <summary>En savoir plus</summary>
+                <p>
+                  Mise en service clé en main de votre matériel (PC, imprimante,
+                  réseau) avec une configuration adaptée à vos besoins.
+                </p>
+              </details>
+            </article>
 
-          <!-- 2. INSTALLATION -->
-          <article class="service-card elevation-3 reveal installation-card">
-            <h2>Installation et configuration</h2>
-<ul class="service-list">
-  <li>Installation Windows / logiciels</li>
-  <li>Comptes utilisateurs & paramétrages</li>
-  <li>Imprimantes & périphériques</li>
-  <li>Configuration box Internet & Wi-Fi</li>
-  <li>Conseils d'utilisation</li>
-</ul>
+            <!-- 3. DONNÉES -->
+            <article class="service-card elevation-3 reveal donnees-card">
+              <h2>Sécurité des données</h2>
 
-<details class="service-details">
-  <summary>En savoir plus</summary>
-  <p>
-    Mise en service clé en main de votre matériel (PC, imprimante, réseau) avec une configuration adaptée à vos besoins.
-  </p>
-</details>
+              <ul class="service-list">
+                <li>Sauvegarde automatique ou manuelle</li>
+                <li>Récupération de fichiers perdus</li>
+                <li>Stockage externe ou cloud</li>
+                <li>Protection antivirus</li>
+                <li>Bonnes pratiques de sécurité</li>
+              </ul>
 
-          </article>
+              <details class="service-details">
+                <summary>En savoir plus</summary>
+                <p>
+                  Solutions simples et fiables pour protéger vos photos,
+                  documents et données importantes.
+                </p>
+              </details>
+            </article>
 
-          <!-- 3. SAUVEGARDE -->
-          <article class="service-card elevation-3 reveal donnees-card">
-            <h2>Sécurité des données</h2>
-<ul class="service-list">
-  <li>Sauvegarde automatique ou manuelle</li>
-  <li>Récupération de fichiers perdus</li>
-  <li>Stockage externe ou cloud</li>
-  <li>Protection antivirus</li>
-  <li>Bonnes pratiques de sécurité</li>
-</ul>
+            <!-- 4. RÉSEAU -->
+            <article class="service-card elevation-3 reveal reseau-card">
+              <h2>Réseaux et connectivité</h2>
 
-<details class="service-details">
-  <summary>En savoir plus</summary>
-  <p>
-    Solutions simples et fiables pour protéger vos photos, documents et données importantes (prévention et récupération).
-  </p>
-</details>
+              <ul class="service-list">
+                <li>Optimisation de la box Internet</li>
+                <li>Extension de portée Wi-Fi</li>
+                <li>Diagnostic coupures / lenteurs</li>
+                <li>Sécurisation du réseau</li>
+              </ul>
 
-          </article>
+              <details class="service-details">
+                <summary>En savoir plus</summary>
+                <p>
+                  Analyse du réseau domestique et amélioration de la stabilité
+                  et de la sécurité.
+                </p>
+              </details>
+            </article>
+          </div>
+        </section>
 
-          <!-- 4. RÉSEAU & WI-FI -->
-          <article class="service-card elevation-3 reveal reseau-card">
-            <h2>Réseaux et connectivité </h2>
-<ul class="service-list">
-  <li>Optimisation de la box Internet</li>
-  <li>Extension de portée Wi-Fi</li>
-  <li>Diagnostic coupures / lenteurs</li>
-  <li>Sécurisation du réseau</li>
-</ul>
+        <!-- =========================
+             ZONES D'INTERVENTION
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Zones d'intervention</h2>
+            <p>
+              Dépannage informatique dans un rayon d'environ 45 minutes autour
+              de Gramat
+            </p>
+          </div>
 
-<details class="service-details">
-  <summary>En savoir plus</summary>
-  <p>
-    Analyse du réseau domestique, amélioration de la stabilité et de la sécurité (placement, configuration, équipements adaptés).
-  </p>
-</details>
+          <p class="zones-text">
+            Intervention possible à Gramat, Padirac, Rocamadour, Alvignac,
+            Saint-Céré, Lacapelle-Marival, Aynac, Leyme, Livernon, Figeac et
+            l'ensemble du nord du Lot (46).
+          </p>
+        </section>
 
-          </article>
+        <!-- =========================
+             POURQUOI NOUS
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Pourquoi choisir Tech 46 Services ?</h2>
+          </div>
 
-        </div>
+          <ul class="service-list why-list" style="max-width: 700px;">
+            <li>Déplacement rapide à domicile</li>
+            <li>Diagnostic clair et transparent</li>
+            <li>Accompagnement sans jargon technique</li>
+            <li>Tarifs honnêtes et sans surprise</li>
+            <li>Conseils personnalisés</li>
+          </ul>
+        </section>
+      </main>
 
-      </section>
+      <!-- =========================
+           FOOTER
+      ========================== -->
+      <footer class="main-footer">
+        <div class="footer-columns">
+          <div>
+            <div class="logo-chip small">
+              <img src="assets/img/logo-tech46.png" alt="Tech 46 Services" />
+            </div>
+          </div>
 
-      <!-- ZONES D'INTERVENTION -->
-      <section class="section-padding reveal">
-        <div class="section-header">
-          <h2>Zones d'intervention</h2>
-          <p>Dépannage informatique dans un rayon d'environ 45 minutes autour de Gramat</p>
-        </div>
-        <p class="zones-text">
-          Intervention possible à Gramat, Padirac, Rocamadour, Alvignac, Saint-Céré, Lacapelle-Marival,
-          Aynac, Leyme, Livernon, Figeac et l'ensemble du nord du Lot (46).
-          Déplacement à domicile sur rendez-vous.
-        </p>
-      </section>
+          <div>
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="apropos.html">À propos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li>
+                <a href="mentions-legales.html">Mentions légales</a>
+              </li>
+              <li>
+                <a href="confidentialite.html"
+                  >Politique de confidentialité</a
+                >
+              </li>
+            </ul>
+          </div>
 
-      <!-- POURQUOI NOUS ? -->
-      <section class="section-padding reveal">
-        <div class="section-header">
-          <h2>Pourquoi choisir Tech 46 Services ?</h2>
-        </div>
-        <ul class="service-list why-list" style="max-width: 700px;">
-          <li>Déplacement rapide à domicile</li>
-          <li>Diagnostic clair et transparent</li>
-          <li>Accompagnement sans jargon technique</li>
-          <li>Tarifs honnêtes et sans surprise</li>
-          <li>Conseils personnalisés selon vos besoins</li>
-        </ul>
-      </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-      <div class="footer-columns">
-        <div>
-          <div class="logo-chip small">
-            <img src="assets/img/logo-tech46.png" alt="Tech 46 Services">
+          <div>
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="tel:0769754085">07 69 75 40 85</a></li>
+              <li>
+                <a href="mailto:tech46services@gmail.com"
+                  >tech46services@gmail.com</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-        <div>
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="apropos.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-          </ul>
+
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> Tech 46 Services</span>
+          <span class="footer-note">Site hébergé sur Github</span>
         </div>
-        <div>
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="tel:0769754085">07 69 75 40 85</a></li>
-            <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
+      </footer>
+    </div>
 
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Tech 46 Services</span>
-        <span class="footer-note">Site hébergé sur Github</span>
-      </div>
-    </footer>
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      const btn = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      const yearSpan = document.getElementById("year");
 
-  </div>
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          nav.classList.toggle("open");
+          btn.classList.toggle("open");
+        });
+      }
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    const btn = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        nav.classList.toggle("open");
-        btn.classList.toggle("open");
-      });
-    }
-  </script>
-</body>
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
 </html>
-
