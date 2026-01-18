@@ -6,6 +6,8 @@
     ========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Découvrez les services de dépannage informatique à domicile à Gramat : réparation PC, installation, sécurité, réseau et assistance personnalisée.">
+
 
     <title>Services - Tech 46 Services</title>
     <link rel="canonical" href="https://tech46services.fr/services.html" />
@@ -13,7 +15,24 @@
     <!-- =========================
          FAVICON / STYLES
     ========================== -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Favicon legacy -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    
+    <!-- Favicons PNG -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    
+    <!-- Apple iOS -->
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    
+    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    
+    <meta name="theme-color" content="#002043">
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- =========================
@@ -59,7 +78,7 @@
       ========================== -->
       <header class="top-nav elevation-2">
         <div class="nav-left">
-          <a href="index.html" class="site-logo">
+          <a href="/" class="site-logo">
             <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
           </a>
           <img
@@ -79,15 +98,15 @@
         </a>
 
         <!-- Bouton menu mobile -->
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <!-- Navigation principale -->
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">Accueil</a>
+        <nav id="site-nav" class="nav-links">
+          <a href="/" class="nav-link">Accueil</a>
           <a href="services.html" class="nav-link active">Services</a>
           <a href="apropos.html" class="nav-link">À propos</a>
           <a href="contact.html" class="nav-link nav-cta">
@@ -103,26 +122,41 @@
         <!-- =========================
              INTRO SERVICES
         ========================== -->
-        <section class="section-padding">
-          <div class="section-header">
-            <h1>Services proposés</h1>
-            <p>Aperçu des prestations informatiques disponibles à domicile</p>
+        <h1 class="hero-intro-title">Services proposés</h1>
+        <section class="hero-grid">
+          <img
+            class="hero-bg"
+            src="assets/img/image_services.webp"
+            alt=""
+            width="960"
+            height="603"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero-content reveal">
+            <div class="hero-text-panel">
+              <div class="section-header">
+                <h2 class="hero-panel-title">Aperçu des prestations informatiques disponibles</h2>
+              </div>
+
+              <p class="intro-text">
+                Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour
+                le dépannage informatique, la réparation d'ordinateurs,
+                l'installation de matériel, la sécurisation des données et
+                l'optimisation de vos performances. Des prestations adaptées aux
+                particuliers et petites entreprises, avec un accompagnement clair
+                et personnalisé.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <p class="intro-text">
-            Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour
-            le dépannage informatique, la réparation d'ordinateurs,
-            l'installation de matériel, la sécurisation des données et
-            l'optimisation de vos performances. Des prestations adaptées aux
-            particuliers et petites entreprises, avec un accompagnement clair
-            et personnalisé.
-          </p>
-
-          <!-- =========================
-               LISTE DES SERVICES
-          ========================== -->
+        <!-- =========================
+             LISTE DES SERVICES
+        ========================== -->
+        <section class="section-padding">
           <div class="cards-grid big">
-            <!-- 1. RÉPARATION -->
+            <!-- 1. REPARATION -->
             <article class="service-card elevation-3 reveal reparation-card">
               <h2>Réparation et dépannage</h2>
 
@@ -149,9 +183,9 @@
 
               <ul class="service-list">
                 <li>Installation Windows / logiciels</li>
-                <li>Comptes utilisateurs & paramétrages</li>
-                <li>Imprimantes & périphériques</li>
-                <li>Configuration box Internet & Wi-Fi</li>
+                <li>Comptes utilisateurs et paramétrages</li>
+                <li>Imprimantes et périphériques</li>
+                <li>Configuration box Internet et Wi-Fi</li>
                 <li>Conseils d'utilisation</li>
               </ul>
 
@@ -164,7 +198,7 @@
               </details>
             </article>
 
-            <!-- 3. DONNÉES -->
+            <!-- 3. DONNEES -->
             <article class="service-card elevation-3 reveal donnees-card">
               <h2>Sécurité des données</h2>
 
@@ -185,7 +219,7 @@
               </details>
             </article>
 
-            <!-- 4. RÉSEAU -->
+            <!-- 4. RESEAU -->
             <article class="service-card elevation-3 reveal reseau-card">
               <h2>Réseaux et connectivité</h2>
 
@@ -256,9 +290,9 @@
           </div>
 
           <div>
-            <h4>Navigation</h4>
+            <p class="footer-heading">Navigation</p>
             <ul class="footer-links">
-              <li><a href="index.html">Accueil</a></li>
+              <li><a href="/">Accueil</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="apropos.html">À propos</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -274,7 +308,7 @@
           </div>
 
           <div>
-            <h4>Contact</h4>
+            <p class="footer-heading">Contact</p>
             <ul class="footer-links">
               <li><a href="tel:0769754085">07 69 75 40 85</a></li>
               <li>
@@ -287,7 +321,8 @@
         </div>
 
         <div class="footer-bottom">
-          <span>© <span id="year"></span> Tech 46 Services</span>
+          <span>© <span class="js-year"></span>
+ Tech 46 Services</span>
           <span class="footer-note">Site hébergé sur Github</span>
         </div>
       </footer>
@@ -297,21 +332,8 @@
          SCRIPTS
     ========================== -->
     <script src="assets/js/main.js"></script>
-    <script>
-      const btn = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
-      const yearSpan = document.getElementById("year");
-
-      if (btn && nav) {
-        btn.addEventListener("click", () => {
-          nav.classList.toggle("open");
-          btn.classList.toggle("open");
-        });
-      }
-
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    </script>
   </body>
 </html>
+
+
+

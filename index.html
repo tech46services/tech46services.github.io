@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <!-- =========================
@@ -6,18 +6,34 @@
     ========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Dépannage informatique à domicile à Gramat et dans le Lot. Réparation PC, installation, sécurité et assistance rapide par un professionnel local.">
 
-    <title>Tech 46 Services - Dépannage informatique à domicile à Gramat (Lot)</title>
-    <meta
-      name="description"
-      content="Tech 46 Services, dépannage informatique à domicile à Gramat et alentours : réparation d'ordinateurs, PC lents, virus, installation et conseils pour particuliers et petites entreprises."
-    />
+
+    <title>Tech 46 Services - Dépannage informatique à Gramat (Lot)</title>
+    
     <link rel="canonical" href="https://tech46services.fr/" />
 
     <!-- =========================
          FAVICON / STYLES
     ========================== -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Favicon legacy -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    
+    <!-- Favicons PNG -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    
+    <!-- Apple iOS -->
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    
+    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    
+    <meta name="theme-color" content="#002043">
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- =========================
@@ -29,6 +45,32 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- =========================
+         STRUCTURED DATA
+    ========================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ComputerRepair",
+        "@id": "https://tech46services.fr/#business",
+        "name": "Tech 46 Services",
+        "url": "https://tech46services.fr/",
+        "image": "https://tech46services.fr/assets/img/logo-tech46.png",
+        "telephone": "+33769754085",
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Gramat (Lot)" },
+          { "@type": "AdministrativeArea", "name": "Nord du Lot (46)" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gramat",
+          "addressRegion": "Occitanie",
+          "postalCode": "46500",
+          "addressCountry": "FR"
+        }
+      }
+    </script>
 
     <!-- =========================
          GOOGLE ANALYTICS
@@ -76,14 +118,14 @@
         </a>
 
         <!-- Bouton menu mobile -->
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <!-- Liens navigation -->
-        <nav class="nav-links">
+        <nav id="site-nav" class="nav-links">
           <a href="/" class="nav-link active">Accueil</a>
           <a href="services.html" class="nav-link">Services</a>
           <a href="apropos.html" class="nav-link">À propos</a>
@@ -100,14 +142,22 @@
         <!-- =========================
              HERO
         ========================== -->
+        <h1 class="hero-intro-title">Dépannage informatique à domicile</h1>
         <section class="hero-grid">
+          <img
+            class="hero-bg"
+            src="assets/img/image_acceuil.webp"
+            alt=""
+            width="960"
+            height="603"
+            decoding="async"
+            fetchpriority="high"
+          />
           <div class="hero-content reveal">
             <!-- <div class="hero-badge elevation-1">Dépannage informatique à domicile</div> -->
 
             <div class="hero-text-panel">
-              <h1>
-                Rapide, fiable et <span class="text-primary">efficace</span>.
-              </h1>
+                <p class="hero-title">Rapide, fiable et <span class="text-primary">efficace</span></p>
 
               <p class="hero-subtitle">
                 Je me déplace chez vous pour résoudre vos problèmes informatiques,
@@ -154,8 +204,8 @@
              BLOC TEXTE SEO LOCAL
         ========================== -->
         <section class="seo-text reveal">
-          <h2 style="font-size: 1.4rem; margin-bottom: 10px;">
-            Dépannage informatique à domicile à Gramat (46500) et alentours
+          <h2>
+            Votre interlocuteur informatique dans le nord du Lot
           </h2>
 
           <p>
@@ -248,7 +298,7 @@
             </div>
 
             <div>
-              <h4>Navigation</h4>
+              <p class="footer-heading">Navigation</p>
               <ul class="footer-links">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -260,7 +310,7 @@
             </div>
 
             <div>
-              <h4>Contact</h4>
+              <p class="footer-heading">Contact</p>
               <ul class="footer-links">
                 <li><a href="tel:0769754085">07 69 75 40 85</a></li>
                 <li><a href="mailto:tech46services@gmail.com">tech46services@gmail.com</a></li>
@@ -271,7 +321,8 @@
           </div>
 
           <div class="footer-bottom">
-            <span>&copy; <span id="year"></span> Tech 46 Services</span>
+            <span>&copy; <span class="js-year"></span>
+              Tech 46 Services</span>
             <span class="footer-note">Site hébergé sur Github</span>
           </div>
         </footer>
@@ -283,17 +334,6 @@
     ========================== -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Script menu mobile -->
-    <script>
-      const btn = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
-
-      if (btn && nav) {
-        btn.addEventListener("click", () => {
-          nav.classList.toggle("open");
-          btn.classList.toggle("open");
-        });
-      }
-    </script>
   </body>
 </html>
+

@@ -6,6 +6,8 @@
     ========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tech 46 Services, votre dépanneur informatique local à Gramat. Découvrez mon parcours, ma méthode de travail et mes valeurs professionnelles.">
+
 
     <title>À propos - Tech 46 Services</title>
     <link rel="canonical" href="https://tech46services.fr/apropos.html" />
@@ -13,7 +15,24 @@
     <!-- =========================
          FAVICON / STYLES
     ========================== -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Favicon legacy -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    
+    <!-- Favicons PNG -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    
+    <!-- Apple iOS -->
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    
+    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    
+    <meta name="theme-color" content="#002043">
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- =========================
@@ -49,7 +68,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="about-page">
     <!-- =========================
          APP SHELL
     ========================== -->
@@ -59,7 +78,7 @@
       ========================== -->
       <header class="top-nav elevation-2">
         <div class="nav-left">
-          <a href="index.html" class="site-logo">
+          <a href="/" class="site-logo">
             <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
           </a>
           <img
@@ -79,15 +98,15 @@
         </a>
 
         <!-- Bouton menu mobile -->
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <!-- Navigation principale -->
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">Accueil</a>
+        <nav id="site-nav" class="nav-links">
+          <a href="/" class="nav-link">Accueil</a>
           <a href="services.html" class="nav-link">Services</a>
           <a href="apropos.html" class="nav-link active">À propos</a>
           <a href="contact.html" class="nav-link nav-cta">
@@ -103,14 +122,12 @@
         <!-- =========================
              SECTION : À PROPOS
         ========================== -->
+        <h1 class="hero-intro-title">À propos de Tech 46 Services</h1>
         <section class="section-padding">
-          <div class="section-header">
-            <h1>À propos de Tech 46 Services</h1>
-            <p>Un interlocuteur unique, à votre écoute.</p>
-          </div>
-
+          
           <!-- Contenu en deux colonnes -->
-          <div class="two-columns">
+          <div class="about-cards-wrap card-panel elevation-2">
+            <div class="two-columns">
             <!-- Carte : Qui suis-je -->
             <div class="card-panel elevation-3 reveal">
               <h2>Qui suis-je ?</h2>
@@ -136,6 +153,7 @@
               </ul>
             </div>
           </div>
+          </div>
 
           <!-- Lien bas de section -->
           <div class="section-footer-link">
@@ -158,9 +176,9 @@
           </div>
 
           <div>
-            <h4>Navigation</h4>
+            <p class="footer-heading">Navigation</p>
             <ul class="footer-links">
-              <li><a href="index.html">Accueil</a></li>
+              <li><a href="/">Accueil</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="apropos.html">À propos</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -172,7 +190,7 @@
           </div>
 
           <div>
-            <h4>Contact</h4>
+            <p class="footer-heading">Contact</p>
             <ul class="footer-links">
               <li><a href="tel:0769754085">07 69 75 40 85</a></li>
               <li>
@@ -187,7 +205,8 @@
         </div>
 
         <div class="footer-bottom">
-          <span>&copy; <span id="year"></span> Tech 46 Services</span>
+          <span>&copy; <span class="js-year"></span>
+ Tech 46 Services</span>
           <span class="footer-note">Site hébergé sur Github</span>
         </div>
       </footer>
@@ -198,17 +217,10 @@
     ========================== -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Menu mobile -->
-    <script>
-      const btn = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
-
-      if (btn && nav) {
-        btn.addEventListener("click", () => {
-          nav.classList.toggle("open");
-          btn.classList.toggle("open");
-        });
-      }
-    </script>
   </body>
 </html>
+
+
+
+
+

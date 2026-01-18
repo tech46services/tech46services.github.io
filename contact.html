@@ -6,6 +6,8 @@
     ========================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contactez Tech 46 Services pour un dépannage informatique à domicile à Gramat et alentours. Intervention rapide, claire et sans surprise.">
+
 
     <title>Contact - Tech 46 Services</title>
     <link rel="canonical" href="https://tech46services.fr/contact.html" />
@@ -13,7 +15,24 @@
     <!-- =========================
          FAVICON / STYLES
     ========================== -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Favicon legacy -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+    
+    <!-- Favicons PNG -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    
+    <!-- Apple iOS -->
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    
+    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    
+    <meta name="theme-color" content="#002043">
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- =========================
@@ -60,7 +79,7 @@
       ========================== -->
       <header class="top-nav elevation-2">
         <div class="nav-left">
-          <a href="index.html" class="site-logo">
+          <a href="/" class="site-logo">
             <img src="assets/img/logo-no-text.png" alt="Tech 46 Services" />
           </a>
           <img
@@ -80,15 +99,15 @@
         </a>
 
         <!-- Bouton menu mobile -->
-        <button class="menu-toggle" aria-label="Menu">
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <!-- Navigation -->
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">Accueil</a>
+        <nav id="site-nav" class="nav-links">
+          <a href="/" class="nav-link">Accueil</a>
           <a href="services.html" class="nav-link">Services</a>
           <a href="apropos.html" class="nav-link">À propos</a>
           <a href="contact.html" class="nav-link nav-cta active">
@@ -104,10 +123,9 @@
         <!-- =========================
              CONTACT
         ========================== -->
+        <h1 class="hero-intro-title">Contactez-moi</h1>
         <section class="section-padding">
           <div class="section-header">
-            <h1>Contactez-moi</h1>
-
             <p class="contact-phone">
               Par téléphone au
               <span class="phone-chip">
@@ -115,7 +133,7 @@
               </span>
             </p>
 
-            <p>Ou via le formulaire suivant :</p>
+            <p class="contact-phone">Ou via le formulaire suivant :</p>
           </div>
 
           <!-- Formulaire -->
@@ -200,7 +218,7 @@
                       Envoyer
                     </button>
 
-                    <p id="form-status" class="form-status"></p>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
                   </form>
                 </div>
               </section>
@@ -221,9 +239,9 @@
           </div>
 
           <div>
-            <h4>Navigation</h4>
+            <p class="footer-heading">Navigation</p>
             <ul class="footer-links">
-              <li><a href="index.html">Accueil</a></li>
+              <li><a href="/">Accueil</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="apropos.html">À propos</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -235,7 +253,7 @@
           </div>
 
           <div>
-            <h4>Contact</h4>
+            <p class="footer-heading">Contact</p>
             <ul class="footer-links">
               <li><a href="tel:0769754085">07 69 75 40 85</a></li>
               <li>
@@ -248,7 +266,8 @@
         </div>
 
         <div class="footer-bottom">
-          <span>&copy; <span id="year"></span> Tech 46 Services</span>
+          <span>&copy; <span class="js-year"></span>
+ Tech 46 Services</span>
           <span class="footer-note">Site hébergé sur Github</span>
         </div>
       </footer>
@@ -259,27 +278,11 @@
     ========================== -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Menu mobile + formulaire -->
+    <!-- Formulaire -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.querySelector(".menu-toggle");
-        const nav = document.querySelector(".nav-links");
         const form = document.getElementById("contact-form");
         const status = document.getElementById("form-status");
-        const yearSpan = document.getElementById("year");
-
-        // Menu mobile
-        if (btn && nav) {
-          btn.addEventListener("click", () => {
-            nav.classList.toggle("open");
-            btn.classList.toggle("open");
-          });
-        }
-
-        // Année footer
-        if (yearSpan) {
-          yearSpan.textContent = new Date().getFullYear();
-        }
 
         // Formulaire
         if (!form) return;
@@ -316,3 +319,6 @@
     </script>
   </body>
 </html>
+
+
+

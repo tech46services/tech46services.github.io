@@ -1,8 +1,24 @@
 // Ajout de l'annee actuelle dans le footer
 document.addEventListener("DOMContentLoaded", () => {
-  const yearSpanList = document.querySelectorAll("#year");
+  const yearSpanList = document.querySelectorAll(".js-year");
   const year = new Date().getFullYear();
   yearSpanList.forEach((span) => (span.textContent = year));
+
+  const btn = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  if (btn && nav) {
+    const setMenuState = (isOpen) => {
+      nav.classList.toggle("open", isOpen);
+      btn.classList.toggle("open", isOpen);
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    setMenuState(nav.classList.contains("open"));
+    btn.addEventListener("click", () => {
+      setMenuState(!nav.classList.contains("open"));
+    });
+  }
 
   // Popover services : hover seulement sur pointeurs fins, comportement natif sur mobile
   const serviceDetails = document.querySelectorAll(".service-details");
