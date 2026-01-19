@@ -295,6 +295,7 @@ main {
   padding: 0 1.5rem 2.2rem;
 }
 
+
 /* Layout colonnes */
 .two-columns {
   display: grid;
@@ -1116,7 +1117,8 @@ main {
 }
 
 .about-page .section-padding {
-  padding: 0 1.5rem 1.7rem;
+  padding: 0 1.5rem 2.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .services-page .section-padding + .section-padding,
@@ -1177,6 +1179,16 @@ main {
   text-justify: inter-word;
 }
 
+.legal-page .legal-identity {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+}
+
+.legal-page .legal-identity p {
+  margin: 0;
+}
+
 /* Formulaire contact */
 .sr-only {
   position: absolute;
@@ -1235,11 +1247,26 @@ main {
   text-align: center;
 }
 
+.contact-page .section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-phone-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  background: var(--card);
+  background-color: rgba(255, 255, 255, 0.80);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -1289,14 +1316,60 @@ main {
   margin-bottom: 0.4rem;
 }
 
-.contact-grid {
-  grid-template-columns: 1fr;
-  justify-items: center;
+.contact-panel {
+  --contact-card-min-width: 320px;
+  width: 100%;
+  max-width: calc(720px - 6rem);
+  min-width: calc(var(--contact-card-min-width) + 3rem);
+  margin: 0.6rem auto 0;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  background-color: var(--card);
+  background-image: url("../img/image-contact.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.contact-grid .card-panel {
+.contact-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
   width: 100%;
-  max-width: 720px;
+  margin-top: 0;
+}
+
+.contact-grid > .card-panel {
+  width: 100%;
+  max-width: 100%;
+  min-width: var(--contact-card-min-width);
+  margin-inline: auto;
+  background: transparent;
+  padding: 0;
+}
+
+.contact-info-card {
+  min-width: var(--contact-card-min-width);
+  background-color: rgba(255, 255, 255, 0.88);
+}
+
+.contact-page .page-main,
+.contact-page .section-padding {
+  max-width: none;
+  width: 100%;
+}
+
+.contact-grid > .card-panel,
+.contact-form {
+  max-width: none;
+  width: 100%;
 }
 
 @media (max-width: 640px) {
@@ -1324,9 +1397,8 @@ main {
 
 /* Textarea contact */
 .contact-form textarea {
-  resize: none;       /* empêche le redimensionnement */
-  height: 150px;      /* hauteur fixe */
-  overflow-y: auto;   /* si le texte est long, une scrollbar apparaît */
+  resize: none;
+  overflow: auto;
 }
 
 
@@ -1695,4 +1767,8 @@ main {
   .logo-secondary {
     display: none !important;
   }
+}
+
+.about-page .page-main {
+  padding-bottom: 0;
 }
