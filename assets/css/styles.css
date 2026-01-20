@@ -1208,9 +1208,11 @@ main {
   align-items: center;
   gap: 0.6rem;
   flex-wrap: wrap;
-  font-size: 1.6rem;
+  font-size: clamp(1.1rem, 3.6vw, 1.6rem);
   font-weight: 500;
   margin: 0;
+  max-width: 100%;
+  text-align: center;
 }
 
 .contact-page .contact-phone + .contact-phone {
@@ -1227,11 +1229,12 @@ main {
   box-shadow: var(--shadow-light);
   white-space: nowrap;
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .contact-phone a {
   color: var(--primary);
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   font-weight: 700;
   text-decoration: none;
 }
@@ -1382,6 +1385,24 @@ main {
   .contact-form input::placeholder,
   .contact-form textarea::placeholder {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .contact-panel,
+  .contact-grid > .card-panel,
+  .contact-info-card {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .contact-page .contact-phone {
+    font-size: 1.1rem;
+  }
+
+  .contact-phone a {
+    font-size: 1.5rem;
   }
 }
 
