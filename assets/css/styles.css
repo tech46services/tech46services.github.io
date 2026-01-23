@@ -295,7 +295,6 @@ main {
   padding: 0 1.5rem 2.2rem;
 }
 
-
 /* Layout colonnes */
 .two-columns {
   display: grid;
@@ -529,22 +528,8 @@ main {
 }
 
 /* Ajuste la tuile texte du hero sur desktop pour la rendre moins haute */
-@media (min-width: 901px) {
-  .hero-text-panel {
-    padding: 1.05rem 1.25rem 1.15rem;
-  }
-
-  .hero-content .hero-title {
-    margin: 0.5rem 0 0.75rem;
-  }
-}
 
 /* Sur écran étroit (pile verticale), le bloc texte prend toute la largeur */
-@media (max-width: 1000px) {
-  .hero-content {
-    --hero-block-width: 100%;
-  }
-}
 
 .hero-badge {
   display: inline-flex;
@@ -627,16 +612,6 @@ main {
 }
 
 /* Aligne les trois meta-chips sur une seule ligne en desktop pour éviter les retours isolés */
-@media (min-width: 720px) {
-  .hero-meta {
-    width: 100%;
-    max-width: var(--hero-block-width);
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
 
 /* Cartes de service / étapes / témoignages */
 .service-card {
@@ -710,7 +685,6 @@ main {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
-
 
 /* Panneaux génériques */
 .card-panel {
@@ -985,7 +959,6 @@ main {
   hyphens: none;
 }
 
-
 .intro-text {
   text-align: left;
   hyphens: none;
@@ -1168,7 +1141,6 @@ main {
 .about-page .section-footer-link {
   margin-top: 0.9rem;
 }
-
 
 .why-cta {
   display: flex;
@@ -1367,17 +1339,6 @@ main {
   margin-bottom: 0;
 }
 
-@media (max-width: 720px) {
-  .legal-hero-card {
-    padding: 1.35rem 1.2rem 1.4rem;
-  }
-
-  .legal-number {
-    width: 40px;
-    height: 40px;
-  }
-}
-
 /* Formulaire contact */
 .sr-only {
   position: absolute;
@@ -1564,37 +1525,6 @@ main {
   width: 100%;
 }
 
-@media (max-width: 640px) {
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.85rem 0.95rem;
-    font-size: 0.95rem;
-  }
-
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .contact-panel,
-  .contact-grid > .card-panel,
-  .contact-info-card {
-    min-width: 0;
-  }
-}
-
-@media (max-width: 330px) {
-  .contact-page .contact-phone {
-    font-size: 1.1rem;
-  }
-
-  .contact-phone a {
-    font-size: 1.5rem;
-  }
-}
-
 .contact-form .btn {
   padding: 0.9rem 1.2rem;
   border-radius: 12px;
@@ -1611,7 +1541,6 @@ main {
   overflow: auto;
 }
 
-
 /* Espacement intro Services */
 .services-page .intro-text {
   margin: 4rem 0 4rem 0;
@@ -1619,6 +1548,37 @@ main {
   text-justify: inter-word;
 }
 
+.about-page .page-main {
+  padding-bottom: 0;
+}
+
+
+
+/* =========================
+   Responsive
+   (regroupé + simplifié)
+   ========================= */
+
+@media (min-width: 720px) {
+  .hero-meta {
+    width: 100%;
+    max-width: var(--hero-block-width);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-text-panel {
+    padding: 1.05rem 1.25rem 1.15rem;
+  }
+
+  .hero-content .hero-title {
+    margin: 0.5rem 0 0.75rem;
+  }
+}
 
 @media (max-width: 1100px) {
   .nav-left {
@@ -1643,6 +1603,10 @@ main {
 
   body {
     overflow-x: hidden;
+  }
+
+  .hero-content {
+    --hero-block-width: 100%;
   }
 
   .top-nav {
@@ -1789,58 +1753,44 @@ main {
     text-shadow: none;
   }
 
-  .footer-columns {
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* reste sur 3 colonnes jusqu'au seuil mobile */
-    align-items: flex-start;
-    gap: 0.9rem;
-  }
-
   .cards-grid.big {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
 
+@media (max-width: 720px) {
+  .legal-hero-card {
+    padding: 1.35rem 1.2rem 1.4rem;
+  }
+
+  .legal-number {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media (max-width: 640px) {
-  .top-nav {
-    flex-wrap: nowrap;
-    gap: 0.4rem;
-  }
+  .top-nav { flex-wrap: nowrap; gap: 0.4rem; }
+  .nav-left { max-width: 68%; }
 
-  .nav-left {
-    max-width: 68%;
-  }
+  .logo-secondary { height: 34px; width: auto; }
+  .site-logo img { height: 34px; }
 
-  .logo-secondary {
-    height: 34px;
-    width: auto;
-  }
-
-  .site-logo img {
-    height: 34px;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: space-between;
-  }
+  .nav-links { width: 100%; justify-content: space-between; }
 
   .hero-grid,
   .section-padding,
-  .page-main {
-    padding-inline: 1rem;
+  .page-main { padding-inline: 1rem; }
+
+  .hero-grid{
+    margin-top: 0.6rem;
+    padding-inline: 0.95rem;
+    gap: 1rem;
   }
 
-  .hero-grid {
-    margin-top: 0.9rem;
-  }
+  .hero-intro-title { margin: 0.6rem auto 14px; }
 
-  .hero-intro-title {
-    margin: 0.9rem auto 14px;
-  }
-
-  .two-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
+  .two-columns { grid-template-columns: minmax(0, 1fr); }
 
   .footer-columns {
     grid-template-columns: 1fr;
@@ -1848,9 +1798,7 @@ main {
     text-align: center;
   }
 
-  .main-footer {
-    padding-inline: 1rem;
-  }
+  .main-footer { padding-inline: 1rem; }
 
   .footer-bottom {
     flex-direction: column;
@@ -1859,14 +1807,10 @@ main {
     gap: 0.4rem;
   }
 
-  .footer-socials {
-    justify-content: center;
-  }
+  .footer-socials { justify-content: center; }
 
   .main-footer h4,
-  .main-footer .footer-heading {
-    margin-top: 0.4rem;
-  }
+  .main-footer .footer-heading { margin-top: 0.4rem; }
 
   .hero-main-card,
   .service-card,
@@ -1875,13 +1819,8 @@ main {
     box-shadow: var(--shadow-soft);
   }
 
-  .hero-main-card {
-    padding: 1.15rem 1.2rem 1.25rem;
-  }
-
-  .hero-main-card h2 {
-    font-size: 1.1rem;
-  }
+  .hero-main-card { padding: 1.15rem 1.2rem 1.25rem; }
+  .hero-main-card h2 { font-size: 1.1rem; }
 
   .hero-actions {
     flex-direction: column;
@@ -1894,21 +1833,11 @@ main {
     justify-content: center;
   }
 
-  .hero-meta {
-    gap: 0.35rem;
-  }
+  .hero-meta { gap: 0.35rem; }
+  .card-layer { display: none; }
 
-  .card-layer {
-    display: none;
-  }
-
-  .section-padding.tinted.steps-section .section-header h2 {
-    color: #ffffff;
-  }
-
-  .section-padding.tinted.steps-section .section-header p {
-    color: #e5e7eb;
-  }
+  .section-padding.tinted.steps-section .section-header h2 { color: #ffffff; }
+  .section-padding.tinted.steps-section .section-header p { color: #e5e7eb; }
 
   .seo-text {
     margin: 24px auto;
@@ -1916,36 +1845,17 @@ main {
     font-size: 0.95rem;
   }
 
-  .seo-text h2 {
-    font-size: 1.2rem;
-  }
+  .seo-text h2 { font-size: 1.2rem; }
 
-  .hero-intro-title {
-    margin: 0.6rem auto 14px;
-  }
-
-  .hero-grid {
-    margin-top: 0.6rem;
-    padding-inline: 0.95rem;
-    gap: 1rem;
-  }
-
-  .hero-content .hero-title {
-    font-size: clamp(1.8rem, 7vw, 2.2rem);
-  }
+  .hero-content .hero-title { font-size: clamp(1.8rem, 7vw, 2.2rem); }
 
   .hero-subtitle {
     font-size: 0.93rem;
     line-height: 1.55;
   }
 
-  .hero-list {
-    padding-left: 0.8rem;
-  }
-
-  .hero-list li {
-    margin-bottom: 0.4rem;
-  }
+  .hero-list { padding-left: 0.8rem; }
+  .hero-list li { margin-bottom: 0.4rem; }
 
   .section-padding,
   .section-padding.tinted,
@@ -1956,18 +1866,42 @@ main {
   }
 
   .cards-grid,
-  .steps-grid {
-    gap: 1rem;
-  }
+  .steps-grid { gap: 1rem; }
 
   .service-card,
-  .step-card {
-    padding: 1.05rem 1.1rem;
-  }
+  .step-card { padding: 1.05rem 1.1rem; }
 
   .section-header h1,
-  .section-header h2 {
-    font-size: 1.35rem;
+  .section-header h2 { font-size: 1.35rem; }
+
+  /* Contact */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.85rem 0.95rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .contact-panel,
+  .contact-grid > .card-panel,
+  .contact-info-card {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .contact-page .contact-phone {
+    font-size: 1.1rem;
+  }
+
+  .contact-phone a {
+    font-size: 1.5rem;
   }
 }
 
@@ -1975,14 +1909,4 @@ main {
   .logo-secondary {
     display: none !important;
   }
-}
-
-@media (max-width: 380px) {
-  .logo-secondary {
-    display: none !important;
-  }
-}
-
-.about-page .page-main {
-  padding-bottom: 0;
 }
