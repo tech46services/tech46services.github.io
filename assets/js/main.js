@@ -20,67 +20,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Popover services : hover seulement sur pointeurs fins, comportement natif sur mobile
+  // Popover services : bouton reel + meme comportement visuel qu'avant
   const serviceDetails = document.querySelectorAll(".service-details");
   const isPointerFine = window.matchMedia("(pointer: fine)").matches;
-  const closeAllServiceDetails = () => {
+
+  const setServiceDetailsState = (details, isOpen) => {
+    details.classList.toggle("is-open", isOpen);
+
+    const toggleButton = details.querySelector(".service-details-toggle");
+    if (toggleButton) {
+      toggleButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    const popoverContent = details.querySelector("p");
+    if (popoverContent) {
+      popoverContent.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    }
+
+    const card = details.closest(".service-card");
+    if (card) {
+      card.classList.toggle("popover-open", isOpen);
+    }
+  };
+
+  const closeAllServiceDetails = (exceptDetails = null) => {
     serviceDetails.forEach((details) => {
-      if (details.open) {
-        details.open = false;
+      if (details !== exceptDetails) {
+        setServiceDetailsState(details, false);
       }
     });
   };
 
-  serviceDetails.forEach((details) => {
-    const summary = details.querySelector("summary");
-    if (!summary) return;
+  serviceDetails.forEach((details, index) => {
+    const toggleButton = details.querySelector(".service-details-toggle");
+    if (!toggleButton) return;
 
-    const card = details.closest(".service-card");
-    const syncPopoverClass = () => {
-      if (!card) return;
-      card.classList.toggle("popover-open", details.open);
-    };
-
-    const openDetails = () => {
-      details.open = true;
-      syncPopoverClass();
-    };
-
-    const closeDetails = () => {
-      details.open = false;
-      syncPopoverClass();
-    };
-
-    details.addEventListener("toggle", () => {
-      // Mobile/tactile: un seul encart ouvert a la fois (comportement accordéon)
-      if (!isPointerFine && details.open) {
-        serviceDetails.forEach((otherDetails) => {
-          if (otherDetails !== details && otherDetails.open) {
-            otherDetails.open = false;
-          }
-        });
+    const popoverContent = details.querySelector("p");
+    if (popoverContent) {
+      if (!popoverContent.id) {
+        popoverContent.id = `service-popover-${index + 1}`;
       }
-
-      syncPopoverClass();
-    });
-    syncPopoverClass();
-
-    if (isPointerFine) {
-      summary.addEventListener("mouseenter", openDetails);
-      summary.addEventListener("mouseleave", closeDetails);
+      toggleButton.setAttribute("aria-controls", popoverContent.id);
     }
 
-    // Sur tactile/clavier, on garde le comportement natif <details>/<summary>.
-    // Cela evite un conflit focus/blur qui imposait parfois un double tap.
-    // pas de preventDefault : on laisse le toggle natif fonctionner.
+    setServiceDetailsState(details, details.classList.contains("is-open"));
+
+    toggleButton.addEventListener("click", () => {
+      const willOpen = !details.classList.contains("is-open");
+
+      // Un seul encart ouvert a la fois quand on clique sur un bouton
+      if (willOpen) {
+        closeAllServiceDetails(details);
+      }
+
+      setServiceDetailsState(details, willOpen);
+    });
+
+    if (isPointerFine) {
+      toggleButton.addEventListener("mouseenter", () => {
+        setServiceDetailsState(details, true);
+      });
+
+      details.addEventListener("mouseleave", () => {
+        setServiceDetailsState(details, false);
+      });
+    }
   });
 
   // Ferme les encarts quand on clique/tape ailleurs sur la page.
-  document.addEventListener("click", (event) => {
+  // Seul le bouton "En savoir plus" est exclu (il gere son propre toggle).
+  const handleGlobalDetailsDismiss = (event) => {
     const target = event.target;
-    if (target instanceof Element && target.closest(".service-details")) return;
+    if (target instanceof Element && target.closest(".service-details-toggle")) return;
     closeAllServiceDetails();
-  });
+  };
+
+  document.addEventListener("pointerdown", handleGlobalDetailsDismiss);
+  document.addEventListener("click", handleGlobalDetailsDismiss);
 
   // Animation d'apparition au scroll
   const revealElements = document.querySelectorAll(".reveal");

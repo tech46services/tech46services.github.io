@@ -1006,7 +1006,8 @@ main {
 .service-card.reparation-card h2,
 .service-card.reparation-card p,
 .service-card.reparation-card .service-list,
-.service-card.reparation-card .service-details summary {
+.service-card.reparation-card .service-details summary,
+.service-card.reparation-card .service-details .service-details-toggle {
   color: #ffffff;
 }
 
@@ -1026,7 +1027,8 @@ main {
 .service-card.installation-card h2,
 .service-card.installation-card p,
 .service-card.installation-card .service-list,
-.service-card.installation-card .service-details summary {
+.service-card.installation-card .service-details summary,
+.service-card.installation-card .service-details .service-details-toggle {
   color: #ffffff;
 }
 
@@ -1046,7 +1048,8 @@ main {
 .service-card.donnees-card h2,
 .service-card.donnees-card p,
 .service-card.donnees-card .service-list,
-.service-card.donnees-card .service-details summary {
+.service-card.donnees-card .service-details summary,
+.service-card.donnees-card .service-details .service-details-toggle {
   color: #ffffff;
 }
 
@@ -1066,7 +1069,8 @@ main {
 .service-card.reseau-card h2,
 .service-card.reseau-card p,
 .service-card.reseau-card .service-list,
-.service-card.reseau-card .service-details summary {
+.service-card.reseau-card .service-details summary,
+.service-card.reseau-card .service-details .service-details-toggle {
   color: #ffffff;
 }
 
@@ -1088,7 +1092,8 @@ main {
   color: var(--text-main);
 }
 
-.service-card.seo-locale-card .service-details summary {
+.service-card.seo-locale-card .service-details summary,
+.service-card.seo-locale-card .service-details .service-details-toggle {
   color: var(--text-muted);
 }
 
@@ -1110,7 +1115,8 @@ main {
   z-index: 40;
 }
 
-.service-details summary {
+.service-details summary,
+.service-details .service-details-toggle {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1118,13 +1124,23 @@ main {
   color: var(--text-muted);
   cursor: pointer;
   font-weight: 500;
+  font-family: inherit;
+  line-height: inherit;
+  text-align: left;
+  background: none;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.services-page .service-details summary {
+.services-page .service-details summary,
+.services-page .service-details .service-details-toggle {
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
-.services-page .service-details summary:hover {
+.services-page .service-details summary:hover,
+.services-page .service-details .service-details-toggle:hover {
   color: var(--primary);
   transform: translateX(2px);
 }
@@ -1134,7 +1150,8 @@ main {
   display: none;
 }
 
-.service-details summary:focus-visible {
+.service-details summary:focus-visible,
+.service-details .service-details-toggle:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 8px;
@@ -1160,7 +1177,8 @@ main {
   z-index: 25;
 }
 
-.service-details[open] p {
+.service-details[open] p,
+.service-details.is-open p {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
