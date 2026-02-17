@@ -23,6 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Popover services : hover seulement sur pointeurs fins, comportement natif sur mobile
   const serviceDetails = document.querySelectorAll(".service-details");
   const isPointerFine = window.matchMedia("(pointer: fine)").matches;
+  const closeAllServiceDetails = () => {
+    serviceDetails.forEach((details) => {
+      if (details.open) {
+        details.open = false;
+      }
+    });
+  };
 
   serviceDetails.forEach((details) => {
     const summary = details.querySelector("summary");
@@ -44,7 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
       syncPopoverClass();
     };
 
-    details.addEventListener("toggle", syncPopoverClass);
+    details.addEventListener("toggle", () => {
+      // Mobile/tactile: un seul encart ouvert a la fois (comportement accordéon)
+      if (!isPointerFine && details.open) {
+        serviceDetails.forEach((otherDetails) => {
+          if (otherDetails !== details && otherDetails.open) {
+            otherDetails.open = false;
+          }
+        });
+      }
+
+      syncPopoverClass();
+    });
     syncPopoverClass();
 
     if (isPointerFine) {
@@ -52,9 +70,16 @@ document.addEventListener("DOMContentLoaded", () => {
       summary.addEventListener("mouseleave", closeDetails);
     }
 
-    summary.addEventListener("focus", openDetails);
-    summary.addEventListener("blur", closeDetails);
-    // pas de preventDefault : on laisse le toggle natif fonctionner (mobile et accessibilité)
+    // Sur tactile/clavier, on garde le comportement natif <details>/<summary>.
+    // Cela evite un conflit focus/blur qui imposait parfois un double tap.
+    // pas de preventDefault : on laisse le toggle natif fonctionner.
+  });
+
+  // Ferme les encarts quand on clique/tape ailleurs sur la page.
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target instanceof Element && target.closest(".service-details")) return;
+    closeAllServiceDetails();
   });
 
   // Animation d'apparition au scroll
