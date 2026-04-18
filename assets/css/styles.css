@@ -482,10 +482,16 @@ main {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: currentColor;
+  background-color: #ff0000;
   -webkit-mask: url("../img/contact.png") center/contain no-repeat;
   mask: url("../img/contact.png") center/contain no-repeat;
   opacity: 0.9;
+}
+
+@media (min-width: 981px) {
+  .contact-page .nav-cta .nav-cta-icon {
+    background-color: currentColor;
+  }
 }
 
 /* HERO _ contenu texte */
@@ -939,7 +945,7 @@ main {
   display: block;
   width: 22px;
   height: 22px;
-  background-color: #002043;
+  background-color: #ff0000;
   -webkit-mask: url("../img/contact.png") center/contain no-repeat;
   mask: url("../img/contact.png") center/contain no-repeat;
 }
