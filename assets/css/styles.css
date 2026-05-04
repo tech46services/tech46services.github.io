@@ -1440,7 +1440,8 @@ main {
 
 .form-note {
   margin-top: 0.8rem;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  text-align: center;
   color: var(--text-muted);
 }
 
