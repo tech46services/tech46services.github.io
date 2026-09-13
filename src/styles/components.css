@@ -198,6 +198,13 @@
   border-radius: 12px;
   padding: 1.2rem 1.3rem;
   border: 1px solid var(--border-subtle);
+  transform-origin: center;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-soft);
 }
 
 .testimonial-card:not(.is-expanded) {
