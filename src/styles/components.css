@@ -201,11 +201,11 @@
 }
 
 .testimonial-card:not(.is-expanded) {
-  height: 185px;
+  height: 155px;
 }
 
 .testimonial-card.is-expanded {
-  min-height: 185px;
+  min-height: 155px;
 }
 
 .testimonial-text {
