@@ -13,6 +13,7 @@ interface Props {
   imageAlt?: string;
   linkLabel?: string;
   elevationClass?: string;
+  showDate?: boolean;
 }
 
 const {
@@ -27,11 +28,12 @@ const {
   imageAlt,
   linkLabel = "Lire la suite",
   elevationClass = "elevation-2",
+  showDate = true,
 } = Astro.props;
 
 const metaParts = [
   category,
-  formatDate(date),
+  showDate ? formatDate(date) : undefined,
   location,
   service,
 ].filter(Boolean);
