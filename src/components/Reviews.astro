@@ -1,0 +1,57 @@
+---
+import { reviews } from "../data/reviews";
+
+const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
+  month: "long",
+  year: "numeric",
+});
+---
+
+{reviews.length > 0 && (
+  <section class="section-padding reveal reviews-section" aria-labelledby="reviews-title">
+    <div class="section-header">
+      <h2 id="reviews-title">Ils m’ont fait confiance</h2>
+      <p>Des témoignages publiés sur la fiche Google de Tech 46 Services.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      {reviews.map((review, index) => {
+        const textId = `review-text-${index + 1}`;
+
+        return (
+          <article class="testimonial-card elevation-2">
+            <p class="testimonial-author">
+              {review.author} · {dateFormatter.format(new Date(review.date))}
+            </p>
+            <p class="review-rating" aria-label={`${review.rating} étoiles sur 5`}>
+              <span aria-hidden="true">{"★".repeat(review.rating)}</span>
+            </p>
+            {review.text && <blockquote id={textId} class="testimonial-text">« {review.text} »</blockquote>}
+            {review.text && (
+              <button
+                type="button"
+                class="review-toggle"
+                aria-expanded="false"
+                aria-controls={textId}
+                hidden
+              >
+                Afficher l’avis complet
+              </button>
+            )}
+          </article>
+        );
+      })}
+    </div>
+
+    <p class="section-footer-link">
+      <a
+        class="inline-link"
+        href="https://share.google/bXzFi34loEhX2cXFx"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir tous les avis sur Google
+      </a>
+    </p>
+  </section>
+)}

@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"Service\",\r\n        \"@id\": \"https://tech46services.fr/espace-pro.html#service\",\r\n        \"name\": \"Services numériques pour professionnels\",\r\n        \"serviceType\": \"Création web, SEO local et optimisation de process\",\r\n        \"description\": \"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process.\",\r\n        \"url\": \"https://tech46services.fr/espace-pro.html\",\r\n        \"provider\": {\r\n          \"@type\": \"LocalBusiness\",\r\n          \"@id\": \"https://tech46services.fr/#business\",\r\n          \"name\": \"Tech 46 Services\",\r\n          \"url\": \"https://tech46services.fr/\",\r\n          \"telephone\": \"+33769754085\"\r\n        },\r\n        \"audience\": {\r\n          \"@type\": \"BusinessAudience\",\r\n          \"audienceType\": \"Professionnels, indépendants, artisans et associations\"\r\n        },\r\n        \"areaServed\": [\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Gramat (Lot)\"\r\n          },\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Nord du Lot (46)\"\r\n          }\r\n        ],\r\n        \"hasOfferCatalog\": {\r\n          \"@type\": \"OfferCatalog\",\r\n          \"name\": \"Services numériques pour activités professionnelles\",\r\n          \"itemListElement\": [\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Création de sites web\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Optimisation SEO locale\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Optimisation de process\"\r\n            }\r\n          ]\r\n        }\r\n      }";
+---
+
+<BaseLayout
+  title={"Création de site web et SEO local pour pros dans le Lot - Tech 46 Services"}
+  description={"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process."}
+  canonical={"https://tech46services.fr/espace-pro.html"}
+  ogTitle={"Espace pro - Tech 46 Services"}
+  ogDescription={"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process."}
+  bodyClass={"services-page espace-pro-page"}
+  activePage={"espace-pro"}
+  jsonLd={jsonLd}
+>
+<main class="page-main">
+        <!-- =========================
+             INTRO SERVICES
+        ========================== -->
+        <h1 class="hero-intro-title">Espace pro</h1>
+        <section class="hero-grid">
+          <img loading="eager"
+            class="hero-bg"
+            src="assets/img/image_espacepro.webp"
+            alt="Services numériques pour professionnels dans le Lot"
+            width="960"
+            height="603"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero-content reveal">
+            <div class="hero-text-panel">
+              <div class="section-header">
+                <h2 class="hero-panel-title">Création web, SEO et productivité pour votre activité</h2>
+              </div>
+
+              <p class="intro-text">
+                Cette page est dédiée aux entreprises, indépendants, artisans et associations
+                qui veulent améliorer leur présence en ligne et gagner du temps au quotidien.
+                Je conçois des solutions simples, évolutives et adaptées à votre activité:
+                site web, SEO local et optimisation de process.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             OFFRES ESPACE PRO
+        ========================== -->
+        <section class="section-padding">
+
+          <p>Chaque jour, vous engagez votre savoir-faire et votre exigence au service de 
+            vos clients. Cette constance façonne votre réputation et ancre votre présence 
+            locale.</p>
+
+          <p>Aujourd’hui, le numérique s’inscrit dans cette même logique d’exigence. Une 
+            présence en ligne structurée et cohérente devient un levier stratégique : elle
+             <strong>renforce votre crédibilité</strong>, <strong>développe votre 
+              visibilité</strong> et affirme votre positionnement.</p>
+
+          <p>Un site internet clair, rapide et maîtrisé, soutenu par un référencement local 
+            solide, vous positionne comme un acteur fiable et accessible. 
+            Il constitue un véritable <strong>outil commercial</strong>, <strong>disponible 
+              en permanence</strong>, au service de votre développement.</p>
+
+          <p>L’optimisation passe également par l’organisation interne. L’automatisation 
+            des devis, de la facturation, du suivi ou de la gestion administrative permet 
+            de <strong>fluidifier vos processus</strong>, de <strong>sécuriser vos 
+              opérations</strong> et de vous recentrer sur votre cœur de métier.</p>
+
+          <p>Le numérique n’est pas une tendance : c’est un levier structurant 
+            d’<strong>optimisation et de croissance</strong>. J’accompagne les 
+            professionnels du nord du Lot qui souhaitent moderniser leur activité avec 
+            méthode et cohérence.</p>
+          
+          <div class="cards-grid big">
+            <article class="service-card elevation-3 reveal">
+              <h2>Création de sites web</h2>
+
+              <ul class="service-list">
+                <li>Site rapide et sécurisé</li>
+                <li>Design responsive mobile et desktop</li>
+                <li>Hébergement simple et maintenance légère</li>
+                <li>Des pages selon vos besoins</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Idéal pour présenter votre activité de façon claire, <strong>professionnelle
+                  et performante</strong>, avec un excellent temps de chargement.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card elevation-3 reveal seo-locale-card">
+              <h2>Optimisation SEO locale</h2>
+
+              <ul class="service-list">
+                <li>Structure technique optimisée</li>
+                <li>Contenus orientés intentions locales</li>
+                <li>Amélioration des performances web</li>
+                <li>Renforcement de votre visibilité sur Google</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Travail sur les fondations SEO pour attirer des prospects qualifiés
+                  dans votre zone d'activité.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card elevation-3 reveal">
+              <h2>Optimisation de process</h2>
+
+              <ul class="service-list">
+                <li>Réduction des tâches répétitives</li>
+                <li>Standardisation des étapes métier</li>
+                <li>Automatisation des échanges clés</li>
+                <li>Gain de temps et meilleure productivité</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Mise en place de méthodes et d'outils simples pour fluidifier votre
+                  fonctionnement quotidien et <strong>gagner du temps</strong>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- =========================
+             METHODE
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Comment se déroule un projet ?</h2>
+            <p>Une méthode claire, avec un objectif simple: vous livrer une solution utile.</p>
+          </div>
+
+          <ul class="service-list why-list" style="max-width: 760px;">
+            <li>Échange initial pour cadrer vos besoins et vos priorités</li>
+            <li>Proposition d'une solution adaptée à votre budget</li>
+            <li>Mise en place progressive et validation à chaque étape</li>
+            <li>Accompagnement après livraison pour assurer l'autonomie</li>
+          </ul>
+        </section>
+
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Intervention locale et à distance</h2>
+            <p>
+              Basé à Gramat, j'accompagne les professionnels du Lot en présentiel
+              et je peux aussi intervenir à distance selon le projet.
+            </p>
+          </div>
+
+          <div class="why-cta">
+            <a href="contact.html" class="inline-link">Parlez-moi de votre projet professionnel &rarr;</a>
+          </div>
+        </section>
+      </main>
+</BaseLayout>

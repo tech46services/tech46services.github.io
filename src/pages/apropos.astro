@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"AboutPage\",\r\n        \"@id\": \"https://tech46services.fr/apropos.html#about\",\r\n        \"name\": \"À propos - Tech 46 Services\",\r\n        \"url\": \"https://tech46services.fr/apropos.html\",\r\n        \"description\": \"Page présentant l'activité, l'approche et la manière de travailler de Tech 46 Services pour le dépannage informatique et les services numériques.\",\r\n        \"mainEntity\": {\r\n          \"@type\": \"ComputerRepair\",\r\n          \"@id\": \"https://tech46services.fr/#business\",\r\n          \"name\": \"Tech 46 Services\",\r\n          \"url\": \"https://tech46services.fr/\"\r\n        }\r\n      }";
+---
+
+<BaseLayout
+  title={"À propos - Tech 46 Services"}
+  description={"Tech 46 Services, votre dépanneur informatique local à Gramat. Découvrez mon parcours, ma méthode de travail et mes valeurs professionnelles."}
+  canonical={"https://tech46services.fr/apropos.html"}
+  ogTitle={"À propos - Tech 46 Services"}
+  ogDescription={"Tech 46 Services, votre dépanneur informatique local à Gramat. Découvrez mon parcours, ma méthode de travail et mes valeurs professionnelles."}
+  bodyClass={"about-page"}
+  activePage={"apropos"}
+  jsonLd={jsonLd}
+>
+<main class="page-main">
+        <!-- =========================
+             SECTION : À PROPOS
+        ========================== -->
+        <h1 class="hero-intro-title">À propos de Tech 46 Services</h1>
+        <section class="section-padding">
+          
+          <!-- Contenu en deux colonnes -->
+          <div class="about-cards-wrap card-panel elevation-2">
+            <div class="two-columns">
+            <!-- Carte : Qui suis-je -->
+            <div class="card-panel elevation-3 reveal">
+              <h2>Qui suis-je ?</h2>
+              <p>
+                Passionné d'informatique, j'accompagne les particuliers et les
+                professionnels pour leurs besoins du quotidien et de développement:
+                dépannage, installation, création de sites web, SEO local et optimisation de process.
+              </p>
+              <p>
+                Mon objectif : vous simplifier l'informatique, sans jargon inutile,
+                avec des explications claires, des solutions durables et des résultats concrets.
+              </p>
+            </div>
+
+            <!-- Carte : Méthode de travail -->
+            <div class="card-panel elevation-2 reveal">
+              <h2>Ma façon de travailler</h2>
+              <ul class="service-list about-list">
+                <li>Prise de contact rapide</li>
+                <li>Prise en compte des besoins</li>
+                <li>Explications simples à chaque étape</li>
+                <li>Conseils clairs et accompagnement tout au long de la démarche</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+
+          <!-- Lien bas de section -->
+          <div class="section-footer-link">
+            <a href="contact.html" class="inline-link">
+              Envie d'en savoir plus ou besoin d'aide ? Contactez-moi &rarr;
+            </a>
+          </div>
+        </section>
+      </main>
+</BaseLayout>

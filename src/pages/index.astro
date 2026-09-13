@@ -1,0 +1,276 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Reviews from "../components/Reviews.astro";
+import ContentCard from "../components/ContentCard.astro";
+import { getPublicEntries } from "../utils/content";
+
+const recentRealisations = getPublicEntries(await getCollection("realisations")).slice(0, 3);
+const recentConseils = getPublicEntries(await getCollection("conseils")).slice(0, 3);
+
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"ComputerRepair\",\r\n        \"@id\": \"https://tech46services.fr/#business\",\r\n        \"name\": \"Tech 46 Services\",\r\n        \"url\": \"https://tech46services.fr/\",\r\n        \"image\": \"https://tech46services.fr/assets/img/logo-tech46.png\",\r\n        \"telephone\": \"+33769754085\",\r\n        \"areaServed\": [\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Gramat (Lot)\" },\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Nord du Lot (46)\" }\r\n        ],\r\n        \"address\": {\r\n          \"@type\": \"PostalAddress\",\r\n          \"addressLocality\": \"Gramat\",\r\n          \"addressRegion\": \"Occitanie\",\r\n          \"postalCode\": \"46500\",\r\n          \"addressCountry\": \"FR\"\r\n        }\r\n      }";
+---
+
+<BaseLayout
+  title={"Tech 46 Services - Dépannage informatique & services numériques à Gramat"}
+  description={"Dépannage informatique et services numériques à Gramat et dans le Lot. Assistance à domicile, création de sites web, SEO local et optimisation de process."}
+  canonical={"https://tech46services.fr/"}
+  ogTitle={"Tech 46 Services - Dépannage informatique & services numériques à Gramat"}
+  ogDescription={"Dépannage informatique et services numériques à Gramat et dans le Lot. Assistance à domicile, création de sites web, SEO local et optimisation de process."}
+  bodyClass={""}
+  activePage={"home"}
+  jsonLd={jsonLd}
+>
+<main>
+        <!-- =========================
+             HERO
+        ========================== -->
+        <h1 class="hero-intro-title">Dépannage informatique à domicile</h1>
+        <section class="hero-grid">
+          <img loading="eager"
+            class="hero-bg"
+            src="assets/img/image_acceuil.webp"
+            alt="Services de dépannage informatique et assistance numérique dans le Lot"
+            width="960"
+            height="603"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero-content reveal">
+            <!-- <div class="hero-badge elevation-1">Dépannage informatique à domicile</div> -->
+
+            <div class="hero-text-panel">
+                <p class="hero-title">Rapide, fiable et <span class="text-primary">efficace</span></p>
+
+              <p class="hero-subtitle">
+                Je me déplace chez vous pour résoudre vos problèmes informatiques, 
+                installer vos équipements et sécuriser vos données, en toute simplicité.
+              </p>
+            </div>
+
+            <!-- Actions -->
+            <div class="hero-actions"></div>
+
+            <!-- Petites infos / chips -->
+            <div class="hero-meta">
+              <span class="meta-chip">Intervention à domicile</span>
+              <span class="meta-chip">Conseils personnalisés</span>
+              <span class="meta-chip">Tarifs transparents</span>
+            </div>
+          </div>
+
+          <!-- Carte à droite (stack + carte principale) -->
+          <div class="hero-cards-stack reveal">
+            <div class="card-layer layer-1 elevation-1"></div>
+            <div class="card-layer layer-2 elevation-2"></div>
+
+            <div class="hero-main-card elevation-3">
+              <h2>Vous avez un souci avec votre PC ?</h2>
+
+              <p>
+                Il est devenu trop lent, il ne démarre pas, ou quelque chose ne fonctionne plus ?
+              </p>
+
+              <ul class="hero-list">
+                <li>J'interviens sur tout type de matériel</li>
+                <li>Le diagnostic est rapide et professionnel</li>
+                <li>Une solution efficace est proposée</li>
+                <li>La satisfaction du client est mon engagement</li>
+              </ul>
+
+              <a href="/contact.html" class="inline-link">Contactez-moi &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             BLOC TEXTE SEO LOCAL
+        ========================== -->
+        <section class="seo-text reveal">
+          <h2>
+            Votre interlocuteur informatique dans le nord du Lot
+          </h2>
+
+          <p>
+            Tech 46 Services intervient rapidement à Gramat et dans les communes voisines (Padirac, Rocamadour,
+            Alvignac, Saint-Céré, Lacapelle-Marival, Figeac) ainsi que dans tout le nord du Lot.
+          </p>
+
+          <p>
+            J'accompagne les particuliers et les professionnels (artisans, commerçants, TPE, indépendants) dans la
+            gestion et l'optimisation de leur informatique au quotidien.
+          </p>
+
+          <h3>Une offre pour les particuliers...</h3>
+          <p>
+            Des services variés comme la réparation d'ordinateurs, l'optimisation de PC lents, la suppression de virus, la réinstallation de systèmes
+            (Windows / Linux / macOS), le remplacement de matériel (SSD, RAM, etc...), l'aide à la sauvegarde
+            et à la sécurisation des données.
+          </p>
+          <div class="section-footer-link why-cta">
+            <a href="/depannage.html" class="inline-link">Voir les services pour les particuliers &rarr;</a>
+          </div>
+
+          <h3>...et pour les professionnels</h3>
+          <p>
+            Pour les professionnels, je propose la maintenance et le dépannage informatique,
+             des solutions d'automatisation, ainsi que la création de sites web professionnels.
+            Je vous accompagne dans la mise en place et l'optimisation de vos outils pour vous faire <strong>gagner du temps !</strong>
+          </p>
+          <div class="section-footer-link why-cta">
+            <a href="/espace-pro.html" class="inline-link">Découvrir l'Espace pro &rarr;</a>
+          </div>
+
+          <p>
+            Le service est disponible dans un rayon d'environ 45 minutes autour de Gramat, ou à distance, avec des interventions
+            simples, efficaces et au prix juste.
+          </p>
+
+          <p>
+            Conseils personnalisés, réactivité, approche pédagogique et solutions adaptées à votre activité : votre
+            informatique est entre de bonnes mains, que vous soyez particulier ou professionnel.
+          </p>
+        </section>
+
+        <!-- =========================
+             SERVICES (RÉSUMÉ)
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Deux parcours selon votre besoin</h2>
+            <p>Dépannage informatique ou développement numérique: vous choisissez le bon accompagnement.</p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="service-card elevation-2">
+              <h3>Réparation & dépannage</h3>
+              <p>PC lent, plantages, virus, erreurs système. Je remets votre ordinateur en état.</p>
+            </article>
+
+            <article class="service-card elevation-2">
+              <h3>Installation & mise en route</h3>
+              <p>Nouvel ordinateur, imprimante, box internet ou Wi-Fi à configurer ? Je m'en occupe.</p>
+            </article>
+
+            <article class="service-card elevation-2">
+              <h3>Sauvegarde & sécurité</h3>
+              <p>
+                Vous avez des fichiers perdus ou un support de stockage illisible ? Je vous aide et sécurise vos données.
+              </p>
+            </article>
+
+            <article class="service-card elevation-2">
+              <h3>Services numériques pour professionnels</h3>
+              <p>Création de sites web, optimisation de visibilité locale et amélioration de vos process.</p>
+            </article>
+          </div>
+
+        </section>
+
+        <!-- =========================
+             DERNIÈRES RÉALISATIONS
+        ========================== -->
+        {recentRealisations.length > 0 && (
+          <section class="section-padding reveal">
+            <div class="section-header">
+              <h2>Nos dernières interventions</h2>
+              <p>Exemples récents de pannes résolues et d'accompagnements numériques dans le Lot.</p>
+            </div>
+
+            <div class="cards-grid article-list">
+              {recentRealisations.map((item) => (
+                <ContentCard
+                  title={item.data.title}
+                  description={item.data.description}
+                  date={item.data.date}
+                  category={item.data.category}
+                  location={item.data.location}
+                  service={item.data.service}
+                  image={item.data.image}
+                  imageAlt={item.data.imageAlt}
+                  href={`/realisations/${item.id}.html`}
+                  linkLabel="Voir l'intervention"
+                  elevationClass="elevation-3"
+                />
+              ))}
+            </div>
+
+            <p class="section-footer-link">
+              <a class="inline-link" href="/realisations.html">
+                Voir toutes les réalisations &rarr;
+              </a>
+            </p>
+          </section>
+        )}
+
+        <Reviews />
+
+        <!-- =========================
+             DERNIERS CONSEILS
+        ========================== -->
+        {recentConseils.length > 0 && (
+          <section class="section-padding reveal">
+            <div class="section-header">
+              <h2>Conseils & astuces</h2>
+              <p>Des explications simples et pratiques pour entretenir et sécuriser votre matériel.</p>
+            </div>
+
+            <div class="cards-grid article-list">
+              {recentConseils.map((item) => (
+                <ContentCard
+                  title={item.data.title}
+                  description={item.data.description}
+                  date={item.data.date}
+                  category={item.data.category}
+                  image={item.data.image}
+                  imageAlt={item.data.imageAlt}
+                  href={`/conseils/${item.id}.html`}
+                  linkLabel="Lire le conseil"
+                  elevationClass="elevation-2"
+                />
+              ))}
+            </div>
+
+            <p class="section-footer-link">
+              <a class="inline-link" href="/conseils.html">
+                Voir tous les conseils &rarr;
+              </a>
+            </p>
+          </section>
+        )}
+
+        <!-- =========================
+             PROCESS / ÉTAPES
+        ========================== -->
+        <section class="section-padding tinted reveal steps-section">
+          <div class="section-header">
+            <h2>Comment ça marche ?</h2>
+            <p>Un fonctionnement simple, un gain de temps.</p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card elevation-2 contact-step">
+              <div class="step-index">1</div>
+              <h3>Vous me contactez <a class="inline-link" href="/contact.html">ici</a></h3>
+              <p>Par téléphone ou via le formulaire. Vous expliquez votre demande en quelques mots.</p>
+            </div>
+
+            <div class="step-card elevation-2 rendezvous-step">
+              <div class="step-index">2</div>
+              <h3>Nous fixons un rendez-vous</h3>
+              <p>Nous choisissons ensemble un créneau adapté à vos disponibilités.</p>
+            </div>
+
+            <div class="step-card elevation-2 intervention-step">
+              <div class="step-index">3</div>
+              <h3>J'interviens sur place</h3>
+              <p>Je me déplace et je vous explique mes procédures.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+</main>
+</BaseLayout>

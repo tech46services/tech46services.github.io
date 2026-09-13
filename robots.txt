@@ -1,5 +1,0 @@
-Sitemap: https://tech46services.fr/sitemap.xml
-
-User-agent: *
-Disallow:
-

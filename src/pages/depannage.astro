@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"Service\",\r\n        \"@id\": \"https://tech46services.fr/depannage.html#service\",\r\n        \"name\": \"Service de dépannage informatique à domicile\",\r\n        \"serviceType\": \"Dépannage informatique à domicile\",\r\n        \"description\": \"Services de dépannage informatique à domicile à Gramat et dans le Lot: réparation PC, installation, sécurité, réseau et assistance personnalisée.\",\r\n        \"url\": \"https://tech46services.fr/depannage.html\",\r\n        \"provider\": {\r\n          \"@type\": \"LocalBusiness\",\r\n          \"@id\": \"https://tech46services.fr/#business\",\r\n          \"name\": \"Tech 46 Services\",\r\n          \"url\": \"https://tech46services.fr/\",\r\n          \"telephone\": \"+33769754085\"\r\n        },\r\n        \"areaServed\": [\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Gramat (Lot)\"\r\n          },\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Nord du Lot (46)\"\r\n          }\r\n        ],\r\n        \"hasOfferCatalog\": {\r\n          \"@type\": \"OfferCatalog\",\r\n          \"name\": \"Prestations de dépannage informatique\",\r\n          \"itemListElement\": [\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Réparation et dépannage\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Installation et configuration\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Sécurité des données\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Réseaux et connectivité\"\r\n            }\r\n          ]\r\n        }\r\n      }";
+---
+
+<BaseLayout
+  title={"Dépannage informatique - Tech 46 Services"}
+  description={"Services de dépannage informatique à domicile à Gramat et dans le Lot: réparation PC, installation, sécurité, réseau et assistance personnalisée."}
+  canonical={"https://tech46services.fr/depannage.html"}
+  ogTitle={"Dépannage informatique - Tech 46 Services"}
+  ogDescription={"Services de dépannage informatique à domicile à Gramat et dans le Lot: réparation PC, installation, sécurité, réseau et assistance personnalisée."}
+  bodyClass={"services-page"}
+  activePage={"depannage"}
+  jsonLd={jsonLd}
+>
+<main class="page-main">
+        <!-- =========================
+             INTRO SERVICES
+        ========================== -->
+        <h1 class="hero-intro-title">Dépannage informatique</h1>
+        <section class="hero-grid">
+          <img loading="eager"
+            class="hero-bg"
+            src="assets/img/image_depannage.webp"
+            alt="Dépannage informatique à domicile à Gramat et dans le Lot"
+            width="960"
+            height="603"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero-content reveal">
+            <div class="hero-text-panel">
+              <div class="section-header">
+                <h2 class="hero-panel-title">Aperçu des prestations de dépannage</h2>
+              </div>
+
+              <p class="intro-text">
+                Tech 46 Services intervient à Gramat et dans tout le nord du Lot pour
+                le dépannage informatique, la réparation d'ordinateurs,
+                l'installation de matériel, la sécurisation des données et
+                l'optimisation de vos performances. Cette page est dédiée aux
+                besoins de dépannage des particuliers et des petites structures,
+                avec un accompagnement clair et personnalisé.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             LISTE DES SERVICES
+        ========================== -->
+        <section class="section-padding">
+          <div class="cards-grid big">
+            <!-- 1. REPARATION -->
+            <article class="service-card elevation-3 reveal reparation-card">
+              <h2>Réparation et dépannage</h2>
+
+              <ul class="service-list">
+                <li>PC lent, qui plante ou ne démarre plus</li>
+                <li>Erreurs Windows / pilotes</li>
+                <li>Virus, malwares, publicités</li>
+                <li>Nettoyage et optimisation</li>
+                <li>Récupération de mots de passe</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Diagnostic complet et intervention sur PC fixes et portables.
+                  Solution proposée après diagnostic.
+                </p>
+              </div>
+            </article>
+
+            <!-- 2. INSTALLATION -->
+            <article class="service-card elevation-3 reveal installation-card">
+              <h2>Installation et configuration</h2>
+
+              <ul class="service-list">
+                <li>Installation Windows / logiciels</li>
+                <li>Comptes utilisateurs et paramétrages</li>
+                <li>Imprimantes et périphériques</li>
+                <li>Configuration box Internet et Wi-Fi</li>
+                <li>Conseils d'utilisation</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Mise en service clé en main de votre matériel (PC, imprimante,
+                  réseau) avec une configuration adaptée à vos besoins.
+                </p>
+              </div>
+            </article>
+
+            <!-- 3. DONNEES -->
+            <article class="service-card elevation-3 reveal donnees-card">
+              <h2>Sécurité des données</h2>
+
+              <ul class="service-list">
+                <li>Sauvegarde automatique ou manuelle</li>
+                <li>Récupération de fichiers perdus</li>
+                <li>Stockage externe ou cloud</li>
+                <li>Protection antivirus</li>
+                <li>Bonnes pratiques de sécurité</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Solutions simples et fiables pour protéger vos photos,
+                  documents et données importantes.
+                </p>
+              </div>
+            </article>
+
+            <!-- 4. RESEAU -->
+            <article class="service-card elevation-3 reveal reseau-card">
+              <h2>Réseaux et connectivité</h2>
+
+              <ul class="service-list">
+                <li>Optimisation de la box Internet</li>
+                <li>Extension de portée Wi-Fi</li>
+                <li>Diagnostic coupures / lenteurs</li>
+                <li>Sécurisation du réseau</li>
+              </ul>
+
+              <div class="service-details">
+                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
+                <p>
+                  Analyse du réseau domestique et amélioration de la stabilité
+                  et de la sécurité.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- =========================
+             ZONES D'INTERVENTION
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Zones d'intervention</h2>
+            <p>
+              Dépannage informatique dans un rayon d'environ 45 minutes autour
+              de Gramat
+            </p>
+          </div>
+
+          <p class="zones-text">
+            Intervention possible à Gramat, Padirac, Rocamadour, Alvignac,
+            Saint-Céré, Lacapelle-Marival, Aynac, Leyme, Livernon, Figeac et
+            l'ensemble du nord du Lot (46).
+          </p>
+        </section>
+
+        <!-- =========================
+             POURQUOI NOUS
+        ========================== -->
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Pourquoi choisir Tech 46 Services ?</h2>
+          </div>
+
+          <ul class="service-list why-list" style="max-width: 700px;">
+            <li>Déplacement rapide à domicile</li>
+            <li>Diagnostic clair et transparent</li>
+            <li>Accompagnement sans jargon technique</li>
+            <li>Tarifs honnêtes et sans surprise</li>
+            <li>Conseils personnalisés</li>
+          </ul>
+        </section>
+
+        <section class="section-padding reveal">
+          <div class="section-header">
+            <h2>Vous êtes professionnel ?</h2>
+            <p>Je propose aussi une offre dédiée pour développer votre visibilité et votre productivité.</p>
+          </div>
+
+          <div class="why-cta">
+            <a href="espace-pro.html" class="inline-link">Découvrir l'Espace pro &rarr;</a>
+          </div>
+        </section>
+      </main>
+</BaseLayout>

@@ -124,4 +124,63 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fallback simple
     revealElements.forEach((el) => el.classList.add("visible"));
   }
+
+  // Envoi du formulaire de contact via Web3Forms
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+
+  if (contactForm && formStatus) {
+    const phoneInput = contactForm.querySelector('input[type="tel"]');
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+      });
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      formStatus.textContent = "Envoi en cours...";
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: new FormData(contactForm),
+        });
+
+        if (!response.ok) throw new Error("Échec de l'envoi");
+
+        formStatus.textContent = "Merci, votre message a bien été envoyé.";
+        contactForm.reset();
+      } catch {
+        formStatus.innerHTML =
+          'Impossible d\'envoyer le message. Vous pouvez aussi m\'écrire à : <a href="mailto:contact@tech46services.fr">contact@tech46services.fr</a>';
+      }
+    });
+  }
+
+  // Déplie individuellement les avis longs.
+  document.querySelectorAll(".review-toggle").forEach((toggleButton) => {
+    const card = toggleButton.closest(".testimonial-card");
+    const controlledTextId = toggleButton.getAttribute("aria-controls");
+    const reviewText = controlledTextId
+      ? document.getElementById(controlledTextId)
+      : null;
+    if (!card || !reviewText) return;
+
+    card.classList.add("is-collapsible");
+    const textOverflows = reviewText.scrollHeight > reviewText.clientHeight + 1;
+    if (!textOverflows) {
+      card.classList.remove("is-collapsible");
+      return;
+    }
+
+    toggleButton.hidden = false;
+    toggleButton.addEventListener("click", () => {
+      const isExpanded = card.classList.toggle("is-expanded");
+      toggleButton.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      toggleButton.textContent = isExpanded
+        ? "Réduire l’avis"
+        : "Afficher l’avis complet";
+    });
+  });
 });

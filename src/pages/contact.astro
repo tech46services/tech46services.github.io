@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"ComputerRepair\",\r\n        \"@id\": \"https://tech46services.fr/#business\",\r\n        \"name\": \"Tech 46 Services\",\r\n        \"url\": \"https://tech46services.fr/\",\r\n        \"image\": \"https://tech46services.fr/assets/img/logo-tech46.png\",\r\n        \"telephone\": \"+33769754085\",\r\n        \"areaServed\": [\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Gramat (Lot)\" },\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Nord du Lot (46)\" }\r\n        ],\r\n        \"address\": {\r\n          \"@type\": \"PostalAddress\",\r\n          \"addressLocality\": \"Gramat\",\r\n          \"addressRegion\": \"Occitanie\",\r\n          \"postalCode\": \"46500\",\r\n          \"addressCountry\": \"FR\"\r\n        }\r\n      }";
+---
+
+<BaseLayout
+  title={"Contact - Tech 46 Services"}
+  description={"Contactez Tech 46 Services pour un dépannage informatique à domicile à Gramat et alentours. Intervention rapide, claire et sans surprise."}
+  canonical={"https://tech46services.fr/contact.html"}
+  ogTitle={"Contact - Tech 46 Services"}
+  ogDescription={"Contactez Tech 46 Services pour un dépannage informatique à domicile à Gramat et alentours. Intervention rapide, claire et sans surprise."}
+  bodyClass={"contact-page"}
+  activePage={"contact"}
+  jsonLd={jsonLd}
+>
+<main class="page-main">
+        <!-- =========================
+             CONTACT
+        ========================== -->
+        <h1 class="hero-intro-title">Contactez-moi</h1>
+        <section class="section-padding">
+          <div class="contact-panel">
+            <div class="contact-stack">
+              <div class="card-panel elevation-3 contact-info-card">
+                <div class="section-header">
+            <div class="contact-phone-group">
+            <p class="contact-phone">
+              Par téléphone au
+              <span class="phone-chip">
+                <a href="tel:+33769754085">07 69 75 40 85</a>
+              </span>
+            </p>
+
+            <p class="contact-phone">Ou via le formulaire suivant&nbsp;:</p>
+            </div>
+          </div>
+
+              </div>
+
+              <!-- Formulaire -->
+              <div class="contact-grid">
+            <div class="card-panel elevation-3 reveal">
+              <h2 class="sr-only">Formulaire de contact</h2>
+
+              <section id="contact" class="section contact-section">
+                <div class="container">
+                  <form id="contact-form" class="contact-form">
+                    <!-- Web3Forms -->
+                    <input
+                      type="hidden"
+                      name="access_key"
+                      value="2e8a6d68-d066-437a-ae83-5317a2070e77"
+                    />
+                    <input
+                      type="hidden"
+                      name="subject"
+                      value="Nouveau message depuis le site Tech 46 Services"
+                    />
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      style="display: none"
+                    />
+
+                    <div class="form-group">
+                      <label for="name">Nom</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Votre nom"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="phonenumber">Téléphone</label>
+                      <input
+                        type="tel"
+                        id="phonenumber"
+                        name="phonenumber"
+                        placeholder="Votre numéro de téléphone"
+                        required
+                        pattern="^0[1-9][0-9]{8}$"
+                        inputmode="numeric"
+                        maxlength="10"
+                        title="Veuillez entrer un numéro de téléphone français valide à 10 chiffres."
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="email@example.com"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Décrivez votre demande..."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary full-width">
+                      Envoyer
+                    </button>
+                    <p class="form-note">
+                      Sans réponse de ma part, pensez à vérifier vos spams.
+                    </p>
+
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                  </form>
+                </div>
+              </section>
+            </div>
+          </div>
+          </div>
+          </div>
+        </section>
+      </main>
+</BaseLayout>

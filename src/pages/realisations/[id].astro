@@ -1,0 +1,69 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getPublicEntries } from "../../utils/content";
+
+export async function getStaticPaths() {
+  const items = getPublicEntries(await getCollection("realisations"));
+
+  return items.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const canonical = `https://tech46services.fr/realisations/${item.id}.html`;
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: item.data.title,
+  description: item.data.description,
+  datePublished: item.data.date.toISOString(),
+  mainEntityOfPage: canonical,
+  author: {
+    "@type": "Organization",
+    name: "Tech 46 Services",
+    url: "https://tech46services.fr/apropos.html",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Tech 46 Services",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://tech46services.fr/assets/img/logo-tech46.png",
+    },
+  },
+  ...(item.data.image ? { image: new URL(item.data.image, Astro.site).href } : {}),
+});
+---
+
+<BaseLayout
+  title={`${item.data.title} - Tech 46 Services`}
+  description={item.data.description}
+  canonical={canonical}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <main class="page-main article-page">
+    <article class="section-padding">
+      <header class="article-header">
+        <p class="article-meta">
+          {[item.data.category, formatDate(item.data.date), item.data.location, item.data.service].filter(Boolean).join(" · ")}
+        </p>
+        <h1 class="hero-intro-title">{item.data.title}</h1>
+        <p class="intro-text">{item.data.description}</p>
+      </header>
+
+      <div class="card-panel elevation-2 article-content">
+        <Content />
+      </div>
+
+      <p class="section-footer-link">
+        <a class="inline-link" href="/realisations.html">&larr; Retour aux réalisations</a>
+      </p>
+    </article>
+  </main>
+</BaseLayout>

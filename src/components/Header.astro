@@ -1,0 +1,49 @@
+---
+interface Props {
+  activePage?: string;
+}
+
+const { activePage = "" } = Astro.props;
+const links = [
+  { key: "home", href: "/", label: "Accueil" },
+  { key: "depannage", href: "/depannage.html", label: "Dépannage" },
+  { key: "espace-pro", href: "/espace-pro.html", label: "Espace pro" },
+  { key: "realisations", href: "/realisations.html", label: "Réalisations" },
+  { key: "conseils", href: "/conseils.html", label: "Conseils" },
+  { key: "apropos", href: "/apropos.html", label: "À propos" },
+];
+---
+
+<header class="top-nav elevation-2">
+  <div class="nav-left">
+    <a href="/" class="site-logo">
+      <img loading="eager" fetchpriority="high" src="/assets/img/logo-no-text.png" alt="Tech 46 Services" />
+    </a>
+    <img loading="eager" class="logo-secondary" src="/assets/img/text-logo.png" alt="Tech 46 Services" />
+  </div>
+
+  <a class="nav-quick-call" href="tel:0769754085" aria-label="Appeler Tech 46 Services">
+    <span aria-hidden="true" class="nav-quick-call-icon"></span>
+  </a>
+
+  <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="site-nav" class="nav-links">
+    {links.map(({ key, href, label }) => (
+      <a href={href} class:list={["nav-link", { active: activePage === key }]} aria-current={activePage === key ? "page" : undefined}>
+        {label}
+      </a>
+    ))}
+    <a
+      href="/contact.html"
+      class:list={["nav-link", "nav-cta", { active: activePage === "contact" }]}
+      aria-current={activePage === "contact" ? "page" : undefined}
+    >
+      Contact <span aria-hidden="true" class="nav-cta-icon"></span>
+    </a>
+  </nav>
+</header>
