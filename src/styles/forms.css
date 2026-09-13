@@ -1,0 +1,215 @@
+/* Formulaire contact */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.contact-page .contact-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: clamp(1.1rem, 3.6vw, 1.6rem);
+  font-weight: 500;
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.contact-page .contact-phone + .contact-phone {
+  margin-top: 0.6rem;
+}
+
+.phone-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.contact-phone a {
+  color: var(--primary);
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-phone a:hover {
+  text-decoration: underline;
+}
+
+.contact-page .section-header,
+.contact-page .section-header h1,
+.contact-page .section-header p,
+.contact-grid h2 {
+  text-align: center;
+}
+
+.contact-page .section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-phone-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.80);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-family: inherit;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #dce3f0;
+  background: var(--bg);
+  font-size: 1rem;
+  font: inherit;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+  background: #ffffff;
+}
+
+.form-note {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+}
+
+.contact-info-list li {
+  margin-bottom: 0.4rem;
+}
+
+.contact-panel {
+  --contact-card-min-width: 320px;
+  width: 100%;
+  max-width: calc(720px - 6rem);
+  min-width: calc(var(--contact-card-min-width) + 3rem);
+  margin: 0.6rem auto 0;
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  background-color: var(--card);
+  background-image: url("/assets/img/image-contact.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  width: 100%;
+  margin-top: 0;
+}
+
+.contact-grid > .card-panel {
+  width: 100%;
+  max-width: 100%;
+  min-width: var(--contact-card-min-width);
+  margin-inline: auto;
+  background: transparent;
+  padding: 0;
+}
+
+.contact-info-card {
+  min-width: var(--contact-card-min-width);
+  background-color: rgba(255, 255, 255, 0.88);
+}
+
+.contact-page .page-main,
+.contact-page .section-padding {
+  max-width: none;
+  width: 100%;
+}
+
+.contact-grid > .card-panel,
+.contact-form {
+  max-width: none;
+  width: 100%;
+}
+
+.contact-form .btn {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+}
+
+.form-status {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Textarea contact */
+.contact-form textarea {
+  resize: none;
+  overflow: auto;
+}
+
+/* Espacement intro Services */
+.services-page .intro-text {
+  margin: 4rem 0 4rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.about-page .page-main {
+  padding-bottom: 0;
+}
