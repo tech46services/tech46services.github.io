@@ -4,6 +4,8 @@ description: "Un disque passé en RAW peut rendre les fichiers inaccessibles. D�
 date: 2026-09-13
 draft: false
 category: "Stockage & données"
+image: "/assets/img/conseils/disque-raw.webp"
+imageAlt: "Disques externes connectés à un ordinateur pour un diagnostic de récupération de données"
 ---
 
 Voir un disque apparaître en RAW dans Windows est souvent inquiétant.

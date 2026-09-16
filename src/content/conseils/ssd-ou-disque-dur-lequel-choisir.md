@@ -4,6 +4,8 @@ description: "SSD ou disque dur classique : découvrez leurs différences, leurs
 date: 2026-09-13
 draft: false
 category: "Stockage & données"
+image: "/assets/img/conseils/ssd-ou-disque-dur.webp"
+imageAlt: "Disque dur mécanique et SSD présentés côte à côte"
 ---
 
 Le choix entre un SSD et un disque dur classique dépend surtout de l’usage, de l’âge de l’ordinateur et de ce que l’on attend de la machine.

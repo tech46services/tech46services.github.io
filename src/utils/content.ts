@@ -6,8 +6,15 @@ export const formatDate = (date: Date): string => {
   }).format(date);
 };
 
-export const getPublicEntries = <T extends { data: { draft?: boolean; date: Date } }>(entries: T[]): T[] => {
-  return entries
-    .filter((entry) => import.meta.env.DEV || !entry.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+export const getPublicEntries = <T extends { data: { draft?: boolean; date?: Date } }>(entries: T[], sortByDate = true): T[] => {
+  const publicEntries = entries.filter((entry) => import.meta.env.DEV || !entry.data.draft);
+
+  if (!sortByDate) return publicEntries;
+
+  return publicEntries.sort((a, b) => {
+      if (a.data.date && b.data.date) return b.data.date.valueOf() - a.data.date.valueOf();
+      if (a.data.date) return -1;
+      if (b.data.date) return 1;
+      return 0;
+  });
 };

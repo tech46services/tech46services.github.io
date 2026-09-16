@@ -40,7 +40,7 @@
   }
 }
 
-@media (max-width: 1180px) and (min-width: 1001px) {
+@media (max-width: 1499px) and (min-width: 1001px) {
   .top-nav {
     padding-inline: 1rem;
   }
@@ -53,6 +53,12 @@
   .nav-cta {
     padding: 0.4rem 0.65rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1365px) and (min-width: 1001px) {
+  .logo-secondary {
+    display: none;
   }
 }
 

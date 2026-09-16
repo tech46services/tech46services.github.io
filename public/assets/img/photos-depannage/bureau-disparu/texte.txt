@@ -1,0 +1,2 @@
+1-16 La cliente vient car son écran reste noir après le démarrage. Je constate alors que c'est simplement le composant d'affichage du bureau qui se lance mais n'opère plus. J'effectue quelques vérifications des composants Windows, mais également les erreurs enregistrées par Windows au démarrage. Tout semble correct, mais toujours pas d'affichage. 
+17-18 Je réinstalle alors complètement le composant, et tout refonctionne de nouveau.

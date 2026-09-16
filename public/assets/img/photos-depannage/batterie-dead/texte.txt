@@ -1,0 +1,4 @@
+Ce client vient pour un ordinateur qui ne charge plus, et qui de ce fait ne s'allume même plus.
+1-2 Je regarde d'abord les connecteurs ainsi que la tension nominale de la batterie, elle est vide mais l'état des cellules n'est pas catastrophique.
+3-4 Après avoir testé la continuité du circuit de charge qui est bonne, je m'intéresse alors au chargeur, le connecteur n'est pas encrassé, en revanche ce dernier ne délivre plus du tout de courant.
+5 Au final un simple remplacement du chargeur a suffit à ce que mon client puisse encore utiliser son ordinateur ! 

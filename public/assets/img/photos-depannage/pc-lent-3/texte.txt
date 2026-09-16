@@ -1,0 +1,4 @@
+1-2 Encore un pc trop lent pour être utilisable
+3 Je vérifie d'abord l'état de BitLocker avant d'effectuer la moindre modification sur les disques
+4 L'ordinateur dispose d'un emplacement M2 libre.
+5 On peut donc simplement ajouter un disque dur SSD, et passer le système de fichier dessus. Le disque est reconnu, le système démarre, le client récupère un ordinateur utilisable, rapide, et avec un gros stockage !

@@ -16,6 +16,50 @@
   margin-top: auto;
 }
 
+/* Tuiles visuelles réservées à la page des réalisations. */
+.realisations-grid .realisation-tile {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.realisations-grid .realisation-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.realisations-grid .realisation-tile-link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.realisations-grid .realisation-tile-link:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
+}
+
+.realisations-grid .realisation-tile-image {
+  width: 100%;
+  max-height: none;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.realisations-grid .realisation-tile h2 {
+  margin: 0;
+  padding: 0.9rem 1rem 1rem;
+  color: #0f172a;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
 .article-meta {
   margin: 0 0 0.7rem;
   color: var(--text-muted);
@@ -24,44 +68,19 @@
 }
 
 /* Page Conseils : une ressource pratique, distincte d'un listing de blog. */
-.advice-page .page-main {
-  margin-top: 0;
-}
-
-.advice-intro {
-  width: min(760px, 100%);
-  padding: 3.25rem 0 2.3rem;
-}
-
-.advice-intro .advice-kicker {
-  margin: 0 0 0.7rem;
-  color: var(--primary);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.advice-intro h1 {
-  margin: 0;
-  color: #0f172a;
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-}
-
-.advice-intro > p:last-child {
-  max-width: 700px;
-  margin: 1rem 0 0;
-  color: var(--text-muted);
-  font-size: 1.02rem;
-  line-height: 1.7;
-}
-
 .advice-library {
   padding: 2rem;
   background: var(--card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
+}
+
+.advice-library + .advice-library {
+  margin-top: 1.5rem;
+}
+
+.content-hub-empty {
+  margin-bottom: 1.5rem;
 }
 
 .advice-library .section-header {
@@ -171,6 +190,120 @@
   font-weight: 600;
 }
 
+.article-content img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
+  border-radius: 12px;
+}
+
+/* Présentation compacte des pages individuelles de réalisations. */
+.realisation-page {
+  padding-top: 1.5rem;
+}
+
+.realisation-summary {
+  width: min(1040px, 100%);
+  margin: 0 auto 1.5rem;
+}
+
+.realisation-summary .intro-text {
+  margin: 0;
+}
+
+.realisation-content {
+  width: min(1040px, 100%);
+  margin-inline: auto;
+  padding: 1.25rem;
+}
+
+.realisation-content > h2 {
+  margin: 2rem 0 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.realisation-content > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.realisation-content > p:first-child {
+  margin-top: 0;
+}
+
+.realisation-step {
+  margin: 0 0 2rem;
+}
+
+.realisation-photo-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.realisation-photo-group[data-count="1"] {
+  grid-template-columns: minmax(0, 360px);
+}
+
+.realisation-photo-group[data-count="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 720px;
+}
+
+.realisation-photo-group img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 260px;
+  margin: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: #f8fafc;
+  object-fit: contain;
+}
+
+.realisation-step-text {
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 900px) {
+  .realisation-photo-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .realisation-page {
+    padding-top: 1.2rem;
+  }
+
+  .realisation-content { padding: 1rem; }
+
+  .realisation-content > h2 {
+    margin: 1.5rem 0 0.75rem;
+    padding-top: 1.25rem;
+  }
+
+  .realisation-content > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .realisation-photo-group,
+  .realisation-photo-group[data-count="2"] {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: none;
+  }
+
+  .realisation-photo-group img {
+    max-height: none;
+  }
+}
+
 .review-rating {
   margin: 0 0 0.75rem;
   color: #f5a623;
@@ -182,14 +315,6 @@
 }
 
 @media (max-width: 500px) {
-  .advice-intro {
-    padding: 2rem 0 1.5rem;
-  }
-
-  .advice-intro > p:last-child {
-    font-size: 0.95rem;
-  }
-
   .advice-library {
     padding: 1.25rem;
     border-radius: 20px;

@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ContentCard from "../components/ContentCard.astro";
 import { getPublicEntries } from "../utils/content";
 
-const items = getPublicEntries(await getCollection("realisations"));
+const items = getPublicEntries(await getCollection("realisations"), false);
 ---
 
 <BaseLayout
@@ -13,7 +13,7 @@ const items = getPublicEntries(await getCollection("realisations"));
   canonical="https://tech46services.fr/realisations.html"
   activePage="realisations"
 >
-  <main class="page-main">
+  <main>
     <h1 class="hero-intro-title">Réalisations & Interventions</h1>
 
     <section class="section-padding">
@@ -23,19 +23,15 @@ const items = getPublicEntries(await getCollection("realisations"));
       </div>
 
       {items.length > 0 ? (
-        <div class="cards-grid article-list">
+        <div class="cards-grid article-list realisations-grid">
           {items.map((item) => (
             <ContentCard
               title={item.data.title}
               description={item.data.description}
-              date={item.data.date}
-              category={item.data.category}
-              location={item.data.location}
-              service={item.data.service}
               image={item.data.image}
               imageAlt={item.data.imageAlt}
               href={`/realisations/${item.id}.html`}
-              linkLabel="Voir l'intervention"
+              variant="realisation-tile"
             />
           ))}
         </div>

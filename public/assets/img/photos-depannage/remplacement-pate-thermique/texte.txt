@@ -1,0 +1,7 @@
+1 le client m'amène son pc, problème : il s'éteint tout seul lorsqu'il commence à chauffer.
+2 j'ouvre la bête
+3 J'enlève le bloc de caloduques et ventilateur
+4 On peut constater que la pate thermique nécessite un remplacement
+5-6 On nettoie tout
+7 On pose la nouvelle pâte thermique
+8 Remontage ; Le client retrouve un pc qui ne s'éteint plus et dont la température de fonctionnement a baissé de quelques degrés.

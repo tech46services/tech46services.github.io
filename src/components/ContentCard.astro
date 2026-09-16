@@ -4,7 +4,7 @@ import { formatDate } from "../utils/content";
 interface Props {
   title: string;
   description: string;
-  date: Date;
+  date?: Date;
   href: string;
   category?: string;
   location?: string;
@@ -14,6 +14,7 @@ interface Props {
   linkLabel?: string;
   elevationClass?: string;
   showDate?: boolean;
+  variant?: "default" | "realisation-tile";
 }
 
 const {
@@ -28,21 +29,31 @@ const {
   imageAlt,
   linkLabel = "Lire la suite",
   elevationClass = "elevation-2",
-  showDate = true,
+  showDate = Boolean(date),
+  variant = "default",
 } = Astro.props;
 
 const metaParts = [
   category,
-  showDate ? formatDate(date) : undefined,
+  showDate && date ? formatDate(date) : undefined,
   location,
   service,
 ].filter(Boolean);
 ---
 
-<article class:list={["service-card", elevationClass]}>
-  {metaParts.length > 0 && <p class="article-meta">{metaParts.join(" · ")}</p>}
-  {image && <img src={image} alt={imageAlt || title} class="card-image" loading="lazy" />}
-  <h2>{title}</h2>
-  <p>{description}</p>
-  <a class="inline-link" href={href}>{linkLabel} &rarr;</a>
-</article>
+{variant === "realisation-tile" ? (
+  <article class:list={["service-card", "realisation-tile", elevationClass]}>
+    <a class="realisation-tile-link" href={href} aria-label={`Voir la réalisation : ${title}`}>
+      {image && <img src={image} alt={imageAlt || title} class="card-image realisation-tile-image" loading="lazy" />}
+      <h2>{title}</h2>
+    </a>
+  </article>
+) : (
+  <article class:list={["service-card", elevationClass]}>
+    {metaParts.length > 0 && <p class="article-meta">{metaParts.join(" · ")}</p>}
+    {image && <img src={image} alt={imageAlt || title} class="card-image" loading="lazy" />}
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <a class="inline-link" href={href}>{linkLabel} &rarr;</a>
+  </article>
+)}

@@ -4,6 +4,8 @@ description: "Un ordinateur ancien n’est pas forcément bon à jeter. Découvr
 date: 2026-09-13
 draft: false
 category: "Réparer ou remplacer"
+image: "/assets/img/conseils/pc-ancien-reparer-remplacer.webp"
+imageAlt: "Ordinateur portable ancien accompagné d’un SSD et d’une barrette de mémoire"
 ---
 
 Un ordinateur ancien n’est pas forcément bon à remplacer.

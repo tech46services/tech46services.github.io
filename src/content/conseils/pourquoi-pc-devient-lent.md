@@ -4,6 +4,8 @@ description: "Un ordinateur peut ralentir pour de nombreuses raisons. Découvrez
 date: 2026-09-13
 draft: false
 category: "PC lent & optimisation"
+image: "/assets/img/conseils/pc-lent.webp"
+imageAlt: "Ordinateur ralenti par de nombreux programmes ouverts"
 ---
 
 Un ordinateur qui devient lent avec le temps n’est pas forcément en fin de vie.

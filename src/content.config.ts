@@ -23,10 +23,7 @@ const realisationsObject = baseObject.extend({
   service: z.string().optional(),
 });
 
-const realisationsSchema = realisationsObject.transform((data) => ({
-  ...data,
-  date: data.date ?? data.publishedAt ?? new Date(),
-}));
+const realisationsSchema = realisationsObject;
 
 const conseils = defineCollection({
   loader: glob({

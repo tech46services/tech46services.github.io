@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import ContentCard from "../components/ContentCard.astro";
 import { getPublicEntries } from "../utils/content";
 
-const recentRealisations = getPublicEntries(await getCollection("realisations")).slice(0, 3);
+const recentRealisations = getPublicEntries(await getCollection("realisations"), false).slice(0, 3);
 const recentConseils = getPublicEntries(await getCollection("conseils")).slice(0, 3);
 
 const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"ComputerRepair\",\r\n        \"@id\": \"https://tech46services.fr/#business\",\r\n        \"name\": \"Tech 46 Services\",\r\n        \"url\": \"https://tech46services.fr/\",\r\n        \"image\": \"https://tech46services.fr/assets/img/logo-tech46.png\",\r\n        \"telephone\": \"+33769754085\",\r\n        \"areaServed\": [\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Gramat (Lot)\" },\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Nord du Lot (46)\" }\r\n        ],\r\n        \"address\": {\r\n          \"@type\": \"PostalAddress\",\r\n          \"addressLocality\": \"Gramat\",\r\n          \"addressRegion\": \"Occitanie\",\r\n          \"postalCode\": \"46500\",\r\n          \"addressCountry\": \"FR\"\r\n        }\r\n      }";
@@ -191,6 +191,7 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
                   href={`/realisations/${item.id}.html`}
                   linkLabel="Voir l'intervention"
                   elevationClass="elevation-3"
+                  showDate={false}
                 />
               ))}
             </div>
@@ -232,8 +233,8 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
             </div>
 
             <p class="section-footer-link">
-              <a class="inline-link" href="/conseils.html">
-                Voir tous les conseils &rarr;
+              <a class="inline-link" href="/conseils-actualites.html">
+                Voir tous les conseils & actualités &rarr;
               </a>
             </p>
           </section>
