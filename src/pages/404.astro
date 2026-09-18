@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title={"Page introuvable - Tech 46 Services"}
+  description={"La page demandée n'existe pas ou plus sur le site de Tech 46 Services."}
+  canonical={"https://tech46services.fr/404.html"}
+  noindex
+  bodyClass={"error-page"}
+  activePage={""}
+>
+  <main id="main-content" class="page-main">
+    <section class="section-padding">
+      <h1 class="hero-intro-title">Page introuvable</h1>
+      <p class="intro-text">
+        La page que vous recherchez n’existe pas ou plus. Vous pouvez retourner à
+        l’accueil ou consulter l’une des pages suivantes.
+      </p>
+
+      <p class="section-footer-link">
+        <a class="inline-link" href="/">Retour à l’accueil</a>
+      </p>
+      <p class="section-footer-link">
+        <a class="inline-link" href="/depannage.html">Dépannage informatique</a>
+      </p>
+      <p class="section-footer-link">
+        <a class="inline-link" href="/contact.html">Contact</a>
+      </p>
+    </section>
+  </main>
+</BaseLayout>
