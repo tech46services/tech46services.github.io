@@ -42,8 +42,9 @@ const metaParts = [
 ---
 
 {variant === "realisation-tile" ? (
-  <article class:list={["service-card", "realisation-tile", elevationClass]}>
+  <article class:list={["service-card", "realisation-tile", "card-top-accent", elevationClass]}>
     <a class="realisation-tile-link" href={href} aria-label={`Voir la réalisation : ${title}`}>
+      {category && <p class="realisation-tile-category">{category}</p>}
       {image && <img src={image} alt={imageAlt || title} class="card-image realisation-tile-image" loading="lazy" />}
       <h2>{title}</h2>
     </a>

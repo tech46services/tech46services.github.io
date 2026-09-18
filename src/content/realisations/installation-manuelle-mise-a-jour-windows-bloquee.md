@@ -1,7 +1,7 @@
 ---
 title: "Installation manuelle d'une mise à jour Windows bloquée"
 description: "Prise en charge d'un ordinateur bloqué sur une mise à jour mensuelle de Windows."
-category: "Dépannage"
+category: "Logiciel"
 service: "Mise à jour de Windows"
 image: "/assets/img/photos-depannage/maj-bloquee/1.webp"
 imageAlt: "Mise à jour Windows bloquée à 99 %"

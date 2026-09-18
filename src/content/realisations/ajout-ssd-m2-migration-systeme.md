@@ -1,7 +1,7 @@
 ---
 title: "Ajout d'un SSD M.2 et migration du système"
 description: "Ajout d'un SSD dans un emplacement libre afin de rendre un ordinateur lent de nouveau utilisable."
-category: "Dépannage"
+category: "Matériel"
 service: "Ajout d'un SSD et migration du système"
 image: "/assets/img/photos-depannage/pc-lent-3/1.webp"
 imageAlt: "Deux espaces de stockage disponibles après l'ajout du SSD"

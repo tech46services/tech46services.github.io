@@ -1,7 +1,7 @@
 ---
 title: "Réparation d'un bureau Windows qui ne s'affichait plus"
 description: "Vérification de Windows puis réinstallation du composant d'affichage du bureau."
-category: "Dépannage"
+category: "Logiciel"
 service: "Réparation de Windows"
 image: "/assets/img/photos-depannage/bureau-disparu/1.webp"
 imageAlt: "Bureau Windows de nouveau affiché après la réparation"

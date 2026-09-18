@@ -28,6 +28,7 @@ const items = getPublicEntries(await getCollection("realisations"), false);
             <ContentCard
               title={item.data.title}
               description={item.data.description}
+              category={item.data.category}
               image={item.data.image}
               imageAlt={item.data.imageAlt}
               href={`/realisations/${item.id}.html`}

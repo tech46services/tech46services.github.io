@@ -1,12 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Reviews from "../components/Reviews.astro";
-import ContentCard from "../components/ContentCard.astro";
-import { getPublicEntries } from "../utils/content";
-
-const recentRealisations = getPublicEntries(await getCollection("realisations"), false).slice(0, 3);
-const recentConseils = getPublicEntries(await getCollection("conseils")).slice(0, 3);
 
 const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"ComputerRepair\",\r\n        \"@id\": \"https://tech46services.fr/#business\",\r\n        \"name\": \"Tech 46 Services\",\r\n        \"url\": \"https://tech46services.fr/\",\r\n        \"image\": \"https://tech46services.fr/assets/img/logo-tech46.png\",\r\n        \"telephone\": \"+33769754085\",\r\n        \"areaServed\": [\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Gramat (Lot)\" },\r\n          { \"@type\": \"AdministrativeArea\", \"name\": \"Nord du Lot (46)\" }\r\n        ],\r\n        \"address\": {\r\n          \"@type\": \"PostalAddress\",\r\n          \"addressLocality\": \"Gramat\",\r\n          \"addressRegion\": \"Occitanie\",\r\n          \"postalCode\": \"46500\",\r\n          \"addressCountry\": \"FR\"\r\n        }\r\n      }";
 ---
@@ -142,24 +136,24 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
           </div>
 
           <div class="cards-grid">
-            <article class="service-card elevation-2">
+            <article class="service-card elevation-2 card-top-accent">
               <h3>Réparation & dépannage</h3>
               <p>PC lent, plantages, virus, erreurs système. Je remets votre ordinateur en état.</p>
             </article>
 
-            <article class="service-card elevation-2">
+            <article class="service-card elevation-2 card-top-accent">
               <h3>Installation & mise en route</h3>
               <p>Nouvel ordinateur, imprimante, box internet ou Wi-Fi à configurer ? Je m'en occupe.</p>
             </article>
 
-            <article class="service-card elevation-2">
+            <article class="service-card elevation-2 card-top-accent">
               <h3>Sauvegarde & sécurité</h3>
               <p>
                 Vous avez des fichiers perdus ou un support de stockage illisible ? Je vous aide et sécurise vos données.
               </p>
             </article>
 
-            <article class="service-card elevation-2">
+            <article class="service-card elevation-2 card-top-accent">
               <h3>Services numériques pour professionnels</h3>
               <p>Création de sites web, optimisation de visibilité locale et amélioration de vos process.</p>
             </article>
@@ -167,78 +161,7 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
 
         </section>
 
-        <!-- =========================
-             DERNIÈRES RÉALISATIONS
-        ========================== -->
-        {recentRealisations.length > 0 && (
-          <section class="section-padding reveal">
-            <div class="section-header">
-              <h2>Nos dernières interventions</h2>
-              <p>Exemples récents de pannes résolues et d'accompagnements numériques dans le Lot.</p>
-            </div>
-
-            <div class="cards-grid article-list">
-              {recentRealisations.map((item) => (
-                <ContentCard
-                  title={item.data.title}
-                  description={item.data.description}
-                  date={item.data.date}
-                  category={item.data.category}
-                  location={item.data.location}
-                  service={item.data.service}
-                  image={item.data.image}
-                  imageAlt={item.data.imageAlt}
-                  href={`/realisations/${item.id}.html`}
-                  linkLabel="Voir l'intervention"
-                  elevationClass="elevation-3"
-                  showDate={false}
-                />
-              ))}
-            </div>
-
-            <p class="section-footer-link">
-              <a class="inline-link" href="/realisations.html">
-                Voir toutes les réalisations &rarr;
-              </a>
-            </p>
-          </section>
-        )}
-
         <Reviews />
-
-        <!-- =========================
-             DERNIERS CONSEILS
-        ========================== -->
-        {recentConseils.length > 0 && (
-          <section class="section-padding reveal">
-            <div class="section-header">
-              <h2>Conseils & astuces</h2>
-              <p>Des explications simples et pratiques pour entretenir et sécuriser votre matériel.</p>
-            </div>
-
-            <div class="cards-grid article-list">
-              {recentConseils.map((item) => (
-                <ContentCard
-                  title={item.data.title}
-                  description={item.data.description}
-                  date={item.data.date}
-                  category={item.data.category}
-                  image={item.data.image}
-                  imageAlt={item.data.imageAlt}
-                  href={`/conseils/${item.id}.html`}
-                  linkLabel="Lire le conseil"
-                  elevationClass="elevation-2"
-                />
-              ))}
-            </div>
-
-            <p class="section-footer-link">
-              <a class="inline-link" href="/conseils-actualites.html">
-                Voir tous les conseils & actualités &rarr;
-              </a>
-            </p>
-          </section>
-        )}
 
         <!-- =========================
              PROCESS / ÉTAPES

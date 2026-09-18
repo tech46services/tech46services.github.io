@@ -1,7 +1,7 @@
 ---
 title: "Remplacement de la pâte thermique d'un PC portable"
 description: "Entretien du refroidissement d'un ordinateur qui s'éteignait lorsqu'il commençait à chauffer."
-category: "Dépannage"
+category: "Matériel"
 service: "Entretien du refroidissement"
 image: "/assets/img/photos-depannage/remplacement-pate-thermique/2.webp"
 imageAlt: "Ordinateur portable pris en charge pour une surchauffe"

@@ -270,6 +270,11 @@
   border: 1px solid var(--border-subtle);
 }
 
+/* Liseré supérieur partagé avec les cartes de la bibliothèque Conseils. */
+.card-top-accent {
+  border-top: 3px solid var(--primary);
+}
+
 /* Boutons & liens */
 .btn {
   display: inline-flex;

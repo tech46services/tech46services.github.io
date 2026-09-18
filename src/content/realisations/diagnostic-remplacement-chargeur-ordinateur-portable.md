@@ -1,7 +1,7 @@
 ---
 title: "Diagnostic et remplacement du chargeur d'un ordinateur portable"
 description: "Recherche de l'origine d'une panne de charge, puis remplacement du chargeur défectueux."
-category: "Dépannage"
+category: "Alimentation"
 service: "Diagnostic et remplacement de chargeur"
 image: "/assets/img/photos-depannage/batterie-dead/1.webp"
 imageAlt: "Ordinateur portable de nouveau alimenté après le remplacement du chargeur"

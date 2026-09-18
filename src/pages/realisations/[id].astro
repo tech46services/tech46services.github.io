@@ -65,7 +65,11 @@ const jsonLd = JSON.stringify({
           return (
             <section class="realisation-step">
               <div class="realisation-photo-group" data-count={block.images.length}>
-                {block.images.map((image) => <img src={image.src} alt={image.alt} loading="lazy" />)}
+                {block.images.map((image) => (
+                  <div class="realisation-photo-tile card-top-accent">
+                    <img src={image.src} alt={image.alt} loading="lazy" />
+                  </div>
+                ))}
               </div>
               {block.content && <p class="realisation-step-text">{block.content}</p>}
             </section>

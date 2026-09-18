@@ -1,7 +1,7 @@
 ---
 title: "Optimisation d'un PC lent avec un SSD et davantage de mémoire"
 description: "Remplacement du disque principal et augmentation de la mémoire vive d'un ordinateur devenu trop lent."
-category: "Dépannage"
+category: "Matériel"
 service: "Remplacement matériel et optimisation"
 image: "/assets/img/photos-depannage/pc-lent/1.webp"
 imageAlt: "Activité élevée du disque sur un ordinateur devenu très lent"

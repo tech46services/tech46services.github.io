@@ -19,7 +19,7 @@ const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
         const textId = `review-text-${index + 1}`;
 
         return (
-          <article class="testimonial-card elevation-2">
+          <article class="testimonial-card elevation-2 card-top-accent">
             <p class="testimonial-author">
               {review.author} · {dateFormatter.format(new Date(review.date))}
             </p>
