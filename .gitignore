@@ -1,3 +1,18 @@
 node_modules/
 dist/
 .astro/
+
+# Variantes d'images générées automatiquement (scripts/generate-responsive-images.mjs)
+/public/assets/img/*-480.webp
+/public/assets/img/*/*-480.webp
+/public/assets/img/*/*/*-480.webp
+/public/assets/img/*-720.webp
+/public/assets/img/*/*-720.webp
+/public/assets/img/*/*/*-720.webp
+/public/assets/img/logo-no-text-96.png
+/public/assets/img/logo-no-text-192.png
+/public/assets/img/text-logo-512.png
+/public/assets/img/text-logo-1024.png
+/public/assets/img/logo-tech46-128.png
+/public/assets/img/logo-tech46-256.png
+/src/generated/image-manifest.json

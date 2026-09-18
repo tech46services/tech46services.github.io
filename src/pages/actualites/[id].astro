@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import ArticleHeader from "../../components/ArticleHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { formatDate, getPublicEntries } from "../../utils/content";
 
@@ -44,21 +45,19 @@ const jsonLd = JSON.stringify({
   title={`${item.data.title} - Tech 46 Services`}
   description={item.data.description}
   canonical={canonical}
-  noindex
   ogType="article"
   activePage="conseils-actualites"
+  bodyClass="advice-page"
   jsonLd={jsonLd}
 >
   <main class="page-main article-page">
-    <article class="section-padding">
-      <header class="article-header">
-        <p class="article-meta">
-          {item.data.category && `${item.data.category} · `}Publié le {formatDate(item.data.date)}
-        </p>
-        <h1 class="hero-intro-title">{item.data.title}</h1>
-        <p class="intro-text">{item.data.description}</p>
-      </header>
+    <ArticleHeader
+      title={item.data.title}
+      description={item.data.description}
+      meta={`${item.data.category ? `${item.data.category} · ` : ""}Publié le ${formatDate(item.data.date)}`}
+    />
 
+    <article aria-label={item.data.title}>
       <div class="card-panel elevation-2 article-content">
         <Content />
       </div>

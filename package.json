@@ -4,15 +4,21 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "images:generate": "node scripts/generate-responsive-images.mjs",
+    "predev": "npm run images:generate",
     "dev": "astro dev",
+    "prestart": "npm run images:generate",
     "start": "astro dev",
+    "prebuild": "npm run images:generate",
     "build": "astro build",
+    "precheck": "npm run images:generate",
     "preview": "astro preview",
     "check": "astro check"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "astro": "7.3.2",
+    "sharp": "^0.35.4",
     "typescript": "^6.0.3"
   }
 }

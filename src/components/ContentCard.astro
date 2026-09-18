@@ -1,5 +1,6 @@
 ---
 import { formatDate } from "../utils/content";
+import { getPublicImageData } from "../utils/images";
 
 interface Props {
   title: string;
@@ -15,6 +16,7 @@ interface Props {
   elevationClass?: string;
   showDate?: boolean;
   variant?: "default" | "realisation-tile";
+  priority?: boolean;
 }
 
 const {
@@ -31,7 +33,11 @@ const {
   elevationClass = "elevation-2",
   showDate = Boolean(date),
   variant = "default",
+  priority = false,
 } = Astro.props;
+
+const imageData = image ? getPublicImageData(image) : undefined;
+const cardImageSizes = "(max-width: 520px) calc(100vw - 4.2rem), (max-width: 1100px) calc(50vw - 3rem), 330px";
 
 const metaParts = [
   category,
@@ -45,14 +51,36 @@ const metaParts = [
   <article class:list={["service-card", "realisation-tile", "card-top-accent", elevationClass]}>
     <a class="realisation-tile-link" href={href} aria-label={`Voir la réalisation : ${title}`}>
       {category && <p class="realisation-tile-category">{category}</p>}
-      {image && <img src={image} alt={imageAlt || title} class="card-image realisation-tile-image" loading="lazy" />}
+      {image && <img
+        src={image}
+        srcset={imageData?.srcset}
+        sizes={imageData?.srcset ? cardImageSizes : undefined}
+        width={imageData?.width}
+        height={imageData?.height}
+        alt={imageAlt || title}
+        class="card-image realisation-tile-image"
+        loading={priority ? "eager" : "lazy"}
+        fetchpriority={priority ? "high" : undefined}
+        decoding="async"
+      />}
       <h2>{title}</h2>
     </a>
   </article>
 ) : (
   <article class:list={["service-card", elevationClass]}>
     {metaParts.length > 0 && <p class="article-meta">{metaParts.join(" · ")}</p>}
-    {image && <img src={image} alt={imageAlt || title} class="card-image" loading="lazy" />}
+    {image && <img
+      src={image}
+      srcset={imageData?.srcset}
+      sizes={imageData?.srcset ? cardImageSizes : undefined}
+      width={imageData?.width}
+      height={imageData?.height}
+      alt={imageAlt || title}
+      class="card-image"
+      loading={priority ? "eager" : "lazy"}
+      fetchpriority={priority ? "high" : undefined}
+      decoding="async"
+    />}
     <h2>{title}</h2>
     <p>{description}</p>
     <a class="inline-link" href={href}>{linkLabel} &rarr;</a>

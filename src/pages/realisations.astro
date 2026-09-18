@@ -24,7 +24,7 @@ const items = getPublicEntries(await getCollection("realisations"), false);
 
       {items.length > 0 ? (
         <div class="cards-grid article-list realisations-grid">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <ContentCard
               title={item.data.title}
               description={item.data.description}
@@ -33,6 +33,7 @@ const items = getPublicEntries(await getCollection("realisations"), false);
               imageAlt={item.data.imageAlt}
               href={`/realisations/${item.id}.html`}
               variant="realisation-tile"
+              priority={index === 0}
             />
           ))}
         </div>

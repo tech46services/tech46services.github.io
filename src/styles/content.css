@@ -6,6 +6,7 @@
 
 .card-image {
   width: 100%;
+  height: auto;
   max-height: 200px;
   object-fit: cover;
   border-radius: 12px;
@@ -183,6 +184,14 @@
 
 .article-header {
   margin-bottom: 2rem;
+}
+
+.article-header .article-date {
+  margin: 0 0 0.85rem;
+}
+
+.article-header .intro-text {
+  margin: 0;
 }
 
 .article-content {

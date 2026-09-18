@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getPublicEntries } from "../../utils/content";
+import { getPublicImageData } from "../../utils/images";
 import { getRealisationBlocks } from "../../utils/realisations";
 
 export async function getStaticPaths() {
@@ -16,6 +17,10 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const canonical = `https://tech46services.fr/realisations/${item.id}.html`;
 const blocks = getRealisationBlocks(item.body ?? "");
+const imageSources = blocks.flatMap((block) => block.type === "step" ? block.images.map((image) => image.src) : []);
+const imageDataBySrc = new Map(imageSources.map((src) => [src, getPublicImageData(src)] as const));
+const priorityImageSrc = imageSources[0];
+const realisationImageSizes = "(max-width: 680px) calc(100vw - 4.1rem), (max-width: 900px) calc(50vw - 3rem), 360px";
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -44,7 +49,6 @@ const jsonLd = JSON.stringify({
   title={`${item.data.title} - Tech 46 Services`}
   description={item.data.description}
   canonical={canonical}
-  noindex
   ogType="article"
   jsonLd={jsonLd}
 >
@@ -65,11 +69,26 @@ const jsonLd = JSON.stringify({
           return (
             <section class="realisation-step">
               <div class="realisation-photo-group" data-count={block.images.length}>
-                {block.images.map((image) => (
-                  <div class="realisation-photo-tile card-top-accent">
-                    <img src={image.src} alt={image.alt} loading="lazy" />
-                  </div>
-                ))}
+                {block.images.map((image) => {
+                  const imageData = imageDataBySrc.get(image.src);
+                  const isPriority = image.src === priorityImageSrc;
+
+                  return (
+                    <div class="realisation-photo-tile card-top-accent">
+                      <img
+                        src={image.src}
+                        srcset={imageData?.srcset}
+                        sizes={imageData?.srcset ? realisationImageSizes : undefined}
+                        width={imageData?.width}
+                        height={imageData?.height}
+                        alt={image.alt}
+                        loading={isPriority ? "eager" : "lazy"}
+                        fetchpriority={isPriority ? "high" : undefined}
+                        decoding="async"
+                      />
+                    </div>
+                  );
+                })}
               </div>
               {block.content && <p class="realisation-step-text">{block.content}</p>}
             </section>

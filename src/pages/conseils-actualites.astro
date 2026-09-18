@@ -27,7 +27,7 @@ const hasContent = conseils.length > 0 || actualites.length > 0;
         </div>
 
         <div class="cards-grid article-list">
-          {conseils.map((item) => (
+          {conseils.map((item, index) => (
             <ContentCard
               title={item.data.title}
               description={item.data.description}
@@ -38,6 +38,7 @@ const hasContent = conseils.length > 0 || actualites.length > 0;
               href={`/conseils/${item.id}.html`}
               linkLabel="Lire le conseil"
               showDate={false}
+              priority={index === 0}
             />
           ))}
         </div>

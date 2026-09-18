@@ -1,4 +1,6 @@
 import type { APIRoute } from "astro";
+import { getCollection } from "astro:content";
+import { getPublicEntries } from "../utils/content";
 
 type SitemapPage = {
   path: string;
@@ -22,8 +24,29 @@ const escapeXml = (value: string) =>
 
 export const GET: APIRoute = async ({ site }) => {
   const baseUrl = site ?? new URL("https://tech46services.fr");
-  
-  const pages: SitemapPage[] = staticPages;
+
+  const [conseils, actualites, realisations] = await Promise.all([
+    getCollection("conseils"),
+    getCollection("actualites"),
+    getCollection("realisations"),
+  ]);
+
+  const contentCollections = [
+    { directory: "conseils", entries: getPublicEntries(conseils, false) },
+    { directory: "actualites", entries: getPublicEntries(actualites, false) },
+    { directory: "realisations", entries: getPublicEntries(realisations, false) },
+  ];
+
+  const contentPages: SitemapPage[] = contentCollections.flatMap(({ directory, entries }) =>
+    entries.map((item) => ({
+      path: `${directory}/${item.id}.html`,
+      lastmod: item.data.date?.toISOString(),
+      priority: "0.6",
+      changefreq: "monthly",
+    })),
+  );
+
+  const pages: SitemapPage[] = [...staticPages, ...contentPages];
 
   const entries = pages
     .map(
