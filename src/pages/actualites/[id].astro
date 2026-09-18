@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import ArticleHeader from "../../components/ArticleHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { formatDate, getPublicEntries } from "../../utils/content";
 
 export async function getStaticPaths() {
@@ -17,28 +18,45 @@ const { item } = Astro.props;
 const { Content } = await render(item);
 const canonical = `https://tech46services.fr/actualites/${item.id}.html`;
 
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: item.data.title,
-  description: item.data.description,
-  datePublished: item.data.date.toISOString(),
-  mainEntityOfPage: canonical,
-  author: {
-    "@type": "Organization",
-    name: "Tech 46 Services",
-    url: "https://tech46services.fr/apropos.html",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Tech 46 Services",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://tech46services.fr/assets/img/logo-tech46.png",
+const breadcrumbItems = [
+  { label: "Accueil", href: "/" },
+  { label: "Conseils & actualités", href: "/conseils-actualites.html" },
+  { label: item.data.title },
+];
+
+const jsonLd = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.data.title,
+    description: item.data.description,
+    datePublished: item.data.date.toISOString(),
+    mainEntityOfPage: canonical,
+    author: {
+      "@type": "Organization",
+      name: "Tech 46 Services",
+      url: "https://tech46services.fr/apropos.html",
     },
+    publisher: {
+      "@type": "Organization",
+      name: "Tech 46 Services",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://tech46services.fr/assets/img/logo-tech46.png",
+      },
+    },
+    ...(item.data.image ? { image: new URL(item.data.image, Astro.site).href } : {}),
   },
-  ...(item.data.image ? { image: new URL(item.data.image, Astro.site).href } : {}),
-});
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tech46services.fr/" },
+      { "@type": "ListItem", position: 2, name: "Conseils & actualités", item: "https://tech46services.fr/conseils-actualites.html" },
+      { "@type": "ListItem", position: 3, name: item.data.title },
+    ],
+  },
+]);
 ---
 
 <BaseLayout
@@ -51,6 +69,7 @@ const jsonLd = JSON.stringify({
   jsonLd={jsonLd}
 >
   <main id="main-content" class="page-main article-page">
+    <Breadcrumbs items={breadcrumbItems} />
     <ArticleHeader
       title={item.data.title}
       description={item.data.description}

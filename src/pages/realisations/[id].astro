@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { getPublicEntries } from "../../utils/content";
 import { getPublicImageData } from "../../utils/images";
 import { getRealisationBlocks } from "../../utils/realisations";
@@ -22,27 +23,44 @@ const imageDataBySrc = new Map(imageSources.map((src) => [src, getPublicImageDat
 const priorityImageSrc = imageSources[0];
 const realisationImageSizes = "(max-width: 680px) calc(100vw - 4.1rem), (max-width: 900px) calc(50vw - 3rem), 360px";
 
-const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: item.data.title,
-  description: item.data.description,
-  mainEntityOfPage: canonical,
-  author: {
-    "@type": "Organization",
-    name: "Tech 46 Services",
-    url: "https://tech46services.fr/apropos.html",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Tech 46 Services",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://tech46services.fr/assets/img/logo-tech46.png",
+const breadcrumbItems = [
+  { label: "Accueil", href: "/" },
+  { label: "Réalisations", href: "/realisations.html" },
+  { label: item.data.title },
+];
+
+const jsonLd = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.data.title,
+    description: item.data.description,
+    mainEntityOfPage: canonical,
+    author: {
+      "@type": "Organization",
+      name: "Tech 46 Services",
+      url: "https://tech46services.fr/apropos.html",
     },
+    publisher: {
+      "@type": "Organization",
+      name: "Tech 46 Services",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://tech46services.fr/assets/img/logo-tech46.png",
+      },
+    },
+    ...(item.data.image ? { image: new URL(item.data.image, Astro.site).href } : {}),
   },
-  ...(item.data.image ? { image: new URL(item.data.image, Astro.site).href } : {}),
-});
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tech46services.fr/" },
+      { "@type": "ListItem", position: 2, name: "Réalisations", item: "https://tech46services.fr/realisations.html" },
+      { "@type": "ListItem", position: 3, name: item.data.title },
+    ],
+  },
+]);
 ---
 
 <BaseLayout
@@ -53,6 +71,7 @@ const jsonLd = JSON.stringify({
   jsonLd={jsonLd}
 >
   <main id="main-content">
+    <Breadcrumbs items={breadcrumbItems} />
     <h1 class="hero-intro-title">{item.data.title}</h1>
 
     <article class="section-padding realisation-page">
