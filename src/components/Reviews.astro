@@ -23,7 +23,7 @@ const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
             <p class="testimonial-author">
               {review.author} · {dateFormatter.format(new Date(review.date))}
             </p>
-            <p class="review-rating" aria-label={`${review.rating} étoiles sur 5`}>
+            <p class="review-rating" role="img" aria-label={`${review.rating} étoiles sur 5`}>
               <span aria-hidden="true">{"★".repeat(review.rating)}</span>
             </p>
             {review.text && <blockquote id={textId} class="testimonial-text">« {review.text} »</blockquote>}
