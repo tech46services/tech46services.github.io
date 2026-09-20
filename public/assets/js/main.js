@@ -6,12 +6,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btn = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav-links");
+  const discover = document.querySelector(".nav-discover");
+  const discoverToggle = discover?.querySelector(".nav-discover-toggle");
+
+  const setDiscoverState = (isOpen) => {
+    if (!discover || !discoverToggle) return;
+    discover.classList.toggle("is-open", isOpen);
+    discoverToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  };
+
+  if (discover && discoverToggle) {
+    discoverToggle.addEventListener("click", () => {
+      setDiscoverState(!discover.classList.contains("is-open"));
+    });
+
+    discover.addEventListener("focusout", (event) => {
+      if (!discover.contains(event.relatedTarget)) setDiscoverState(false);
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (!discover.contains(event.target)) setDiscoverState(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && discover.classList.contains("is-open")) {
+        setDiscoverState(false);
+        discoverToggle.focus();
+      }
+    });
+  }
 
   if (btn && nav) {
     const setMenuState = (isOpen) => {
       nav.classList.toggle("open", isOpen);
       btn.classList.toggle("open", isOpen);
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (!isOpen) setDiscoverState(false);
     };
 
     setMenuState(nav.classList.contains("open"));

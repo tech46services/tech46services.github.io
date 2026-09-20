@@ -91,6 +91,84 @@
   gap: 0.8rem;
 }
 
+.nav-discover {
+  position: relative;
+}
+
+.nav-discover-toggle {
+  gap: 0.45rem;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-discover-chevron {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.nav-discover-toggle[aria-expanded="true"] .nav-discover-chevron {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.nav-discover-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 410;
+  min-width: 220px;
+  padding: 0.4rem;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: var(--shadow-med);
+}
+
+.nav-discover.is-open .nav-discover-menu {
+  display: grid;
+  gap: 0.2rem;
+}
+
+@media (min-width: 1001px) {
+  .nav-discover-menu {
+    display: grid;
+    gap: 0.2rem;
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    pointer-events: none;
+    transition: clip-path 200ms ease-out, visibility 0s linear 200ms;
+  }
+
+  .nav-discover.is-open .nav-discover-menu {
+    clip-path: inset(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: clip-path 200ms ease-out, visibility 0s;
+  }
+}
+
+@media (min-width: 1001px) and (prefers-reduced-motion: reduce) {
+  .nav-discover-menu,
+  .nav-discover.is-open .nav-discover-menu {
+    transition: none;
+  }
+}
+
+.nav-discover-menu .nav-link {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.nav-discover-toggle:focus-visible,
+.nav-discover-menu .nav-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* Style de base commun à  tous les items de nav (texte + bouton) */
 .nav-link,
 .nav-cta {

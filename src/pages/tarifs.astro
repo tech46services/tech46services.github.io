@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { tarifs } from "../data/tarifs";
+import "../styles/tarifs.css";
+---
+
+<BaseLayout
+  title="Tarifs dépannage informatique à Gramat | Tech 46 Services"
+  description="Découvrez des tarifs clairs pour le dépannage informatique, la réparation et l'optimisation, la réinstallation Windows et la récupération de données à Gramat et dans le Lot."
+  canonical="https://tech46services.fr/tarifs.html"
+  activePage="tarifs"
+  bodyClass="tarifs-page"
+>
+  <main id="main-content" class="page-main">
+    <h1 class="hero-intro-title">Tarifs dépannage informatique à Gramat et dans le Lot</h1>
+
+    <section class="section-padding tarifs-section" aria-label="Principaux tarifs">
+      <p class="tarifs-intro">
+        Tech 46 Services propose des tarifs clairs pour les principales interventions à Gramat et dans le Lot.
+        Pour les besoins particuliers, un devis peut être établi avant intervention.
+      </p>
+
+      <div class="tarifs-grid">
+        {tarifs.map(({ id, category, items }) => (
+          <section class="card-panel card-top-accent tarifs-card" aria-labelledby={id}>
+            <h2 id={id}>{category}</h2>
+            <ul class="tarifs-list">
+              {items.map(({ name, price, detail }) => (
+                <li class="tarifs-item">
+                  <div class="tarifs-label">
+                    <span class="tarifs-name">{name}</span>
+                    {detail && <span class="tarifs-detail">{detail}</span>}
+                  </div>
+                  <span class="tarifs-price">{price}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+      <aside class="tarifs-note" aria-labelledby="tarifs-note-title">
+        <h2 id="tarifs-note-title">Quelques précisions sur les tarifs</h2>
+        <p>
+          Les tarifs affichés correspondent aux interventions courantes, même si toutes les prestations ne figurent pas ici.
+          Ils peuvent être ajustés selon la configuration du matériel, la complexité de la panne ou les travaux nécessaires.
+          Tout ajustement est annoncé avant l'intervention concernée ; un devis peut être établi si nécessaire.
+        </p>
+        <p class="tarifs-parts">
+          Les pièces, composants, supports de stockage, licences et matériels nécessaires ne sont pas inclus dans les tarifs de main-d'œuvre, sauf indication contraire.
+        </p>
+      </aside>
+
+      <aside class="card-panel advice-cta" aria-labelledby="tarifs-cta-title">
+        <div>
+          <h2 id="tarifs-cta-title">Un problème particulier&nbsp;?</h2>
+          <p>Décrivez-moi votre besoin pour connaître la solution et le tarif adaptés.</p>
+        </div>
+        <a class="btn primary" href="/contact.html">Me contacter</a>
+      </aside>
+    </section>
+  </main>
+</BaseLayout>

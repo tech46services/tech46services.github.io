@@ -8,10 +8,16 @@ const links = [
   { key: "home", href: "/", label: "Accueil" },
   { key: "depannage", href: "/depannage.html", label: "Dépannage" },
   { key: "espace-pro", href: "/espace-pro.html", label: "Espace pro" },
+];
+const discoverLinks = [
   { key: "realisations", href: "/realisations.html", label: "Réalisations" },
   { key: "conseils-actualites", href: "/conseils-actualites.html", label: "Conseils & actualités" },
+  { key: "tarifs", href: "/tarifs.html", label: "Tarifs" },
+];
+const followingLinks = [
   { key: "apropos", href: "/apropos.html", label: "À propos" },
 ];
+const discoverActive = discoverLinks.some(({ key }) => key === activePage);
 ---
 
 <header class="top-nav elevation-2">
@@ -53,6 +59,28 @@ const links = [
 
   <nav id="site-nav" class="nav-links">
     {links.map(({ key, href, label }) => (
+      <a href={href} class:list={["nav-link", { active: activePage === key }]} aria-current={activePage === key ? "page" : undefined}>
+        {label}
+      </a>
+    ))}
+    <div class="nav-discover">
+      <button
+        class:list={["nav-link", "nav-discover-toggle", { active: discoverActive }]}
+        type="button"
+        aria-expanded="false"
+        aria-controls="discover-menu"
+      >
+        Découvrir <span class="nav-discover-chevron" aria-hidden="true"></span>
+      </button>
+      <div id="discover-menu" class="nav-discover-menu">
+        {discoverLinks.map(({ key, href, label }) => (
+          <a href={href} class:list={["nav-link", { active: activePage === key }]} aria-current={activePage === key ? "page" : undefined}>
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+    {followingLinks.map(({ key, href, label }) => (
       <a href={href} class:list={["nav-link", { active: activePage === key }]} aria-current={activePage === key ? "page" : undefined}>
         {label}
       </a>

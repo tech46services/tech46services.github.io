@@ -15,6 +15,7 @@ const staticPages = [
   { path: "espace-pro.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.9", changefreq: "monthly" },
   { path: "conseils-actualites.html", priority: "0.7", changefreq: "monthly" },
   { path: "realisations.html", priority: "0.7", changefreq: "monthly" },
+  { path: "tarifs.html", priority: "0.7", changefreq: "monthly" },
   { path: "apropos.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.6", changefreq: "yearly" },
   { path: "contact.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.8", changefreq: "monthly" },
 ];

@@ -169,6 +169,8 @@
     visibility: hidden;
     transform: translateY(-12px);
     pointer-events: none;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
   }
 
@@ -188,6 +190,29 @@
     background: #fff;
     border: 1px solid var(--border-subtle);
     border-radius: 12px;
+  }
+
+  .nav-discover {
+    width: 100%;
+  }
+
+  .nav-discover-toggle {
+    justify-content: space-between;
+  }
+
+  .nav-discover-menu {
+    position: static;
+    min-width: 0;
+    margin-top: 0.35rem;
+    padding: 0 0 0 0.8rem;
+    border: 0;
+    border-left: 2px solid var(--primary-soft);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-discover-menu .nav-link {
+    padding-block: 0.75rem;
   }
 
   .nav-cta .nav-cta-icon {
