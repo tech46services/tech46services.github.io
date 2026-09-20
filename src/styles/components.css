@@ -477,11 +477,6 @@
   fill: currentColor;
 }
 
-.footer-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
 /* Animations d'apparition (scroll) */
 .reveal {
   opacity: 0;

@@ -234,15 +234,6 @@ main {
   align-self: center;
 }
 
-/* Affiche Contact/Réseaux avant la colonne CGV */
-.footer-columns > div:nth-child(3) {
-  order: 4;
-}
-
-.footer-columns > div:nth-child(4) {
-  order: 3;
-}
-
 .footer-bottom {
   max-width: 1100px;
   margin: 0 auto;
