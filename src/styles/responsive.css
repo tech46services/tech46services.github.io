@@ -250,6 +250,21 @@
   .cards-grid.big {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+  }
+
+  .footer-socials { justify-content: center; }
 }
 
 @media (max-width: 720px) {
@@ -259,12 +274,6 @@
 
   .espace-pro-page .cards-grid.big {
     grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .footer-columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -291,22 +300,11 @@
 
   .two-columns { grid-template-columns: minmax(0, 1fr); }
 
-  .footer-columns {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+  .footer-navigation-links {
+    column-count: 1;
   }
 
   .main-footer { padding-inline: 1rem; }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.4rem;
-  }
-
-  .footer-socials { justify-content: center; }
 
   .main-footer h4,
   .main-footer .footer-heading { margin-top: 0.4rem; }

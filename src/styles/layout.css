@@ -224,14 +224,24 @@ main {
   max-width: 1100px;
   margin: 0 auto 0.7rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
   gap: 1rem;
   align-items: start; /* aligne les tuiles texte en haut pour un alignement horizontal propre */
 }
 
-/* Centre uniquement le bloc logo pour garder son équilibre visuel */
-.footer-columns > div:first-child {
-  align-self: center;
+.footer-navigation-links {
+  column-count: 2;
+  column-gap: 1rem;
+}
+
+.footer-navigation-links li {
+  break-inside: avoid;
+}
+
+@media (min-width: 641px) {
+  .footer-columns > div > .footer-heading:first-child {
+    margin-top: 0;
+  }
 }
 
 .footer-bottom {
