@@ -71,6 +71,7 @@ const generatePng = async (sourceName, outputName, width) => {
 const responsiveDirectories = [
   path.join(imageRoot, "photos-depannage"),
   path.join(imageRoot, "conseils"),
+  path.join(imageRoot, "actu"),
 ];
 
 const heroSources = [

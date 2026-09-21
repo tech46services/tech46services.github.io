@@ -255,6 +255,11 @@
   border-radius: 12px;
 }
 
+.article-content .article-hero-image {
+  width: 100%;
+  margin: 0 0 1.5rem;
+}
+
 /* Présentation compacte des pages individuelles de réalisations. */
 .realisation-page {
   padding-top: 1.5rem;

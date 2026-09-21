@@ -4,6 +4,7 @@ import ArticleHeader from "../../components/ArticleHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { formatDate, getPublicEntries } from "../../utils/content";
+import { getPublicImageData } from "../../utils/images";
 
 export async function getStaticPaths() {
   const items = getPublicEntries(await getCollection("actualites"));
@@ -17,6 +18,8 @@ export async function getStaticPaths() {
 const { item } = Astro.props;
 const { Content } = await render(item);
 const canonical = `https://tech46services.fr/actualites/${item.id}.html`;
+const imageData = item.data.image ? getPublicImageData(item.data.image) : undefined;
+const imageUrl = item.data.image ? new URL(item.data.image, Astro.site).href : undefined;
 
 const breadcrumbItems = [
   { label: "Accueil", href: "/" },
@@ -64,20 +67,34 @@ const jsonLd = JSON.stringify([
   description={item.data.description}
   canonical={canonical}
   ogType="article"
+  ogImage={imageUrl}
   activePage="conseils-actualites"
   bodyClass="advice-page"
   jsonLd={jsonLd}
 >
   <main id="main-content" class="page-main article-page">
-    <Breadcrumbs items={breadcrumbItems} />
     <ArticleHeader
       title={item.data.title}
       description={item.data.description}
       meta={`${item.data.category ? `${item.data.category} · ` : ""}Publié le ${formatDate(item.data.date)}`}
-    />
+    >
+      <Breadcrumbs slot="breadcrumbs" items={breadcrumbItems} />
+    </ArticleHeader>
 
     <article aria-label={item.data.title}>
       <div class="card-panel elevation-2 article-content">
+        {item.data.image && <img
+          src={item.data.image}
+          srcset={imageData?.srcset}
+          sizes={imageData?.srcset ? "(max-width: 932px) calc(100vw - 4.5rem), 812px" : undefined}
+          width={imageData?.width}
+          height={imageData?.height}
+          alt={item.data.imageAlt || item.data.title}
+          class="article-hero-image"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />}
         <Content />
       </div>
 

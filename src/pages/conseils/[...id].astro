@@ -69,8 +69,9 @@ const jsonLd = JSON.stringify([
   jsonLd={jsonLd}
 >
   <main id="main-content" class="page-main article-page">
-    <Breadcrumbs items={breadcrumbItems} />
-    <ArticleHeader title={item.data.title} description={item.data.description} />
+    <ArticleHeader title={item.data.title} description={item.data.description}>
+      <Breadcrumbs slot="breadcrumbs" items={breadcrumbItems} />
+    </ArticleHeader>
 
     <article aria-label={item.data.title}>
       <div class="card-panel elevation-2 article-content">
