@@ -68,6 +68,29 @@ const generatePng = async (sourceName, outputName, width) => {
     .toFile(outputPath);
 };
 
+// Variantes dédiées au fond CSS de la page contact (breakpoints 720px / 1100px)
+const contactBackgroundWidths = [800, 1200];
+
+const generateContactBackgroundVariants = async () => {
+  const sourcePath = path.join(imageRoot, "image-contact.webp");
+  if (!(await pathExists(sourcePath))) return;
+
+  const metadata = await sharp(sourcePath).metadata();
+  if (!metadata.width) return;
+
+  for (const width of contactBackgroundWidths) {
+    if (width >= metadata.width) continue;
+
+    const outputPath = path.join(imageRoot, `image-contact-${width}.webp`);
+    if (await isCurrent(sourcePath, outputPath)) continue;
+
+    await sharp(sourcePath)
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality: 82, effort: 6, smartSubsample: true })
+      .toFile(outputPath);
+  }
+};
+
 const responsiveDirectories = [
   path.join(imageRoot, "photos-depannage"),
   path.join(imageRoot, "conseils"),
@@ -88,6 +111,7 @@ const responsiveSources = [
 ];
 
 await Promise.all(responsiveSources.map(generateWebpVariants));
+await generateContactBackgroundVariants();
 
 await Promise.all([
   generatePng("logo-no-text.png", "logo-no-text-96.png", 96),

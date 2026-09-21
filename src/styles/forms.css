@@ -148,6 +148,19 @@
   background-repeat: no-repeat;
 }
 
+/* Fond allégé selon la largeur d'écran (mêmes breakpoints que responsive.css) */
+@media (max-width: 1100px) {
+  .contact-panel {
+    background-image: url("/assets/img/image-contact-1200.webp");
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-panel {
+    background-image: url("/assets/img/image-contact-800.webp");
+  }
+}
+
 .contact-stack {
   display: grid;
   gap: 1rem;
