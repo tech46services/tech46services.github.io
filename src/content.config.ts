@@ -6,6 +6,7 @@ const baseObject = z.object({
   title: z.string().min(5),
   description: z.string().min(10),
   date: z.coerce.date().optional(),
+  updated: z.coerce.date().optional(),
   publishedAt: z.coerce.date().optional(),
   draft: z.boolean().default(false),
   image: z.string().optional(),

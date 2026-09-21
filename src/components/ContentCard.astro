@@ -1,5 +1,5 @@
 ---
-import { formatDate } from "../utils/content";
+import { formatDate, formatMonthYear } from "../utils/content";
 import { getPublicImageData } from "../utils/images";
 
 interface Props {
@@ -15,6 +15,7 @@ interface Props {
   linkLabel?: string;
   elevationClass?: string;
   showDate?: boolean;
+  dateDisplay?: "full" | "month-year";
   variant?: "default" | "realisation-tile";
   priority?: boolean;
 }
@@ -32,6 +33,7 @@ const {
   linkLabel = "Lire la suite",
   elevationClass = "elevation-2",
   showDate = Boolean(date),
+  dateDisplay = "full",
   variant = "default",
   priority = false,
 } = Astro.props;
@@ -41,7 +43,7 @@ const cardImageSizes = "(max-width: 520px) calc(100vw - 4.2rem), (max-width: 110
 
 const metaParts = [
   category,
-  showDate && date ? formatDate(date) : undefined,
+  showDate && date ? (dateDisplay === "month-year" ? formatMonthYear(date) : formatDate(date)) : undefined,
   location,
   service,
 ].filter(Boolean);

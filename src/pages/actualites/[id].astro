@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import ArticleHeader from "../../components/ArticleHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { formatDate, getPublicEntries } from "../../utils/content";
+import { formatMonthYear, getPublicEntries } from "../../utils/content";
 import { getPublicImageData } from "../../utils/images";
 
 export async function getStaticPaths() {
@@ -76,7 +76,7 @@ const jsonLd = JSON.stringify([
     <ArticleHeader
       title={item.data.title}
       description={item.data.description}
-      meta={`${item.data.category ? `${item.data.category} · ` : ""}Publié le ${formatDate(item.data.date)}`}
+      meta={`${item.data.category ? `${item.data.category} · ` : ""}Publié en ${formatMonthYear(item.data.date)}`}
     >
       <Breadcrumbs slot="breadcrumbs" items={breadcrumbItems} />
     </ArticleHeader>

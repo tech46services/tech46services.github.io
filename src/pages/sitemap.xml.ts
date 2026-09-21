@@ -10,14 +10,14 @@ type SitemapPage = {
 };
 
 const staticPages = [
-  { path: "", lastmod: "2026-05-04T19:37:41Z", priority: "1.0", changefreq: "weekly" },
-  { path: "depannage.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.9", changefreq: "monthly" },
-  { path: "espace-pro.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.9", changefreq: "monthly" },
+  { path: "", priority: "1.0", changefreq: "weekly" },
+  { path: "depannage.html", priority: "0.9", changefreq: "monthly" },
+  { path: "espace-pro.html", priority: "0.9", changefreq: "monthly" },
   { path: "conseils-actualites.html", priority: "0.7", changefreq: "monthly" },
   { path: "realisations.html", priority: "0.7", changefreq: "monthly" },
   { path: "tarifs.html", priority: "0.7", changefreq: "monthly" },
-  { path: "apropos.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.6", changefreq: "yearly" },
-  { path: "contact.html", lastmod: "2026-05-04T19:37:41Z", priority: "0.8", changefreq: "monthly" },
+  { path: "apropos.html", priority: "0.6", changefreq: "yearly" },
+  { path: "contact.html", priority: "0.8", changefreq: "monthly" },
 ];
 
 const escapeXml = (value: string) =>
@@ -41,7 +41,7 @@ export const GET: APIRoute = async ({ site }) => {
   const contentPages: SitemapPage[] = contentCollections.flatMap(({ directory, entries }) =>
     entries.map((item) => ({
       path: `${directory}/${item.id}.html`,
-      lastmod: item.data.date?.toISOString(),
+      lastmod: (item.data.updated ?? item.data.date)?.toISOString(),
       priority: "0.6",
       changefreq: "monthly",
     })),
