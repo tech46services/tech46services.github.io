@@ -64,7 +64,7 @@ const jsonLd = JSON.stringify([
 ---
 
 <BaseLayout
-  title={`${item.data.title} - Tech 46 Services`}
+  title={item.data.seoTitle ?? `${item.data.title} - Tech 46 Services`}
   description={item.data.description}
   canonical={canonical}
   ogType="article"

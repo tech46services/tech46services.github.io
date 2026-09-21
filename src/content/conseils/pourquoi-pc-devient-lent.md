@@ -1,5 +1,6 @@
 ---
 title: "Pourquoi un PC devient-il lent avec le temps ?"
+seoTitle: "Pourquoi un PC devient lent | Tech 46 Services"
 description: "Un ordinateur peut ralentir pour de nombreuses raisons. Découvrez les causes les plus fréquentes et pourquoi un diagnostic évite les mauvaises solutions."
 date: 2026-09-13
 draft: false

@@ -1,5 +1,6 @@
 ---
 title: "Disque RAW : peut-on récupérer les données ?"
+seoTitle: "Disque RAW : récupérer ses données | Tech 46 Services"
 description: "Un disque passé en RAW peut rendre les fichiers inaccessibles. Découvrez ce que cela signifie, les risques et les solutions possibles pour récupérer les données."
 date: 2026-09-13
 draft: false

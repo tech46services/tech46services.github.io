@@ -4,6 +4,7 @@ import { z } from "astro/zod";
 
 const baseObject = z.object({
   title: z.string().min(5),
+  seoTitle: z.string().min(5).optional(),
   description: z.string().min(10),
   date: z.coerce.date().optional(),
   updated: z.coerce.date().optional(),

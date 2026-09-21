@@ -1,5 +1,6 @@
 ---
 title: "Remplacement de la pâte thermique d'un PC portable"
+seoTitle: "Pâte thermique d’un PC portable | Tech 46 Services"
 description: "Entretien du refroidissement d'un ordinateur qui s'éteignait lorsqu'il commençait à chauffer."
 category: "Matériel"
 service: "Entretien du refroidissement"

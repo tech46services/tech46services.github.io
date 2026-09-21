@@ -1,5 +1,6 @@
 ---
 title: "Optimisation d'un PC lent avec un SSD et davantage de mémoire"
+seoTitle: "Optimisation PC avec SSD et RAM | Tech 46 Services"
 description: "Remplacement du disque principal et augmentation de la mémoire vive d'un ordinateur devenu trop lent."
 category: "Matériel"
 service: "Remplacement matériel et optimisation"

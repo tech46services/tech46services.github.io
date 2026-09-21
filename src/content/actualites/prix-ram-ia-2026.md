@@ -1,5 +1,6 @@
 ---
 title: "Prix de la RAM : pourquoi l’IA fait grimper les prix"
+seoTitle: "Prix de la RAM et IA | Tech 46 Services"
 description: "Pourquoi le prix de la RAM augmente-t-il ? IA, DDR4, DDR5, PC neufs, occasion et SSD : comprendre les tensions actuelles du marché."
 date: 2026-09-21
 category: "Actualités"

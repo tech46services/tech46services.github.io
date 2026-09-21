@@ -1,5 +1,6 @@
 ---
 title: "PC ancien : faut-il le réparer ou le remplacer ?"
+seoTitle: "PC ancien : réparer ou remplacer ? | Tech 46 Services"
 description: "Un ordinateur ancien n’est pas forcément bon à jeter. Découvrez quand une réparation reste pertinente et quand le remplacement devient plus logique."
 date: 2026-09-13
 draft: false

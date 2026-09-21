@@ -1,5 +1,6 @@
 ---
 title: "Ajout d'un SSD M.2 et migration du système"
+seoTitle: "Ajout d’un SSD M.2 et migration | Tech 46 Services"
 description: "Ajout d'un SSD dans un emplacement libre afin de rendre un ordinateur lent de nouveau utilisable."
 category: "Matériel"
 service: "Ajout d'un SSD et migration du système"

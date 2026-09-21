@@ -1,5 +1,6 @@
 ---
 title: "Tech 46 Services rejoint le Dell Expert Network"
+seoTitle: "Dell Expert Network | Tech 46 Services"
 description: "Tech 46 Services rejoint le Dell Expert Network pour mieux vous conseiller dans le choix, la configuration et le suivi de votre matériel Dell."
 date: 2026-09-21
 category: "Actualités"

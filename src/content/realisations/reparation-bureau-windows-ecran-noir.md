@@ -1,5 +1,6 @@
 ---
 title: "Réparation d'un bureau Windows qui ne s'affichait plus"
+seoTitle: "Réparation d’un bureau Windows | Tech 46 Services"
 description: "Vérification de Windows puis réinstallation du composant d'affichage du bureau."
 category: "Logiciel"
 service: "Réparation de Windows"

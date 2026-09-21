@@ -1,5 +1,6 @@
 ---
 title: "Diagnostic et remplacement du chargeur d'un ordinateur portable"
+seoTitle: "Remplacement d’un chargeur PC | Tech 46 Services"
 description: "Recherche de l'origine d'une panne de charge, puis remplacement du chargeur défectueux."
 category: "Alimentation"
 service: "Diagnostic et remplacement de chargeur"

@@ -1,5 +1,6 @@
 ---
 title: "Installation manuelle d'une mise à jour Windows bloquée"
+seoTitle: "Mise à jour Windows bloquée | Tech 46 Services"
 description: "Prise en charge d'un ordinateur bloqué sur une mise à jour mensuelle de Windows."
 category: "Logiciel"
 service: "Mise à jour de Windows"
