@@ -10,6 +10,7 @@ const baseObject = z.object({
   updated: z.coerce.date().optional(),
   publishedAt: z.coerce.date().optional(),
   draft: z.boolean().default(false),
+  socialPublish: z.boolean().default(false),
   image: z.string().optional(),
   imageAlt: z.string().optional(),
   category: z.string().optional(),

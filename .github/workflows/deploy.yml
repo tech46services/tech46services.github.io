@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -33,3 +33,50 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+  publish-facebook:
+    name: Publish new content to Facebook
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push'
+
+    concurrency:
+      group: facebook-publications
+      cancel-in-progress: false
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install Facebook publishing dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      # Le scan complet permet au prochain run de récupérer un contenu éligible manqué.
+      - name: Detect and publish new social content
+        env:
+          FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        shell: bash
+        run: |
+          FILES_FILE="${RUNNER_TEMP}/new-social-content-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.bin"
+          node scripts/get-new-social-content.mjs --all > "$FILES_FILE"
+
+          found=false
+
+          while IFS= read -r -d '' file; do
+            if [ "$found" = false ]; then
+              echo "Nouveaux contenus détectés :"
+              found=true
+            fi
+
+            printf '%s\n' "$file"
+            node scripts/publish-facebook.mjs "$file"
+          done < "$FILES_FILE"
+
+          if [ "$found" = false ]; then
+            echo "Aucun nouveau contenu à publier sur Facebook."
+          fi
