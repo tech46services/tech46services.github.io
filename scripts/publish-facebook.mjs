@@ -179,9 +179,9 @@ function messageContainsExactUrl(message, url) {
 
 async function isAlreadyPublished(url) {
   const endpoint = new URL(
-    `https://graph.facebook.com/${GRAPH_API_VERSION}/${encodeURIComponent(pageId)}/feed`
+    `https://graph.facebook.com/${GRAPH_API_VERSION}/${encodeURIComponent(pageId)}/published_posts`
   );
-  endpoint.searchParams.set("fields", "message,link,created_time");
+  endpoint.searchParams.set("fields", "id,message,created_time");
   endpoint.searchParams.set("limit", RECENT_POST_LIMIT);
 
   const response = await fetchFacebook(
@@ -200,8 +200,8 @@ async function isAlreadyPublished(url) {
     );
   }
 
-  return result.data.some(
-    (post) => post?.link === url || messageContainsExactUrl(post?.message, url)
+  return result.data.some((post) =>
+    messageContainsExactUrl(post?.message, url)
   );
 }
 
