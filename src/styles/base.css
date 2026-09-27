@@ -21,6 +21,13 @@ body {
   animation-duration: 0s;
 }
 
+/* Header persistant : identité stable + aucune animation de transition propre */
+::view-transition-group(site-header),
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+}
+
 .text-primary {
   color: var(--primary);
 }
