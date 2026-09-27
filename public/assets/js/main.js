@@ -94,6 +94,30 @@ const initializePage = () => {
     btn.addEventListener("click", () => {
       setMenuState(!nav.classList.contains("open"));
     });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.classList.contains("open")) return;
+      const target = event.target;
+      if (target instanceof Node && (nav.contains(target) || btn.contains(target))) return;
+      setMenuState(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && nav.classList.contains("open")) {
+        setMenuState(false);
+        btn.focus();
+      }
+    });
+
+    // "scroll" ne remonte pas depuis le scroll interne du menu (nav-links en overflow-y: auto),
+    // seul le scroll de la fenêtre déclenche donc cette fermeture.
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (nav.classList.contains("open")) setMenuState(false);
+      },
+      { passive: true }
+    );
   }
 
   // Popover services : bouton reel + meme comportement visuel qu'avant
