@@ -20,7 +20,7 @@ const followingLinks = [
 const discoverActive = discoverLinks.some(({ key }) => key === activePage);
 ---
 
-<header class="top-nav elevation-2">
+<header class="top-nav elevation-2" transition:persist>
   <div class="nav-left">
     <a href="/" class="site-logo">
       <img

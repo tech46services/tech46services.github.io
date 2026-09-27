@@ -17,6 +17,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::view-transition-group(page-content) {
+  animation-duration: 0s;
+}
+
 .text-primary {
   color: var(--primary);
 }

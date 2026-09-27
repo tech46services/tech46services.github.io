@@ -1,5 +1,49 @@
 // Ajout de l'annee actuelle dans le footer
-document.addEventListener("DOMContentLoaded", () => {
+const initializedElements = new WeakSet();
+let revealObserver;
+let dismissListenersInitialized = false;
+
+const syncPersistedHeader = (event) => {
+  const incomingHeader = event.newDocument?.querySelector(".top-nav");
+  const currentHeader = document.querySelector(".top-nav");
+  if (!incomingHeader || !currentHeader) return;
+
+  const incomingLinks = incomingHeader.querySelectorAll("a.nav-link");
+  currentHeader.querySelectorAll("a.nav-link").forEach((link) => {
+    const incomingLink = Array.from(incomingLinks).find(
+      (candidate) => candidate.getAttribute("href") === link.getAttribute("href")
+    );
+    if (!incomingLink) return;
+
+    link.classList.toggle("active", incomingLink.classList.contains("active"));
+    if (incomingLink.hasAttribute("aria-current")) {
+      link.setAttribute("aria-current", incomingLink.getAttribute("aria-current"));
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  const currentDiscoverToggle = currentHeader.querySelector(".nav-discover-toggle");
+  const incomingDiscoverToggle = incomingHeader.querySelector(".nav-discover-toggle");
+  currentDiscoverToggle?.classList.toggle(
+    "active",
+    incomingDiscoverToggle?.classList.contains("active") ?? false
+  );
+
+  const nav = currentHeader.querySelector(".nav-links");
+  const menuButton = currentHeader.querySelector(".menu-toggle");
+  nav?.classList.remove("open");
+  menuButton?.classList.remove("open");
+  menuButton?.setAttribute("aria-expanded", "false");
+
+  const discover = currentHeader.querySelector(".nav-discover");
+  discover?.classList.remove("is-open");
+  currentDiscoverToggle?.setAttribute("aria-expanded", "false");
+};
+
+document.addEventListener("astro:before-swap", syncPersistedHeader);
+
+const initializePage = () => {
   const yearSpanList = document.querySelectorAll(".js-year");
   const year = new Date().getFullYear();
   yearSpanList.forEach((span) => (span.textContent = year));
@@ -15,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     discoverToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   };
 
-  if (discover && discoverToggle) {
+  if (discover && discoverToggle && !initializedElements.has(discoverToggle)) {
+    initializedElements.add(discoverToggle);
     discoverToggle.addEventListener("click", () => {
       setDiscoverState(!discover.classList.contains("is-open"));
     });
@@ -36,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (btn && nav) {
+  if (btn && nav && !initializedElements.has(btn)) {
+    initializedElements.add(btn);
     const setMenuState = (isOpen) => {
       nav.classList.toggle("open", isOpen);
       btn.classList.toggle("open", isOpen);
@@ -74,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const closeAllServiceDetails = (exceptDetails = null) => {
-    serviceDetails.forEach((details) => {
+    document.querySelectorAll(".service-details").forEach((details) => {
       if (details !== exceptDetails) {
         setServiceDetailsState(details, false);
       }
@@ -82,8 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   serviceDetails.forEach((details, index) => {
+    if (initializedElements.has(details)) return;
     const toggleButton = details.querySelector(".service-details-toggle");
     if (!toggleButton) return;
+    initializedElements.add(details);
 
     const popoverContent = details.querySelector("p");
     if (popoverContent) {
@@ -125,41 +173,55 @@ document.addEventListener("DOMContentLoaded", () => {
     closeAllServiceDetails();
   };
 
-  document.addEventListener("pointerdown", handleGlobalDetailsDismiss);
-  document.addEventListener("click", handleGlobalDetailsDismiss);
+  if (!dismissListenersInitialized) {
+    document.addEventListener("pointerdown", handleGlobalDetailsDismiss);
+    document.addEventListener("click", handleGlobalDetailsDismiss);
+    dismissListenersInitialized = true;
+  }
 
   // Animation d'apparition au scroll
   const revealElements = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        // Trigger un peu plus tôt pour éviter que le contenu reste invisible sur mobile
-        rootMargin: "20% 0px",
-        threshold: 0,
-      }
-    );
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          // Trigger un peu plus tôt pour éviter que le contenu reste invisible sur mobile
+          rootMargin: "20% 0px",
+          threshold: 0,
+        }
+      );
+    }
 
-    revealElements.forEach((el) => observer.observe(el));
+    revealElements.forEach((el) => {
+      if (initializedElements.has(el)) return;
+      initializedElements.add(el);
+      revealObserver.observe(el);
+    });
   } else {
     // Fallback simple
-    revealElements.forEach((el) => el.classList.add("visible"));
+    revealElements.forEach((el) => {
+      if (initializedElements.has(el)) return;
+      initializedElements.add(el);
+      el.classList.add("visible");
+    });
   }
 
   // Envoi du formulaire de contact via Web3Forms
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
 
-  if (contactForm && formStatus) {
+  if (contactForm && formStatus && !initializedElements.has(contactForm)) {
+    initializedElements.add(contactForm);
     const phoneInput = contactForm.querySelector('input[type="tel"]');
     if (phoneInput) {
       phoneInput.addEventListener("input", () => {
@@ -187,4 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
+};
+
+document.addEventListener("astro:page-load", initializePage);
