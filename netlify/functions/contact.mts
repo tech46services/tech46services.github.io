@@ -182,7 +182,10 @@ export default async (request: Request): Promise<Response> => {
 
   try {
     await transporter.sendMail({
-      from: smtpConfig.user,
+      from: {
+        name: "Tech 46 Services - Formulaire",
+        address: smtpConfig.user,
+      },
       to: smtpConfig.recipient,
       replyTo: email,
       subject: EMAIL_SUBJECT,
