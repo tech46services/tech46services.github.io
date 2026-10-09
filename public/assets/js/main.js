@@ -240,7 +240,7 @@ const initializePage = () => {
     });
   }
 
-  // Envoi du formulaire de contact via Web3Forms
+  // Envoi du formulaire de contact via la fonction Netlify
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
 
@@ -255,21 +255,50 @@ const initializePage = () => {
 
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      if (submitButton?.disabled) return;
+
+      submitButton?.setAttribute("disabled", "");
       formStatus.textContent = "Envoi en cours...";
 
       try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: new FormData(contactForm),
-        });
+        const formData = new FormData(contactForm);
+        const getFieldValue = (name) => {
+          const value = formData.get(name);
+          return typeof value === "string" ? value : "";
+        };
 
-        if (!response.ok) throw new Error("Échec de l'envoi");
+        const response = await fetch(
+          "https://tech46services-api.netlify.app/api/contact",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: getFieldValue("name"),
+              phonenumber: getFieldValue("phonenumber"),
+              email: getFieldValue("email"),
+              message: getFieldValue("message"),
+              botcheck: getFieldValue("botcheck"),
+            }),
+          }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || result?.success !== true) {
+          throw new Error("Échec de l'envoi");
+        }
 
         formStatus.textContent = "Merci, votre message a bien été envoyé.";
         contactForm.reset();
       } catch {
         formStatus.innerHTML =
           'Impossible d\'envoyer le message. Vous pouvez aussi m\'écrire à : <a href="mailto:contact@tech46services.fr">contact@tech46services.fr</a>';
+      } finally {
+        submitButton?.removeAttribute("disabled");
       }
     });
   }
