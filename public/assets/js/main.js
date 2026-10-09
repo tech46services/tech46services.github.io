@@ -270,7 +270,7 @@ const initializePage = () => {
         };
 
         const response = await fetch(
-          "https://tech46services-api.netlify.app/api/contact",
+          "https://api.tech46services.fr/api/contact",
           {
             method: "POST",
             headers: {
