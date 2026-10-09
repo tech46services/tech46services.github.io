@@ -135,29 +135,6 @@
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
 }
 
-.service-card.seo-locale-card {
-  background: var(--card);
-  color: var(--text-main);
-}
-
-.service-card.seo-locale-card h2,
-.service-card.seo-locale-card p,
-.service-card.seo-locale-card .service-list {
-  color: var(--text-main);
-}
-
-.service-card.seo-locale-card .service-details summary,
-.service-card.seo-locale-card .service-details .service-details-toggle {
-  color: var(--text-muted);
-}
-
-.service-card.seo-locale-card .service-details p {
-  background: #ffffff;
-  border-color: var(--border-subtle);
-  color: var(--text-main);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-}
-
 .service-details {
   position: relative;
   display: block;
@@ -267,6 +244,19 @@
 
 .why-cta .section-footer-link {
   margin-top: 0;
+}
+
+.espace-pro-page .service-card {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+.espace-pro-page .hero-text-panel .intro-text {
+  text-align: left;
+  text-justify: auto;
+}
+
+.espace-pro-page .service-card:hover {
+  transform: none;
 }
 
 .why-list {

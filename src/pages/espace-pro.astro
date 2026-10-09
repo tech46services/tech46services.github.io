@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"Service\",\r\n        \"@id\": \"https://tech46services.fr/espace-pro.html#service\",\r\n        \"name\": \"Services numériques pour professionnels\",\r\n        \"serviceType\": \"Création web, SEO local et optimisation de process\",\r\n        \"description\": \"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process.\",\r\n        \"url\": \"https://tech46services.fr/espace-pro.html\",\r\n        \"provider\": {\r\n          \"@type\": \"LocalBusiness\",\r\n          \"@id\": \"https://tech46services.fr/#business\",\r\n          \"name\": \"Tech 46 Services\",\r\n          \"url\": \"https://tech46services.fr/\",\r\n          \"telephone\": \"+33769754085\"\r\n        },\r\n        \"audience\": {\r\n          \"@type\": \"BusinessAudience\",\r\n          \"audienceType\": \"Professionnels, indépendants, artisans et associations\"\r\n        },\r\n        \"areaServed\": [\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Gramat (Lot)\"\r\n          },\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Nord du Lot (46)\"\r\n          }\r\n        ],\r\n        \"hasOfferCatalog\": {\r\n          \"@type\": \"OfferCatalog\",\r\n          \"name\": \"Services numériques pour activités professionnelles\",\r\n          \"itemListElement\": [\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Création de sites web\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Optimisation SEO locale\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Optimisation de process\"\r\n            }\r\n          ]\r\n        }\r\n      }";
+const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"@type\": \"Service\",\r\n        \"@id\": \"https://tech46services.fr/espace-pro.html#service\",\r\n        \"name\": \"Création web et référencement pour professionnels\",\r\n        \"serviceType\": \"Création de sites web et référencement local\",\r\n        \"description\": \"Création de sites web et référencement pour les professionnels à Gramat et dans le nord du Lot.\",\r\n        \"url\": \"https://tech46services.fr/espace-pro.html\",\r\n        \"provider\": {\r\n          \"@type\": \"LocalBusiness\",\r\n          \"@id\": \"https://tech46services.fr/#business\",\r\n          \"name\": \"Tech 46 Services\",\r\n          \"url\": \"https://tech46services.fr/\",\r\n          \"telephone\": \"+33769754085\"\r\n        },\r\n        \"audience\": {\r\n          \"@type\": \"BusinessAudience\",\r\n          \"audienceType\": \"Professionnels, indépendants, artisans et associations\"\r\n        },\r\n        \"areaServed\": [\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Gramat (Lot)\"\r\n          },\r\n          {\r\n            \"@type\": \"AdministrativeArea\",\r\n            \"name\": \"Nord du Lot (46)\"\r\n          }\r\n        ],\r\n        \"hasOfferCatalog\": {\r\n          \"@type\": \"OfferCatalog\",\r\n          \"name\": \"Création web et référencement\",\r\n          \"itemListElement\": [\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Création de sites web\"\r\n            },\r\n            {\r\n              \"@type\": \"OfferCatalog\",\r\n              \"name\": \"Référencement local\"\r\n            }\r\n          ]\r\n        }\r\n      }";
 ---
 
 <BaseLayout
-  title={"Espace pro - Création de sites web & SEO local - Tech 46 Services"}
-  description={"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process."}
+  title={"Création web & référencement à Gramat | Tech 46 Services"}
+  description={"Création de sites web et référencement pour les professionnels à Gramat et dans le nord du Lot. Développez votre visibilité en ligne."}
   canonical={"https://tech46services.fr/espace-pro.html"}
-  ogTitle={"Espace pro - Tech 46 Services"}
-  ogDescription={"Services numériques pour professionnels à Gramat et dans le Lot: création de sites web, optimisation SEO locale et optimisation de process."}
+  ogTitle={"Création web & référencement à Gramat | Tech 46 Services"}
+  ogDescription={"Création de sites web et référencement pour les professionnels à Gramat et dans le nord du Lot. Développez votre visibilité en ligne."}
   bodyClass={"services-page espace-pro-page"}
   activePage={"espace-pro"}
   jsonLd={jsonLd}
@@ -18,14 +18,14 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
         <!-- =========================
              INTRO SERVICES
         ========================== -->
-        <h1 class="hero-intro-title">Espace pro</h1>
-        <section class="hero-grid">
+        <h1 id="espace-pro-title" class="hero-intro-title">Création de sites web et référencement à Gramat et dans le nord du Lot</h1>
+        <section class="hero-grid" aria-labelledby="espace-pro-title">
           <img loading="eager"
             class="hero-bg"
             src="assets/img/image_espacepro.webp"
             srcset="/assets/img/image_espacepro-480.webp 480w, /assets/img/image_espacepro-720.webp 720w, /assets/img/image_espacepro.webp 958w"
             sizes="(max-width: 1000px) calc(100vw - 2rem), 958px"
-            alt="Services numériques pour professionnels dans le Lot"
+            alt="Création web et référencement pour les professionnels"
             width="958"
             height="447"
             decoding="async"
@@ -33,15 +33,10 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
           />
           <div class="hero-content reveal">
             <div class="hero-text-panel">
-              <div class="section-header">
-                <h2 class="hero-panel-title">Création web, SEO et productivité pour votre activité</h2>
-              </div>
-
               <p class="intro-text">
-                Cette page est dédiée aux entreprises, indépendants, artisans et associations
-                qui veulent améliorer leur présence en ligne et gagner du temps au quotidien.
-                Je conçois des solutions simples, évolutives et adaptées à votre activité:
-                site web, SEO local et optimisation de process.
+                Tech 46 Services accompagne les artisans, TPE, indépendants et associations
+                pour créer leur présence en ligne et améliorer leur visibilité sur le web et
+                sur Google, avec des solutions claires et adaptées à leur activité.
               </p>
             </div>
           </div>
@@ -52,52 +47,45 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
         ========================== -->
         <section class="section-padding">
 
-          <p>Chaque jour, vous engagez votre savoir-faire et votre exigence au service de 
-            vos clients. Cette constance façonne votre réputation et ancre votre présence 
-            locale.</p>
+          <div class="section-header">
+            <h2 id="solutions-web">Des solutions web pour développer votre activité</h2>
+            <p>Deux prestations complémentaires pour construire une présence en ligne claire et visible.</p>
+          </div>
 
-          <p>Aujourd’hui, le numérique s’inscrit dans cette même logique d’exigence. Une 
-            présence en ligne structurée et cohérente devient un levier stratégique : elle{" "}
-             <strong>renforce votre crédibilité</strong>, <strong>développe votre 
-              visibilité</strong> et affirme votre positionnement.</p>
+          <p>Votre présence en ligne doit refléter le sérieux de votre activité. Un site web
+            clair, rapide et adapté à vos clients renforce votre crédibilité, facilite la prise
+            de contact et constitue un véritable outil commercial disponible en permanence.
+            Associé à un référencement local cohérent, il vous aide également à gagner en
+            visibilité sur Google auprès des personnes qui recherchent vos services.</p>
 
-          <p>Un site internet clair, rapide et maîtrisé, soutenu par un référencement local 
-            solide, vous positionne comme un acteur fiable et accessible. 
-            Il constitue un véritable <strong>outil commercial</strong>, <strong>disponible 
-              en permanence</strong>, au service de votre développement.</p>
-
-          <p>L’optimisation passe également par l’organisation interne. L’automatisation 
-            des devis, de la facturation, du suivi ou de la gestion administrative permet 
-            de <strong>fluidifier vos processus</strong>, de <strong>sécuriser vos 
-              opérations</strong> et de vous recentrer sur votre cœur de métier.</p>
-
-          <p>Le numérique n’est pas une tendance : c’est un levier structurant 
-            d’<strong>optimisation et de croissance</strong>. J’accompagne les 
-            professionnels du nord du Lot qui souhaitent moderniser leur activité avec 
-            méthode et cohérence.</p>
+          <p>J’accompagne les professionnels de Gramat et du nord du Lot de la définition du
+            besoin jusqu’à la mise en ligne, puis dans l’amélioration de leur visibilité, avec
+            une méthode claire et un interlocuteur unique.</p>
           
           <div class="cards-grid big">
-            <article class="service-card elevation-3 reveal card-top-accent">
-              <h2>Création de sites web</h2>
+            <article id="creation-sites-web" class="service-card elevation-3 reveal card-top-accent">
+              <h3>Création de sites web</h3>
+
+              <p>
+                Un site professionnel conçu pour présenter clairement votre activité
+                et faciliter la prise de contact avec vos futurs clients.
+              </p>
 
               <ul class="service-list">
                 <li>Site rapide et sécurisé</li>
                 <li>Design responsive mobile et desktop</li>
                 <li>Hébergement simple et maintenance légère</li>
-                <li>Des pages selon vos besoins</li>
+                <li>Pages adaptées à vos besoins et à votre activité</li>
               </ul>
-
-              <div class="service-details">
-                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
-                <p>
-                  Idéal pour présenter votre activité de façon claire, <strong>professionnelle
-                  et performante</strong>, avec un excellent temps de chargement.
-                </p>
-              </div>
             </article>
 
-            <article class="service-card elevation-3 reveal seo-locale-card card-top-accent">
-              <h2>Optimisation SEO locale</h2>
+            <article id="referencement-local" class="service-card elevation-3 reveal card-top-accent">
+              <h3>Référencement local</h3>
+
+              <p>
+                Des fondations solides et des contenus pertinents pour aider votre entreprise
+                à être trouvée par les clients qui recherchent vos services dans votre secteur.
+              </p>
 
               <ul class="service-list">
                 <li>Structure technique optimisée</li>
@@ -105,34 +93,11 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
                 <li>Amélioration des performances web</li>
                 <li>Renforcement de votre visibilité sur Google</li>
               </ul>
-
-              <div class="service-details">
-                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
-                <p>
-                  Travail sur les fondations SEO pour attirer des prospects qualifiés
-                  dans votre zone d'activité.
-                </p>
-              </div>
             </article>
+          </div>
 
-            <article class="service-card elevation-3 reveal card-top-accent">
-              <h2>Optimisation de process</h2>
-
-              <ul class="service-list">
-                <li>Réduction des tâches répétitives</li>
-                <li>Standardisation des étapes métier</li>
-                <li>Automatisation des échanges clés</li>
-                <li>Gain de temps et meilleure productivité</li>
-              </ul>
-
-              <div class="service-details">
-                <button type="button" class="service-details-toggle" aria-expanded="false">En savoir plus</button>
-                <p>
-                  Mise en place de méthodes et d'outils simples pour fluidifier votre
-                  fonctionnement quotidien et <strong>gagner du temps</strong>.
-                </p>
-              </div>
-            </article>
+          <div class="section-footer-link why-cta">
+            <a href="/contact.html" class="btn primary">Demander un devis pour votre projet web</a>
           </div>
         </section>
 
@@ -142,14 +107,14 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
         <section class="section-padding reveal">
           <div class="section-header">
             <h2>Comment se déroule un projet ?</h2>
-            <p>Une méthode claire, avec un objectif simple: vous livrer une solution utile.</p>
+            <p>Une méthode claire pour construire une solution web utile à votre activité.</p>
           </div>
 
           <ul class="service-list why-list" style="max-width: 760px;">
             <li>Échange initial pour cadrer vos besoins et vos priorités</li>
             <li>Proposition d'une solution adaptée à votre budget</li>
             <li>Mise en place progressive et validation à chaque étape</li>
-            <li>Accompagnement après livraison pour assurer l'autonomie</li>
+            <li>Accompagnement après la mise en ligne et conseils pour la suite</li>
           </ul>
         </section>
 
@@ -163,7 +128,7 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
           </div>
 
           <div class="why-cta">
-            <a href="contact.html" class="inline-link">Parlez-moi de votre projet professionnel &rarr;</a>
+            <a href="/contact.html" class="inline-link">Parlez-moi de votre projet web &rarr;</a>
           </div>
         </section>
       </main>

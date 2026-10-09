@@ -168,7 +168,8 @@ main {
 }
 
 .espace-pro-page .cards-grid.big {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.4rem;
 }
 
 /* Steps */
