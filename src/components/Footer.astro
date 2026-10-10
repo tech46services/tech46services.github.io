@@ -57,5 +57,37 @@
 
   <div class="footer-bottom">
     <span>&copy; <span class="js-year"></span> Tech 46 Services</span>
+    <button
+      type="button"
+      class="footer-cookie-settings"
+      data-cookie-consent-action="manage"
+      aria-controls="cookie-consent"
+    >
+      Gérer les cookies
+    </button>
   </div>
 </footer>
+
+<style>
+  .footer-cookie-settings {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    cursor: pointer;
+  }
+
+  .footer-cookie-settings:hover {
+    color: var(--primary);
+  }
+
+  .footer-cookie-settings:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+</style>

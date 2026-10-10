@@ -2,6 +2,7 @@
 import { ClientRouter, fade } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import "../styles/main.css";
 
 interface Props {
@@ -84,19 +85,6 @@ const pageTransition = {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-5RJZZRVC7C"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-5RJZZRVC7C", {
-        anonymize_ip: true,
-        storage: "none",
-        client_id: "anonyme",
-        allow_ad_personalization_signals: false,
-        allow_google_signals: false,
-      });
-    </script>
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main-content">Aller au contenu</a>
@@ -111,6 +99,7 @@ const pageTransition = {
       </div>
       <Footer />
     </div>
+    <CookieConsent />
     <script is:inline src="/assets/js/main.js"></script>
   </body>
 </html>
