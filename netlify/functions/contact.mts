@@ -119,8 +119,7 @@ export default async (request: Request): Promise<Response> => {
     return invalidResponse();
   }
 
-  const botcheck =
-    typeof body.botcheck === "string" ? body.botcheck.trim() : body.botcheck;
+  const botcheck = body.botcheck;
 
   if (botcheck !== undefined && botcheck !== null && botcheck !== "") {
     return successResponse();

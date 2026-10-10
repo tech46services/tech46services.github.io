@@ -48,9 +48,12 @@ const jsonLd = "{\r\n        \"@context\": \"https://schema.org\",\r\n        \"
                   <form id="contact-form" class="contact-form">
                     <!-- Honeypot antispam -->
                     <input
-                      type="checkbox"
+                      type="text"
                       name="botcheck"
-                      style="display: none"
+                      tabindex="-1"
+                      autocomplete="off"
+                      aria-hidden="true"
+                      style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;"
                     />
 
                     <div class="form-group">

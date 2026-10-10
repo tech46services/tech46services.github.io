@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .astro/
+.env
+.env.*
+!.env.example
 
 # Variantes d'images générées automatiquement (scripts/generate-responsive-images.mjs)
 /public/assets/img/*-480.webp
