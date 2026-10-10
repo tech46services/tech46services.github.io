@@ -1,66 +1,80 @@
 // Déplie individuellement les avis longs (chargé uniquement sur les pages avec le composant Reviews).
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".review-toggle").forEach((toggleButton) => {
-    const card = toggleButton.closest(".testimonial-card");
-    const controlledTextId = toggleButton.getAttribute("aria-controls");
-    const reviewText = controlledTextId
-      ? document.getElementById(controlledTextId)
-      : null;
-    if (!card || !reviewText) return;
+(() => {
+  const initReviews = () => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll(".review-toggle").forEach((toggleButton) => {
+        if (toggleButton.dataset.reviewInitialized === "true") return;
 
-    card.classList.add("is-collapsible");
-    const textOverflows = reviewText.scrollHeight > reviewText.clientHeight + 1;
-    if (!textOverflows) {
-      card.classList.remove("is-collapsible");
-      return;
-    }
+        const card = toggleButton.closest(".testimonial-card");
+        const controlledTextId = toggleButton.getAttribute("aria-controls");
+        const reviewText = controlledTextId
+          ? document.getElementById(controlledTextId)
+          : null;
+        if (!card || !reviewText) return;
 
-    toggleButton.hidden = false;
-    toggleButton.addEventListener("click", () => {
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
+        toggleButton.dataset.reviewInitialized = "true";
+        card.classList.add("is-collapsible");
+        const textOverflows = reviewText.scrollHeight > reviewText.clientHeight + 1;
+        if (!textOverflows) {
+          card.classList.remove("is-collapsible");
+          return;
+        }
 
-      if (card._activeAnim) {
-        card._activeAnim.cancel();
-      }
+        toggleButton.hidden = false;
+        toggleButton.addEventListener("click", () => {
+          const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
 
-      const startHeight = card.offsetHeight;
-
-      const isExpanded = card.classList.toggle("is-expanded");
-      toggleButton.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      toggleButton.textContent = isExpanded
-        ? "Réduire l’avis"
-        : "Afficher l’avis complet";
-
-      const endHeight = card.offsetHeight;
-
-      if (
-        !prefersReducedMotion &&
-        typeof card.animate === "function" &&
-        startHeight !== endHeight
-      ) {
-        card.style.overflow = "hidden";
-        const anim = card.animate(
-          [
-            { height: `${startHeight}px` },
-            { height: `${endHeight}px` },
-          ],
-          {
-            duration: 260,
-            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          if (card._activeAnim) {
+            card._activeAnim.cancel();
           }
-        );
-        card._activeAnim = anim;
 
-        const cleanup = () => {
-          card.style.overflow = "";
-          card._activeAnim = null;
-        };
+          const startHeight = card.offsetHeight;
 
-        anim.onfinish = cleanup;
-        anim.oncancel = cleanup;
-      }
+          const isExpanded = card.classList.toggle("is-expanded");
+          toggleButton.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+          toggleButton.textContent = isExpanded
+            ? "Réduire l’avis"
+            : "Afficher l’avis complet";
+
+          const endHeight = card.offsetHeight;
+
+          if (
+            !prefersReducedMotion &&
+            typeof card.animate === "function" &&
+            startHeight !== endHeight
+          ) {
+            card.style.overflow = "hidden";
+            const anim = card.animate(
+              [
+                { height: `${startHeight}px` },
+                { height: `${endHeight}px` },
+              ],
+              {
+                duration: 260,
+                easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+              }
+            );
+            card._activeAnim = anim;
+
+            const cleanup = () => {
+              card.style.overflow = "";
+              card._activeAnim = null;
+            };
+
+            anim.onfinish = cleanup;
+            anim.oncancel = cleanup;
+          }
+        });
+      });
     });
-  });
-});
+  };
+
+  if (!window.tech46ReviewsPageLoadListenerInitialized) {
+    window.tech46ReviewsPageLoadListenerInitialized = true;
+    document.addEventListener("astro:page-load", initReviews);
+  }
+
+  initReviews();
+})();
