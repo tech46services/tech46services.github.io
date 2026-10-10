@@ -1,5 +1,5 @@
 ---
-import { ClientRouter, fade } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieConsent from "../components/CookieConsent.astro";
@@ -33,17 +33,6 @@ const {
   noindex = false,
 } = Astro.props;
 
-const pageFade = fade({ duration: "200ms" });
-const pageTransition = {
-  forwards: {
-    old: { ...pageFade.forwards.old, duration: "0ms" },
-    new: { ...pageFade.forwards.new, duration: "200ms" },
-  },
-  backwards: {
-    old: { ...pageFade.backwards.old, duration: "0ms" },
-    new: { ...pageFade.backwards.new, duration: "0ms" },
-  },
-};
 ---
 
 <!doctype html>
@@ -90,11 +79,7 @@ const pageTransition = {
     <a class="skip-link" href="#main-content">Aller au contenu</a>
     <div class="app-shell">
       <Header activePage={activePage} />
-      <div
-        style="flex: 1;"
-        transition:name="page-content"
-        transition:animate={pageTransition}
-      >
+      <div style="flex: 1;">
         <slot />
       </div>
       <Footer />
